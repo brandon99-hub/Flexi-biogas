@@ -1,0 +1,1 @@
+jQuery(function($){$('#footer-info').html("\u00a9 2019 Biogas International | Powered by <a href=\"https:\/\/bigarttagroup.com\/\" target=\"_blank\" rel=\"noopener\">Bigartta Group<\/a>");});

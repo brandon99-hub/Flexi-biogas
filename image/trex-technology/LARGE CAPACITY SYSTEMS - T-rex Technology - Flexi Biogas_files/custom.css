@@ -1,0 +1,140 @@
+/*
+Theme Name: Divi Staff Post Type
+Author: Geno Quiroz
+Author URI: http://montereypremier.com/
+*/
+
+/*------------------------------------------------*/
+/*-------------[STAFF SINGLE PAGE]----------------*/
+/*------------------------------------------------*/
+
+/* entry content padding */
+	.staff .entry-content, .single-staff .entry-content {
+		padding-top: 0px!important;}
+		
+		
+/* coimbine image and meta into one line */
+	@media only screen and (min-width : 568px) {
+		.dspt_left_area {
+			width: 200px;
+			display: inline-block;}
+		.dspt_right_area {
+			width: 100%;
+			display: inline-block;
+			padding-left:20px;}
+		.dspt_single_wrap {
+			display: flex;}}
+			
+/* single staff image */
+	.dspt-single-staff-img img {
+   		border: 1px solid #d5d5d5;
+   		padding: 5px;
+   		padding-right: 5px !important;
+   		margin-right: 21px;
+   		border-radius: 3px;
+		box-shadow: 1px 1px 15px 0px #b9b9b9;
+		margin-bottom:20px;}			
+
+/* custom meta data */		
+		
+	h3.dspt-position {
+		font-size: 17px;
+		font-weight: 600;
+		color: #b3b3b3;}
+
+	h3.dspt-department {
+		font-size: 14px;
+		color: #2ea3f2;}
+
+	h3.dspt-meta {
+		font-size: 14px;
+		color: #b3b3b3;}
+		
+
+
+/*------------------------------------------------*/
+/*-------------[STAFF ARCHIVE PAGES]---------------*/
+/*------------------------------------------------*/
+
+/* page title border */
+	.dspt-title-line {
+    	margin-bottom: 50px!important;}
+
+
+/* staff name */
+	.dspt-archive-staff {
+   		font-size: 22px;
+   		font-weight: 700;}
+			
+/* border beneath name */
+	.dspt-archive-short-line {
+   		max-width: 50px;
+   		margin-left: 0;}			
+
+/* image */
+	.dspt-staff-img img {
+   		border: 1px solid #d5d5d5;
+   		padding: 5px;
+   		padding-right: 5px !important;
+   		margin-right: 21px;
+   		border-radius: 3px;
+		box-shadow: 1px 1px 15px 0px #b9b9b9;
+		float:left;}
+		
+/* position */
+	.dspt-archive-position {
+		font-size: 16px;
+		font-weight: 700;
+		color: #a9a7a7;}
+		
+/* department */
+	.dspt-archive-department {
+		font-size: 14px;
+		color: #2ea3f2;}		
+		
+/* archive meta */		
+	.dspt-archive-meta {
+		font-size: 12px;
+		color: #a9a7a7;
+}		
+
+/* read more button */
+	.dspt-archive-read-more {
+    	float: right;
+    	background: #fe6601;
+    	color: #fff;
+    	padding: 0px 10px;
+    	border-radius: 3px;
+    	margin-top: -10px;
+		font-size: 13px;}
+	.dspt-archive-read-more:hover {
+    	background: #ba4b01;}
+
+
+
+/*------------------------------------------------*/
+/*---------[ADD DIVI BUILDER TO DSPT]-------------*/
+/*------------------------------------------------*/		
+ 
+.et_pb_pagebuilder_layout.single-staff #page-container .et_pb_row {
+width: 100%;
+}
+.et_pb_pagebuilder_layout.single-staff #page-container .et_pb_with_background .et_pb_row {
+width: 80%;
+}
+
+
+/*------------------------------------------------*/
+/*---------------[DIVI STAFF GRID]-----------------*/
+/*------------------------------------------------*/	
+
+.et-pb-all-modules .et_pb_staff:before, .et_pb_saved_layouts_list .et_pb_staff:before {
+    content: '\47'!important;
+}
+
+p.post-meta.ds-dpbm-position {
+    padding-bottom: 0px;
+    font-weight: 600;
+    margin-bottom: -10px;
+}
+		
