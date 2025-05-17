@@ -53,6 +53,114 @@
           margin: 0 0 10px 0 !important;
         }
       }
+      .sponsor-logo {
+        filter: grayscale(100%);
+        transition: filter 0.3s, transform 0.3s;
+        max-height: 60px;
+        width: auto;
+        display: block;
+        margin: 0 auto;
+      }
+      .sponsor-logo:hover {
+        filter: none !important;
+        -webkit-filter: none !important;
+        transform: scale(1.05);
+      }
+      .sponsors.pb-60 {
+        margin-top: 60px;
+      }
+
+      /* Portfolio Section Enhancement */
+      .portfolioBlock {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
+        margin: 24px 12px;
+        overflow: hidden;
+        transition: box-shadow 0.3s;
+      }
+      .portfolioBlock:hover {
+        box-shadow: 0 8px 32px 0 rgba(51,131,157,0.18);
+      }
+      .portfolioBlock__figure iframe {
+        border-radius: 12px 12px 0 0;
+        width: 100%;
+        height: 340px;
+        display: block;
+      }
+      .portfolioBlock__content {
+        padding: 18px 16px 12px 16px;
+        text-align: center;
+      }
+      @media (max-width: 991px) {
+        .portfolioBlock__figure iframe {
+          height: 220px;
+        }
+      }
+      @media (max-width: 767px) {
+        .portfolioBlock {
+          margin: 18px 0;
+        }
+        .portfolioBlock__figure iframe {
+          height: 180px;
+        }
+      }
+      @media (max-width: 600px) {
+        .donnerAreaContent__bigTitle {
+          font-size: 2rem !important;
+          line-height: 2.2rem !important;
+        }
+        .donnerAreaContent__bigTitle__number {
+          font-size: 2.5rem !important;
+        }
+        .donnerAreaContent__bigTitle__text {
+          font-size: 1.2rem !important;
+        }
+        .donnerAreaContent__heading {
+          font-size: 1.1rem !important;
+        }
+        .donnerAreaContent {
+          padding: 0 10px !important;
+        }
+      }
+      @media (max-width: 767px) {
+        .team-member-circle {
+          width: 180px;
+          height: 180px;
+          margin: 0 auto 20px;
+        }
+        .team-member-circle img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .responsive-iframe {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio for mobile */
+        height: 0;
+        overflow: hidden;
+        background: #f8f8f8;
+        border-radius: 18px;
+        margin-bottom: 24px;
+      }
+      @media (min-width: 768px) {
+        .responsive-iframe {
+          padding-bottom: 85%; /* Slightly taller for desktop */
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      .responsive-iframe iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
     </style>
   </head>
 
@@ -176,38 +284,6 @@
             <div class="header__actions">
               <ul>
                 <li>
-                  <a href="products.html">
-                    <svg
-                      width="25"
-                      height="20"
-                      viewBox="0 0 25 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24.2344 7H20.9258L14.9102 0.382812C14.6523 0.0820312 14.2227 0.0820312 13.9648 0.339844C13.6641 0.597656 13.6641 1.02734 13.9219 1.28516L19.0781 7H5.62891L10.7852 1.28516C11.043 1.02734 11.043 0.597656 10.7422 0.339844C10.4844 0.0820312 10.0547 0.0820312 9.79688 0.382812L3.78125 7H0.515625C0.214844 7 0 7.25781 0 7.51562V7.85938C0 8.16016 0.214844 8.375 0.515625 8.375H1.20312L2.49219 17.6133C2.62109 18.6445 3.48047 19.375 4.51172 19.375H20.1953C21.2266 19.375 22.0859 18.6445 22.2148 17.6133L23.5039 8.375H24.2344C24.4922 8.375 24.75 8.16016 24.75 7.85938V7.51562C24.75 7.25781 24.4922 7 24.2344 7ZM20.8828 17.4414C20.7969 17.7852 20.5391 18 20.1953 18H4.51172C4.16797 18 3.91016 17.7852 3.82422 17.4414L2.57812 8.375H22.1289L20.8828 17.4414ZM13.0625 10.7812C13.0625 10.4375 12.7188 10.0938 12.375 10.0938C11.9883 10.0938 11.6875 10.4375 11.6875 10.7812V15.5938C11.6875 15.9805 11.9883 16.2812 12.375 16.2812C12.7188 16.2812 13.0625 15.9805 13.0625 15.5938V10.7812ZM17.875 10.7812C17.875 10.4375 17.5312 10.0938 17.1875 10.0938C16.8008 10.0938 16.5 10.4375 16.5 10.7812V15.5938C16.5 15.9805 16.8008 16.2812 17.1875 16.2812C17.5312 16.2812 17.875 15.9805 17.875 15.5938V10.7812ZM8.25 10.7812C8.25 10.4375 7.90625 10.0938 7.5625 10.0938C7.17578 10.0938 6.875 10.4375 6.875 10.7812V15.5938C6.875 15.9805 7.17578 16.2812 7.5625 16.2812C7.90625 16.2812 8.25 15.9805 8.25 15.5938V10.7812Z"
-                        fill="#7FB432"
-                      />
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#template-search">
-                    <svg
-                      width="23"
-                      height="23"
-                      viewBox="0 0 23 23"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M21.8281 21.4609L16.2852 15.918C16.1992 15.832 16.0703 15.7891 15.9414 15.7891H15.4688C16.9727 14.1562 17.875 12.0508 17.875 9.6875C17.875 4.78906 13.8359 0.75 8.9375 0.75C3.99609 0.75 0 4.78906 0 9.6875C0 14.6289 3.99609 18.625 8.9375 18.625C11.2578 18.625 13.4062 17.7227 14.9961 16.2617V16.6914C14.9961 16.8633 15.0391 16.9922 15.125 17.0781L20.668 22.6211C20.8828 22.8359 21.1836 22.8359 21.3984 22.6211L21.8281 22.1914C22.043 21.9766 22.043 21.6758 21.8281 21.4609ZM8.9375 17.25C4.72656 17.25 1.375 13.8984 1.375 9.6875C1.375 5.51953 4.72656 2.125 8.9375 2.125C13.1055 2.125 16.5 5.51953 16.5 9.6875C16.5 13.8984 13.1055 17.25 8.9375 17.25Z"
-                        fill="#7FB432"
-                      />
-                    </svg>
-                  </a>
-                </li>
-                <li>
                   <button
                     class="headerBurgerMenu__button sidebarBtn"
                     onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
@@ -297,11 +373,6 @@
                 rel="nofollow"
               >
                 <i class="fab fa-linkedin-in"></i>
-              </a>
-            </li>
-            <li>
-              <a class="pinterest" href="http://www.biogas.co.ke/" rel="nofollow">
-                <i class="fab fa-pinterest-p"></i>
               </a>
             </li>
           </ul>
@@ -603,7 +674,7 @@
                           <p class="keyFeatureBlock__text">
                             Large scale systems built according to energy demand need. Perfect for schools, farms, hotels, churches, markets, and children's homes.
                           </p>
-                          <a class="keyFeatureBlock__link" href="trex-technology.html">
+                          <a class="keyFeatureBlock__link" href="trex-technology.html" style="color: #33839d;">
                             Read more <i class="fa-solid fa-arrow-right-long"></i>
                           </a>
                         </div>
@@ -629,7 +700,7 @@
                           <p class="keyFeatureBlock__text">
                             Systems designed for household energy demands. Installed in 3 hours, producing gas in 3-5 days, running on any biodegradable material.
                           </p>
-                          <a class="keyFeatureBlock__link" href="flexi-technology.html">
+                          <a class="keyFeatureBlock__link" href="flexi-technology.html" style="color: #33839d;">
                             Read more <i class="fa-solid fa-arrow-right-long"></i>
                           </a>
                         </div>
@@ -655,7 +726,7 @@
                           <p class="keyFeatureBlock__text">
                             Clean hygienic solution producing both biogas and rich fertilizer. Prefabricated and assembled on site in hours.
                           </p>
-                          <a class="keyFeatureBlock__link" href="biosan-technology.html">
+                          <a class="keyFeatureBlock__link" href="biosan-technology.html" style="color: #33839d;">
                             Read more <i class="fa-solid fa-arrow-right-long"></i>
                           </a>
                         </div>
@@ -696,13 +767,11 @@
                             </a>
                           </h3>
                           <p class="keyFeatureBlock__text">
-                            The by-product of our biogas systems, the
-                            bio-slurry, is a mineral-rich organic fertilizer
-                            ready for use. It serves as an effective pest
-                            repellent and can be applied directly to plants,
-                            promoting healthier crops and reducing reliance on
-                            chemical fertilizers.
+                            The by-product of our biogas systems, the bio-slurry, is a mineral-rich organic fertilizer ready for use. It serves as an effective pest repellent and can be applied directly to plants, promoting healthier crops and reducing reliance on chemical fertilizers.
                           </p>
+                          <a class="keyFeatureBlock__link" href="copycat-farming.html" style="color: #33839d;">
+                            Read more <i class="fa-solid fa-arrow-right-long"></i>
+                          </a>
                         </div>
                         <div
                           class="keyFeatureBlock__skill skill-bar"
@@ -743,7 +812,7 @@
                             vegetables to providing heat for poultry brooding,
                             enhancing the versatility of our systems.​
                           </p>
-                          <a href="chicken-brooding.html" class="read-more">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                          <a href="chicken-brooding.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
                         </div>
                         <div
                           class="keyFeatureBlock__skill skill-bar"
@@ -784,7 +853,7 @@
                             ensures that we provide cutting-edge solutions for a
                             sustainable future.
                           </p>
-                          <a href="drying-fruits.html" class="read-more">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                          <a href="drying-fruits.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
                         </div>
                         <div
                           class="keyFeatureBlock__skill skill-bar"
@@ -836,7 +905,7 @@
                             promoting healthier crops and reducing reliance on
                             chemical fertilizers.
                           </p>
-                          <a href="bio-fertiliser.html" class="read-more">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                          <a href="bio-fertiliser.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
                         </div>
                         <div
                           class="keyFeatureBlock__skill skill-bar"
@@ -877,7 +946,7 @@
                             vegetables to providing heat for poultry brooding,
                             enhancing the versatility of our systems.​
                           </p>
-                          <a href="value-addition.html" class="read-more">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                          <a href="value-addition.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
                         </div>
                         <div
                           class="keyFeatureBlock__skill skill-bar"
@@ -918,7 +987,7 @@
                             ensures that we provide cutting-edge solutions for a
                             sustainable future.
                           </p>
-                          <a href="new-innovations.html" class="read-more">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                          <a href="new-innovations.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
                         </div>
                         <div
                           class="keyFeatureBlock__skill skill-bar"
@@ -1298,6 +1367,352 @@
                       </div>
                     </div>
                   </div>
+                  <!-- Example of new entries to append in the swiper-wrapper for 'What we've been up-to' -->
+                  <div class="swiper-slide">
+                    <div class="featureBlock">
+                      <div class="featureBlock__wrap">
+                        <figure class="featureBlock__thumb">
+                          <img src="image/what weve done/flexi-biogas-tz-9-400x250.jpeg" alt="Flexi Biogas Installation in Tanzania" />
+                          <a class="featureBlock__hashLink" href="news1.html">
+                            <span class="featureBlock__hashLink__text">#CLEANENERGY</span>
+                          </a>
+                        </figure>
+                        <div class="featureBlock__content">
+                          <h3 class="featureBlock__heading">
+                            <a class="featureBlock__heading__link" href="news1.html">
+                              Flexi Biogas Installation in Tanzania: Empowering Communities with Clean Energy
+                            </a>
+                          </h3>
+                          <p class="featureBlock__text">
+                            Discover how Biogas International, in partnership with Flint Global, is transforming lives in Tanzania by installing 32 domestic Flexi Biogas units. These systems provide clean cooking energy, reduce indoor air pollution, and promote sustainable waste management, empowering vulnerable communities toward a greener future.
+                          </p>
+                          <a href="news1.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="featureBlock">
+                      <div class="featureBlock__wrap">
+                        <figure class="featureBlock__thumb">
+                          <img src="image/what weve done/flexi-biogas-24-400x250.jpeg" alt="Friends Theological College Kaimosi" />
+                          <a class="featureBlock__hashLink" href="news2.html">
+                            <span class="featureBlock__hashLink__text">#EDUCATION</span>
+                          </a>
+                        </figure>
+                        <div class="featureBlock__content">
+                          <h3 class="featureBlock__heading">
+                            <a class="featureBlock__heading__link" href="news2.html">
+                              Transforming Energy Use at Friends Theological College Kaimosi with T-rex M100 Biogas System
+                            </a>
+                          </h3>
+                          <p class="featureBlock__text">
+                            Friends Theological College Kaimosi has implemented a biogas system that enhances waste management and reduces energy costs. This sustainable solution is transforming institutions.
+                          </p>
+                          <a href="news2.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="featureBlock">
+                      <div class="featureBlock__wrap">
+                        <figure class="featureBlock__thumb">
+                          <img src="image/what weve done/cactus-to-biogas-20-400x250.jpeg" alt="Dol Dol's Green Transformation" />
+                          <a class="featureBlock__hashLink" href="news3.html">
+                            <span class="featureBlock__hashLink__text">#WASTETOWEALTH</span>
+                          </a>
+                        </figure>
+                        <div class="featureBlock__content">
+                          <h3 class="featureBlock__heading">
+                            <a class="featureBlock__heading__link" href="news3.html">
+                              From Invasive Cactus to Clean Energy: Dol Dol's Green Transformation
+                            </a>
+                          </h3>
+                          <p class="featureBlock__text">
+                            Earlier this year, we embarked on a transformative journey in Dol Dol, Laikipia County, installing 8 domestic biogas systems to harness the power of invasive opuntia cactus. Through the support of our partners, we've introduced innovative solutions like cactus choppers, unique beehives, and vertical gardens, creating a self-sustaining ecosystem that promotes clean energy, organic farming, and food security.
+                          </p>
+                          <a href="news3.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="featureBlock">
+                      <div class="featureBlock__wrap">
+                        <figure class="featureBlock__thumb">
+                          <img src="image/what weve done/WhatsApp-Image-2022-10-02-at-2.26.53-AM-1-400x250.jpeg" alt="Empowering Communities with Clean Energy this Christmas!" />
+                          <a class="featureBlock__hashLink" href="news4.html">
+                            <span class="featureBlock__hashLink__text">#CLEANENERGY</span>
+                          </a>
+                        </figure>
+                        <div class="featureBlock__content">
+                          <h3 class="featureBlock__heading">
+                            <a class="featureBlock__heading__link" href="news4.html">
+                              Empowering Communities with Clean Energy this Christmas!
+                            </a>
+                          </h3>
+                          <p class="featureBlock__text">
+                            Experience holiday joy with clean energy! Our collaboration with Aga Khan Foundation brightened 35+ households in Kirinyaga and Kwale. Through Flexi Biogas, 15 families in Kirinyaga and 20 in Kwale enjoy sustainable, clean energy. This initiative provides free energy and a sustainable source of organic fertilizer for greener agriculture. Celebrate with us. Explore our gallery for installations and the smiles of our beneficiaries.
+                          </p>
+                          <a href="news4.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="featureBlock">
+                      <div class="featureBlock__wrap">
+                        <figure class="featureBlock__thumb">
+                          <img src="image/what weve done/biogas-in-nairobi-1-400x250.jpeg" alt="Empowering Nairobi Dairy Farmers: A Flexi Biogas Success Story" />
+                          <a class="featureBlock__hashLink" href="news5.html">
+                            <span class="featureBlock__hashLink__text">#FARMING</span>
+                          </a>
+                        </figure>
+                        <div class="featureBlock__content">
+                          <h3 class="featureBlock__heading">
+                            <a class="featureBlock__heading__link" href="news5.html">
+                              Empowering Nairobi Dairy Farmers: A Flexi Biogas Success Story
+                            </a>
+                          </h3>
+                          <p class="featureBlock__text">
+                            Nairobi County Government in collaboration with Flexi Biogas recently implemented a transformative biogas project that is changing lives in remarkable ways in Nairobi. We proudly installed 5 domestic Flexi Biogas systems for 5 model farmers, and we're excited to share the success story of one extraordinary farmer, Mary Wainaina from Dagoretti, Nairobi.
+                          </p>
+                          <a href="news5.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="featureBlock">
+                      <div class="featureBlock__wrap">
+                        <figure class="featureBlock__thumb">
+                          <img src="image/what weve done/biogas-pressure-cooker-3-400x250.jpeg" alt="Introducing The Flexi Biogas Pressure Cooker!" />
+                          <a class="featureBlock__hashLink" href="news6.html">
+                            <span class="featureBlock__hashLink__text">#INNOVATION</span>
+                          </a>
+                        </figure>
+                        <div class="featureBlock__content">
+                          <h3 class="featureBlock__heading">
+                            <a class="featureBlock__heading__link" href="news6.html">
+                              Introducing The Flexi Biogas Pressure Cooker!
+                            </a>
+                          </h3>
+                          <p class="featureBlock__text">
+                            Looking to revolutionize your institution's kitchen? We're thrilled to share our latest innovation; the Flexi Biogas Pressure Cooker. It's time to cook smarter, save time, and make a greener impact on your kitchen and the environment.
+                          </p>
+                          <a href="news6.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="featureBlock">
+                      <div class="featureBlock__wrap">
+                        <figure class="featureBlock__thumb">
+                          <img src="image/what weve done/flexi-biogas-7-400x250.jpeg" alt="Harnessing the Power of Nature in Congo!" />
+                          <a class="featureBlock__hashLink" href="news7.html">
+                            <span class="featureBlock__hashLink__text">#CLEANENERGY</span>
+                          </a>
+                        </figure>
+                        <div class="featureBlock__content">
+                          <h3 class="featureBlock__heading">
+                            <a class="featureBlock__heading__link" href="news7.html">
+                              Harnessing the Power of Nature in Congo!
+                            </a>
+                          </h3>
+                          <p class="featureBlock__text">
+                            We are thrilled to announce the installation of our brand new T-rex 30 biogas system in the heart of North Kivu, Democratic Republic of Congo! This cutting-edge system has found its home in the Mweson rural health zone, where it will revolutionize energy and agriculture.
+                          </p>
+                          <a href="news7.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="featureBlock">
+                      <div class="featureBlock__wrap">
+                        <figure class="featureBlock__thumb">
+                          <img src="image/what weve done/3-flexi-biogas-400x250.jpg" alt="CopyCat Farming Model" />
+                          <a class="featureBlock__hashLink" href="news8.html">
+                            <span class="featureBlock__hashLink__text">#FARMING</span>
+                          </a>
+                        </figure>
+                        <div class="featureBlock__content">
+                          <h3 class="featureBlock__heading">
+                            <a class="featureBlock__heading__link" href="news8.html">
+                              CopyCat Farming Model
+                            </a>
+                          </h3>
+                          <p class="featureBlock__text">
+                            Farming is no longer just a job; it has become a lifestyle. Now climate smart farming offers new innovations and improvements upon traditional methods. Climate Smart Farming is leading the way towards a more sustainable food production. This revolutionary method...
+                          </p>
+                          <a href="news8.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="featureBlock">
+                      <div class="featureBlock__wrap">
+                        <figure class="featureBlock__thumb">
+                          <img src="image/what weve done/IMG-20190423-WA0019-400x250.jpg" alt="Flexi Biogas Solutions in Togo" />
+                          <a class="featureBlock__hashLink" href="news9.html">
+                            <span class="featureBlock__hashLink__text">#CLEANENERGY</span>
+                          </a>
+                        </figure>
+                        <div class="featureBlock__content">
+                          <h3 class="featureBlock__heading">
+                            <a class="featureBlock__heading__link" href="news9.html">
+                              Flexi Biogas Solutions in Togo
+                            </a>
+                          </h3>
+                          <p class="featureBlock__text">
+                            In collaboration with the National Agency for Grassroots Development Support (ANADEB) in Togo, we have installed 10 flexi biogas units that will serve as a pilot project with the objective of replacing wood-fuel as a source of energy. The initiative is in effect...
+                          </p>
+                          <a href="news9.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="featureBlock">
+                      <div class="featureBlock__wrap">
+                        <figure class="featureBlock__thumb">
+                          <img src="image/what weve done/jet-inn-gardens-2-1-400x250.jpg" alt="Biogas Plant and Climate Smart Agriculture at Jet Inn Gardens Hotel in Emali" />
+                          <a class="featureBlock__hashLink" href="news10.html">
+                            <span class="featureBlock__hashLink__text">#INNOVATION</span>
+                          </a>
+                        </figure>
+                        <div class="featureBlock__content">
+                          <h3 class="featureBlock__heading">
+                            <a class="featureBlock__heading__link" href="news10.html">
+                              Biogas Plant and Climate Smart Agriculture at Jet Inn Gardens Hotel in Emali
+                            </a>
+                          </h3>
+                          <p class="featureBlock__text">
+                            65 millions years later, the T-rex is still Dazzling !! We have installed the Large Capacity Biogas unit [T-rex 50m3] with the potential to produce between 40,000 - 50,000 litres of #biogas daily at Jet Inn Gardens hotel in Emali. Food waste and Kitchen vegetable...
+                          </p>
+                          <a href="news10.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="featureBlock">
+                      <div class="featureBlock__wrap">
+                        <figure class="featureBlock__thumb">
+                          <img src="image/what weve done/biogas-in-Kisumu-Ahero-Market-400x250.jpeg" alt="Ahero Town's Biogas Plant" />
+                          <a class="featureBlock__hashLink" href="news11.html">
+                            <span class="featureBlock__hashLink__text">#WASTEMANAGEMENT</span>
+                          </a>
+                        </figure>
+                        <div class="featureBlock__content">
+                          <h3 class="featureBlock__heading">
+                            <a class="featureBlock__heading__link" href="news11.html">
+                              Ahero Town's Biogas Plant
+                            </a>
+                          </h3>
+                          <p class="featureBlock__text">
+                            The County Government of Kisumu is aiming at 0 waste to dumpsite in a #circulareconomy model where all the #waste gets turned to valuables. Here we are managing 1 ton of #organic waste daily at Ahero Market, waste that could have otherwise ended up getting dumped...
+                          </p>
+                          <a href="news11.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="featureBlock">
+                      <div class="featureBlock__wrap">
+                        <figure class="featureBlock__thumb">
+                          <img src="image/what weve done/water-hyacinth-to-biogas-400x250.jpeg" alt="Kenyan Turns Water Hyacinth Weed into Cooking Fuel." />
+                          <a class="featureBlock__hashLink" href="news12.html">
+                            <span class="featureBlock__hashLink__text">#INNOVATION</span>
+                          </a>
+                        </figure>
+                        <div class="featureBlock__content">
+                          <h3 class="featureBlock__heading">
+                            <a class="featureBlock__heading__link" href="news12.html">
+                              Kenyan Turns Water Hyacinth Weed into Cooking Fuel.
+                            </a>
+                          </h3>
+                          <p class="featureBlock__text">
+                            Here in Kenya, we are using biogas technology to tackle two major pollution problems with one device: a machine (we call it the T-rex) converts waste such as invasive water hyacinth into clean cooking fuel. This is in partnering with drugmaker AstraZeneca (AZN.L) and...
+                          </p>
+                          <a href="news12.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="featureBlock">
+                      <div class="featureBlock__wrap">
+                        <figure class="featureBlock__thumb">
+                          <img src="image/what weve done/clean-green-ngong-market-400x250.png" alt="Women in Uganda Embrace Flexi Biogas" />
+                          <a class="featureBlock__hashLink" href="news13.html">
+                            <span class="featureBlock__hashLink__text">#CLEANENERGY</span>
+                          </a>
+                        </figure>
+                        <div class="featureBlock__content">
+                          <h3 class="featureBlock__heading">
+                            <a class="featureBlock__heading__link" href="news13.html">
+                              Women in Uganda Embrace Flexi Biogas
+                            </a>
+                          </h3>
+                          <p class="featureBlock__text">
+                            Kenyan Biogas Technology is Transforming Lives for families in Uganda. For years, Caroline and most of her neighbours have had to cut down trees so they could prepare meals for their families. Once the #flexibiogas units were installed, all the families now...
+                          </p>
+                          <a href="news13.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="featureBlock">
+                      <div class="featureBlock__wrap">
+                        <figure class="featureBlock__thumb">
+                          <img src="image/what weve done/EM-treatment-of-waste-water-for-irrigation-400x250.jpeg" alt="Biogas Plant at The New Ngong Market" />
+                          <a class="featureBlock__hashLink" href="news14.html">
+                            <span class="featureBlock__hashLink__text">#WATERMANAGEMENT</span>
+                          </a>
+                        </figure>
+                        <div class="featureBlock__content">
+                          <h3 class="featureBlock__heading">
+                            <a class="featureBlock__heading__link" href="news14.html">
+                              Biogas Plant at The New Ngong Market
+                            </a>
+                          </h3>
+                          <p class="featureBlock__text">
+                            The New Ngong Market with over 2500 traders is generating over 1 ton of waste daily and 0 waste is ending up at the #dumpsite.
+                          </p>
+                          <a href="news14.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="featureBlock">
+                      <div class="featureBlock__wrap">
+                        <figure class="featureBlock__thumb">
+                          <img src="image/what weve done/biogas-pressure-cooker-9-400x250.jpeg" alt="WASTE WATER TREATMENT FOR RE-USE IN AGRICULTURE" />
+                          <a class="featureBlock__hashLink" href="news15.html">
+                            <span class="featureBlock__hashLink__text">#WATERMANAGEMENT</span>
+                          </a>
+                        </figure>
+                        <div class="featureBlock__content">
+                          <h3 class="featureBlock__heading">
+                            <a class="featureBlock__heading__link" href="news15.html">
+                              WASTE WATER TREATMENT FOR RE-USE IN AGRICULTURE
+                            </a>
+                          </h3>
+                          <p class="featureBlock__text">
+                            Grey water is basically soapy water and does not contain a lot of pathogens. We use Effective Microorganisms {EM} to break down solids, soaps, destroy any undesirable bacteria & pathogens, prevent / remove any foul odours, and enhance the quality of the water which can now be used for irrigation.
+                          </p>
+                          <a href="news15.html" class="read-more" style="color: #33839d;">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1390,28 +1805,16 @@
                 </div>
                 <ul class="review__box__images">
                   <li>
-                    <img
-                      src="image/auth/reviewAuth2.png"
-                      alt="Gainioz Reviewer"
-                    />
+                    <img src="image/auth/paula.jpg" alt="Paula Kahumbu" style="width:60px;height:60px;border-radius:50%;opacity:0.6;object-fit:cover;" />
                   </li>
                   <li>
-                    <img
-                      src="image/auth/reviewAuth3.png"
-                      alt="Gainioz Reviewer"
-                    />
+                    <img src="image/auth/chris.jpg" alt="Chris Nzuve" style="width:60px;height:60px;border-radius:50%;opacity:0.6;object-fit:cover;" />
                   </li>
                   <li>
-                    <img
-                      src="image/auth/reviewAuth4.png"
-                      alt="Gainioz Reviewer"
-                    />
+                    <img src="image/auth/andrew.jpg" alt="Andrew Amadi" style="width:60px;height:60px;border-radius:50%;opacity:0.6;object-fit:cover;" />
                   </li>
                   <li>
-                    <img
-                      src="image/auth/reviewAuth5.png"
-                      alt="Gainioz Reviewer"
-                    />
+                    <img src="image/auth/paula.jpg" alt="Paula Kahumbu" style="width:60px;height:60px;border-radius:50%;opacity:0.6;object-fit:cover;" />
                   </li>
                 </ul>
                 <div class="reviewblock text-center">
@@ -1431,6 +1834,38 @@
                   </span>
                   <div class="testi-slider-active1 swiper">
                     <div class="swiper-wrapper">
+                      <!-- Andrew Amadi -->
+                      <div class="swiper-slide">
+                        <div class="reviewblock__content">
+                          <img class="reviewblock__author__image" src="image/auth/andrew.jpg" alt="Andrew Amadi" style="width: 90px; height: 90px; object-fit: cover; border-radius: 50%; border: 4px solid #fff; margin-bottom: 33px;" />
+                          <span class="reviewblock__quoteIcon__one">
+                            <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M21.75 10.9951H18V7.99512C18 6.35449 19.3125 4.99512 21 4.99512H21.375C21.9844 4.99512 22.5 4.52637 22.5 3.87012V1.62012C22.5 1.01074 21.9844 0.495117 21.375 0.495117H21C16.8281 0.495117 13.5 3.87012 13.5 7.99512V19.2451C13.5 20.5107 14.4844 21.4951 15.75 21.4951H21.75C22.9688 21.4951 24 20.5107 24 19.2451V13.2451C24 12.0264 22.9688 10.9951 21.75 10.9951ZM8.25 10.9951H4.5V7.99512C4.5 6.35449 5.8125 4.99512 7.5 4.99512H7.875C8.48438 4.99512 9 4.52637 9 3.87012V1.62012C9 1.01074 8.48438 0.495117 7.875 0.495117H7.5C3.32812 0.495117 0 3.87012 0 7.99512V19.2451C0 20.5107 0.984375 21.4951 2.25 21.4951H8.25C9.46875 21.4951 10.5 20.5107 10.5 19.2451V13.2451C10.5 12.0264 9.46875 10.9951 8.25 10.9951Z" fill="#6b9949"/>
+                            </svg>
+                          </span>
+                          <h4 class="reviewblock__qotes">
+                            Thanks to the digester, women no longer have to collect firewood, but can use the biogas from the digester for cooking. Plus the waste product from the system is an excellent fertiliser.
+                          </h4>
+                          <span class="reviewblock__author__name">Andrew Amadi</span>
+                          <span class="reviewblock__authorDes">Business Developing Consultant, Biogas International Limited</span>
+                        </div>
+                      </div>
+                      <!-- Chris Nzuve -->
+                      <div class="swiper-slide">
+                        <div class="reviewblock__content">
+                          <img class="reviewblock__author__image" src="image/auth/chris.jpg" alt="Chris Nzuve" style="width: 90px; height: 90px; object-fit: cover; border-radius: 50%; border: 4px solid #fff; margin-bottom: 33px;" />
+                          <span class="reviewblock__quoteIcon__one">
+                            <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M21.75 10.9951H18V7.99512C18 6.35449 19.3125 4.99512 21 4.99512H21.375C21.9844 4.99512 22.5 4.52637 22.5 3.87012V1.62012C22.5 1.01074 21.9844 0.495117 21.375 0.495117H21C16.8281 0.495117 13.5 3.87012 13.5 7.99512V19.2451C13.5 20.5107 14.4844 21.4951 15.75 21.4951H21.75C22.9688 21.4951 24 20.5107 24 19.2451V13.2451C24 12.0264 22.9688 10.9951 21.75 10.9951ZM8.25 10.9951H4.5V7.99512C4.5 6.35449 5.8125 4.99512 7.5 4.99512H7.875C8.48438 4.99512 9 4.52637 9 3.87012V1.62012C9 1.01074 8.48438 0.495117 7.875 0.495117H7.5C3.32812 0.495117 0 3.87012 0 7.99512V19.2451C0 20.5107 0.984375 21.4951 2.25 21.4951H8.25C9.46875 21.4951 10.5 20.5107 10.5 19.2451V13.2451C10.5 12.0264 9.46875 10.9951 8.25 10.9951Z" fill="#6b9949"/>
+                            </svg>
+                          </span>
+                          <h4 class="reviewblock__qotes">
+                            This is one of a kind biogas system; easy to install and extremely efficient. I love it!
+                          </h4>
+                          <span class="reviewblock__author__name">Chris Nzuve</span>
+                          <span class="reviewblock__authorDes">CEO/ Director, Bigartta Group</span>
+                        </div>
+                      </div>
                       <div class="swiper-slide">
                         <div class="reviewblock__content">
                           <img
@@ -1658,16 +2093,15 @@
                 class="portfolioBlock position-relative portfolioBlock--active"
               >
                 <figure class="portfolioBlock__figure">
-                  <iframe
-                    width="580"
-                    height="790"
-                    src="https://www.youtube.com/embed/videoseries?si=L0dN-wWd3AimGLYl&amp;list=PL1JuTn6WQEWgHHSFAW55dvL9tidGYRf0C"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen
-                  ></iframe>
+                  <div class="responsive-iframe">
+                    <iframe
+                      src="https://www.youtube.com/embed/videoseries?si=L0dN-wWd3AimGLYl&amp;list=PL1JuTn6WQEWgHHSFAW55dvL9tidGYRf0C"
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
                   <!-- <img
                     class="portfolioBlock__figure__thumb"
                     src="image/portfolio/portfolio-thumb1.jpg"
@@ -1696,16 +2130,15 @@
             <div class="col-lg-4 col-md-6">
               <div class="portfolioBlock position-relative">
                 <figure class="portfolioBlock__figure">
-                  <iframe
-                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fflexi.biogas&tabs=timeline&width=640&height=790&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-                    width="680"
-                    height="790"
-                    style="border: none; overflow: hidden"
-                    scrolling="no"
-                    frameborder="0"
-                    allowfullscreen="true"
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  ></iframe>
+                  <div class="responsive-iframe">
+                    <iframe
+                      src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fflexi.biogas&tabs=timeline&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                      style="border: none; overflow: hidden"
+                      scrolling="no"
+                      allowfullscreen="true"
+                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    ></iframe>
+                  </div>
                   <!-- <img
                     class="portfolioBlock__figure__thumb"
                     src="image/portfolio/portfolio-thumb2.jpg.png"
@@ -1734,11 +2167,12 @@
             <div class="col-lg-4 col-md-6">
               <div class="portfolioBlock position-relative">
                 <figure class="portfolioBlock__figure">
-                  <iframe
-                    src="https://www.google.com/maps/d/embed?mid=1eodYmpudptScPyrwdHDLwMf1gVSE3D9T&hl=en&ehbc=2E312F"
-                    width="640"
-                    height="790"
-                  ></iframe>
+                  <div class="responsive-iframe">
+                    <iframe
+                      src="https://www.google.com/maps/d/embed?mid=1eodYmpudptScPyrwdHDLwMf1gVSE3D9T&hl=en&ehbc=2E312F"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
                   <!-- <img
                     class="portfolioBlock__figure__thumb"
                     src="image/portfolio/portfolio-thumb3.jpg"
@@ -1768,206 +2202,6 @@
         </div>
       </section>
       <!-- Portfolio End -->
-      <!-- Blog -->
-      <section class="blog pt-125 pb-55">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 mx-auto">
-              <!-- Section Heading/Title -->
-              <div class="sectionTitle text-center mb-60">
-                <span class="sectionTitle__small justify-content-center">
-                  <i class="fa-solid fa-tree btn__icon"></i>
-                  Newsfeds
-                </span>
-                <h2 class="sectionTitle__big">Latest News & Article</h2>
-              </div>
-              <!-- Section Heading/Title End -->
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="blogBlock blogBlock--style1 mb-60">
-                <figure class="blogBlock__figure">
-                  <a href="blog-details.html" class="blogBlock__figure__link">
-                    <img
-                      src="image/blog/p12.jpeg"
-                      alt="Gainioz Blog"
-                      class="blogBlock__figure__image"
-                    />
-                  </a>
-                </figure>
-                <div class="blogBlock__content">
-                  <div class="blogBlock__header">
-                    <span class="blogBlock__tag tag mb-20">#FarmingForTheFuture</span>
-                    <h2 class="blogBlock__heading heading text-uppercase mb-20">
-                      <a
-                        class="blogBlock__heading__link"
-                        href="blog-details.html"
-                        >Boosting Agricultural Productivity with Bio-Slurry</a
-                      >
-                    </h2>
-                  </div>
-                  <div class="blogBlock__body mb-30">
-                    <p class="blogBlock__text text">
-                      We're also enhancing agricultural practices through the use of bio-slurry, a nutrient-rich fertilizer by-product of our biogas systems. This eco-friendly fertilizer is transforming the way farmers approach soil management, promoting healthy crops without the need for harmful chemicals. As a result, farmers are seeing higher yields and more sustainable farming practices.
-                    </p>
-                  </div>
-                  <div class="blogBlock__meta">
-                    <ul class="blogBlock__meta__list">
-                      <li>
-                        <a class="blogBlock__metaUser" href="#">
-                          <img
-                            class="blogBlock__metaUser__thumb"
-                            src="image/users/user1.jpg"
-                            alt="Gainioz User"
-                          />
-                          <span class="blogBlock__metaUser__name"
-                            >Lewis</span
-                          >
-                        </a>
-                      </li>
-                      <li>
-                        <button class="blogBlock__reactButton">
-                          <span class="blogBlock__reactButton__count">356</span>
-                        </button>
-                      </li>
-                      <li>
-                        <div class="blogBlock__date">
-                          <span class="blogBlock__date__text"
-                            >12.January.2021</span
-                          >
-                          <i class="fa-regular fa-clock"></i>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="blogBlock blogBlock--style2 mb-60">
-                <figure class="blogBlock__figure">
-                  <a href="blog-details.html" class="blogBlock__figure__link">
-                    <img
-                      src="image/blog/p13.jpeg"
-                      alt="Gainioz Blog"
-                      class="blogBlock__figure__image"
-                    />
-                  </a>
-                </figure>
-                <div class="blogBlock__content">
-                  <div class="blogBlock__header">
-                    <span class="blogBlock__tag tag mb-20">#RenewableEnergyInnovation</span>
-                    <h2 class="blogBlock__heading heading text-uppercase mb-20">
-                      <a
-                        class="blogBlock__heading__link"
-                        href="blog-details.html"
-                      >
-                      Innovating to Meet Growing Energy Demands
-                      </a>
-                    </h2>
-                  </div>
-                  <div class="blogBlock__body mb-30">
-                    <p class="blogBlock__text text">
-                      To meet the ever-growing demand for renewable energy, we've expanded our large capacity biogas systems. These high-performance systems are now providing reliable, sustainable energy to institutions like schools, hospitals, and businesses, reducing their dependence on traditional energy sources and helping them lower their carbon footprints.
-                    </p>
-                  </div>
-                  <div class="blogBlock__meta">
-                    <ul class="blogBlock__meta__list">
-                      <li>
-                        <a class="blogBlock__metaUser" href="#">
-                          <img
-                            class="blogBlock__metaUser__thumb"
-                            src="image/users/user2.jpg"
-                            alt="Gainioz User"
-                          />
-                          <span class="blogBlock__metaUser__name"
-                            >Dominic</span
-                          >
-                        </a>
-                      </li>
-                      <li>
-                        <button class="blogBlock__reactButton">
-                          <span class="blogBlock__reactButton__count">556</span>
-                        </button>
-                      </li>
-                      <li>
-                        <div class="blogBlock__date">
-                          <span class="blogBlock__date__text"
-                            >12.January.2025</span
-                          >
-                          <i class="fa-regular fa-clock"></i>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="blogBlock blogBlock--style2 mb-60">
-                <figure class="blogBlock__figure">
-                  <a href="blog-details.html" class="blogBlock__figure__link">
-                    <img
-                      src="image/blog/p14.jpeg"
-                      alt="Gainioz Blog"
-                      class="blogBlock__figure__image"
-                    />
-                  </a>
-                </figure>
-                <div class="blogBlock__content">
-                  <div class="blogBlock__header">
-                    <span class="blogBlock__tag tag mb-20">#InnovatingForTomorrow</span>
-                    <h2 class="blogBlock__heading heading text-uppercase mb-20">
-                      <a
-                        class="blogBlock__heading__link"
-                        href="blog-details.html"
-                      >
-                      Continuous Research & Development
-                      </a>
-                    </h2>
-                  </div>
-                  <div class="blogBlock__body mb-30">
-                    <p class="blogBlock__text text">
-                      We never stop innovating. Our dedicated team is constantly researching and developing new ways to improve the efficiency and affordability of our biogas solutions. From refining our digester technology to exploring ways to expand biogas applications, we're committed to advancing clean energy technology for a brighter, greener future.
-                    </p>
-                  </div>
-                  <div class="blogBlock__meta">
-                    <ul class="blogBlock__meta__list">
-                      <li>
-                        <a class="blogBlock__metaUser" href="#">
-                          <img
-                            class="blogBlock__metaUser__thumb"
-                            src="image/users/user3.jpg"
-                            alt="Gainioz User"
-                          />
-                          <span class="blogBlock__metaUser__name"
-                            >David</span
-                          >
-                        </a>
-                      </li>
-                      <li>
-                        <button class="blogBlock__reactButton">
-                          <span class="blogBlock__reactButton__count">556</span>
-                        </button>
-                      </li>
-                      <li>
-                        <div class="blogBlock__date">
-                          <span class="blogBlock__date__text"
-                            >15.January.2024</span
-                          >
-                          <i class="fa-regular fa-clock"></i>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Blog End -->
       <!-- Sponsors -->
       <section class="sponsors pb-60">
         <div class="container">
@@ -1986,50 +2220,67 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="sponsorsItem mb-40">
-                  <img
-                    src="image/sponsors/sponsors1.png"
-                    alt="Gainioz Sponsors"
-                  />
+                  <img src="image/partners/kenya-association-of-manufacturers-bw.jpg" alt="Kenya Association of Manufacturers" class="sponsor-logo" />
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="sponsorsItem mb-40">
-                  <img
-                    src="image/sponsors/sponsors2.png"
-                    alt="Gainioz Sponsors"
-                  />
+                  <img src="image/partners/aah-bw.jpg" alt="AAH" class="sponsor-logo" />
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="sponsorsItem mb-40">
-                  <img
-                    src="image/sponsors/sponsors3.png"
-                    alt="Gainioz Sponsors"
-                  />
+                  <img src="image/partners/unicef-bw.jpg" alt="UNICEF" class="sponsor-logo" />
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="sponsorsItem mb-40">
-                  <img
-                    src="image/sponsors/sponsors4.png"
-                    alt="Gainioz Sponsors"
-                  />
+                  <img src="image/partners/unhcr-bw.jpg" alt="UNHCR" class="sponsor-logo" />
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="sponsorsItem mb-40">
-                  <img
-                    src="image/sponsors/sponsors5.png"
-                    alt="Gainioz Sponsors"
-                  />
+                  <img src="image/partners/undp-bw.jpg" alt="UNDP" class="sponsor-logo" />
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="sponsorsItem mb-40">
-                  <img
-                    src="image/sponsors/sponsors6.png"
-                    alt="Gainioz Sponsors"
-                  />
+                  <img src="image/partners/snv-bw.jpg" alt="SNV" class="sponsor-logo" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="sponsorsItem mb-40">
+                  <img src="image/partners/pwani-university-bw.jpg" alt="Pwani University" class="sponsor-logo" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="sponsorsItem mb-40">
+                  <img src="image/partners/ngare-ndare-forest-trust-bw.jpg" alt="Ngare Ndare Forest Trust" class="sponsor-logo" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="sponsorsItem mb-40">
+                  <img src="image/partners/moi-university-bw.jpg" alt="Moi University" class="sponsor-logo" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="sponsorsItem mb-40">
+                  <img src="image/partners/kenya-biogas-program-bw.jpg" alt="Kenya Biogas Program" class="sponsor-logo" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="sponsorsItem mb-40">
+                  <img src="image/partners/indian-institute-of-technology-bw.jpg" alt="Indian Institute of Technology" class="sponsor-logo" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="sponsorsItem mb-40">
+                  <img src="image/partners/ifad-bw.jpg" alt="IFAD" class="sponsor-logo" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="sponsorsItem mb-40">
+                  <img src="image/partners/egerton-university-bw.jpg" alt="Egerton University" class="sponsor-logo" />
                 </div>
               </div>
             </div>
@@ -2037,103 +2288,6 @@
         </div>
       </section>
       <!-- Sponsors End -->
-      <!-- Services -->
-      <section class="services services--style1 pt-120 pb-95">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 mx-auto">
-              <!-- Section Heading/Title -->
-              <div class="sectionTitle text-center mb-65">
-                <span class="sectionTitle__small justify-content-center">
-                  <i class="fa-solid fa-tree btn__icon"></i>
-                  Our Products
-                </span>
-                <h2 class="sectionTitle__big">Innovative Green Energy Solutions</h2>
-              </div>
-              <!-- Section Heading/Title End -->
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4 col-md-6">
-              <div class="keyFeatureBlock keyFeatureBlock--style3 mb-30">
-                <div class="keyFeatureBlock__left">
-                  <span class="keyFeatureBlock__icon">
-                    <img src="image/icons/feature-icon-1.svg" alt="Large Capacity Systems" />
-                  </span>
-                </div>
-                <div class="keyFeatureBlock__content">
-                  <h3 class="keyFeatureBlock__heading">
-                    <a class="keyFeatureBlock__heading__link" href="trex-technology.html">
-                      T-REX TECHNOLOGY SYSTEMS
-                    </a>
-                  </h3>
-                  <p class="keyFeatureBlock__text">
-                    Large scale systems built according to energy demand need. Perfect for schools, farms, hotels, churches, markets, and children's homes.
-                  </p>
-                  <a class="keyFeatureBlock__link" href="trex-technology.html">
-                    Read more <i class="fa-solid fa-arrow-right-long"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div class="keyFeatureBlock keyFeatureBlock--style3 mb-30">
-                <div class="keyFeatureBlock__left">
-                  <span class="keyFeatureBlock__icon">
-                    <img src="image/icons/feature-icon-2.svg" alt="Flexi Domestic Systems" />
-                  </span>
-                </div>
-                <div class="keyFeatureBlock__content">
-                  <h3 class="keyFeatureBlock__heading">
-                    <a class="keyFeatureBlock__heading__link" href="flexi-technology.html">
-                      FLEXI-BIOGAS-TECHNOLOGY
-                    </a>
-                  </h3>
-                  <p class="keyFeatureBlock__text">
-                    Systems designed for household energy demands. Installed in 3 hours, producing gas in 3-5 days, running on any biodegradable material.
-                  </p>
-                  <a class="keyFeatureBlock__link" href="flexi-technology.html">
-                    Read more <i class="fa-solid fa-arrow-right-long"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div class="keyFeatureBlock keyFeatureBlock--style3 mb-30">
-                <div class="keyFeatureBlock__left">
-                  <span class="keyFeatureBlock__icon">
-                    <img src="image/icons/feature-icon-3.svg" alt="Bio-San-Gas Systems" />
-                  </span>
-                </div>
-                <div class="keyFeatureBlock__content">
-                  <h3 class="keyFeatureBlock__heading">
-                    <a class="keyFeatureBlock__heading__link" href="biosan-technology.html">
-                      BIO-SAN-GAS SYSTEMS
-                    </a>
-                  </h3>
-                  <p class="keyFeatureBlock__text">
-                    Clean hygienic solution producing both biogas and rich fertilizer. Prefabricated and assembled on site in hours.
-                  </p>
-                  <a class="keyFeatureBlock__link" href="biosan-technology.html">
-                    Read more <i class="fa-solid fa-arrow-right-long"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-4">
-            <div class="col-12 text-center">
-              <a href="service.html" class="btn btn--styleOne btn--secondary it-btn">
-                <span class="btn__text">View All Products</span>
-                <i class="fa-solid fa-arrow-right btn__icon"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Services End -->
     </main>
     <!-- Main End -->
     <!-- footer -->
@@ -2158,11 +2312,7 @@
             <div class="footer__social itSocial">
               <ul>
                 <li>
-                  <a
-                    class="facebook"
-                    href="https://www.facebook.com/flexi.biogas"
-                    rel="nofollow"
-                  >
+                  <a class="facebook" href="https://www.facebook.com/flexi.biogas" rel="nofollow">
                     <i class="fab fa-facebook-f"></i>
                   </a>
                 </li>
@@ -2172,26 +2322,13 @@
                   </a>
                 </li>
                 <li>
-                  <a
-                    class="instagram"
-                    href="https://www.instagram.com/flexibiogas/"
-                    rel="nofollow"
-                  >
+                  <a class="instagram" href="https://www.instagram.com/flexibiogas/" rel="nofollow">
                     <i class="fab fa-instagram"></i>
                   </a>
                 </li>
                 <li>
-                  <a
-                    class="linkedin"
-                    href="https://www.linkedin.com/company/biogas-international-limited"
-                    rel="nofollow"
-                  >
+                  <a class="linkedin" href="https://www.linkedin.com/company/biogas-international-limited" rel="nofollow">
                     <i class="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-                <li>
-                  <a class="pinterest" href="http://www.biogas.co.ke/" rel="nofollow">
-                    <i class="fab fa-pinterest-p"></i>
                   </a>
                 </li>
               </ul>
@@ -2204,73 +2341,29 @@
         <div class="row">
           <div class="footer__middle pt-65 pb-35">
             <div class="row justify-content-between">
-              <div class="col-lg-2 col-md-4 mb-30">
+              <div class="col-lg-3 col-md-6 mb-30">
                 <div class="footer__widget">
                   <div class="footer__title">
-                    <h2 class="footer__heading text-uppercase text-white">
-                      About us
-                    </h2>
-                  </div>
-                  <div class="footer__menu">
-                    <ul>
-                      <li><a href="index.html">Policy Priorities</a></li>
-                      <li><a href="index.html">Careers</a></li>
-                      <li><a href="index.html">Internships</a></li>
-                      <li><a href="index.html">Financial Reports</a></li>
-                      <li><a href="index.html">Contact Us</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-md-4 mb-30">
-                <div class="footer__widget">
-                  <div class="footer__title">
-                    <h2 class="footer__heading text-uppercase text-white">
-                      Support us
-                    </h2>
-                  </div>
-                  <div class="footer__menu">
-                    <ul>
-                      <li><a href="donation-listing.html">Donate Now</a></li>
-                      <li><a href="products.html">Store</a></li>
-                      <li><a href="index.html">Reports</a></li>
-                      <li><a href="index.html">Press Releases</a></li>
-                      <li><a href="index.html">Privacy & Policy</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-md-4 mb-30">
-                <div class="footer__widget">
-                  <div class="footer__title">
-                    <h2 class="footer__heading text-uppercase text-white">
-                      Quick LInks
-                    </h2>
+                    <h2 class="footer__heading text-uppercase text-white">Quick Links</h2>
                   </div>
                   <div class="footer__menu">
                     <ul>
                       <li><a href="index.html">Home</a></li>
-                      <li><a href="about.html">About us</a></li>
-                      <li><a href="contact.html">Contact us</a></li>
-                      <li><a href="donation-listing.html">Donation</a></li>
-                      <li><a href="stories.html">Join Volentter</a></li>
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="service.html">Products</a></li>
+                      <li><a href="faq.html">FAQs</a></li>
+                      <li><a href="contact.html">Contacts</a></li>
                     </ul>
                   </div>
                 </div>
               </div>
               <div class="col-lg-5 mb-30">
-                <form action="#" method="post" class="footer__newsletter">
+                <form action="https://formsubmit.co/info@biogas.co.ke" method="POST" class="footer__newsletter">
                   <div class="footer__title">
-                    <h2 class="footer__heading text-uppercase text-white">
-                      News Latter
-                    </h2>
+                    <h2 class="footer__heading text-uppercase text-white">News Latter</h2>
                   </div>
                   <div class="footer__newsletter__formGroup mb-20">
-                    <input
-                      type="text"
-                      class="footer__newsletter__input"
-                      placeholder="Enter mail"
-                    />
+                    <input type="text" class="footer__newsletter__input" placeholder="Enter mail" />
                     <a href="#" class="footer__newsletter__button btn btn--styleOne btn--secondary it-btn" style="display:inline-flex;align-items:center;min-width:140px;justify-content:center;height:48px;">
                       <span class="btn__text">Subscribe</span>
                       <span class="it-btn__inner">
@@ -2293,15 +2386,8 @@
                     </a>
                   </div>
                   <div class="footer__newsletter__formGroup">
-                    <input
-                      id="agree"
-                      type="checkbox"
-                      class="footer__newsletter__check form-check-input"
-                    />
-                    <label class="footer__newsletter__label" for="agree"
-                      >I agree that my submitted data is being collected and
-                      stored.</label
-                    >
+                    <input id="agree" type="checkbox" class="footer__newsletter__check form-check-input" />
+                    <label class="footer__newsletter__label" for="agree">I agree that my submitted data is being collected and stored.</label>
                   </div>
                 </form>
               </div>
@@ -2317,7 +2403,7 @@
               <div class="col mb-20">
                 <div class="footer__copyright pt-20">
                   <p class="footer__copyright__text mb-0">
-                    Copyright@example 2022 all right receved
+                    Working Wave © 2025. All Right Reserved.
                   </p>
                 </div>
               </div>

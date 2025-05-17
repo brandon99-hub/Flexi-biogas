@@ -7497,5 +7497,35 @@ img.map-about-tab {
   box-shadow: 4px 4px 8px rgba(235, 147, 9, 0.25);
 }
 
-/*# sourceMappingURL=maps/main.css.map */
+/* Product card font updates to match home page */
+.serviceCard--modern .serviceCard__heading {
+  font-family: 'Oswald', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em !important;
+  line-height: 1.15 !important;
+}
+.serviceCard--modern .card-text {
+  font-family: 'Barlow', sans-serif !important;
+  font-weight: 400;
+  color: #666;
+}
+
+/* FAQ Accordion active/open button color */
+.accordion-button:not(.collapsed) {
+  background-color: #33839d !important;
+  color: #fff !important;
+  box-shadow: none;
+}
+
+@media (max-width: 767px) {
+  .volunteerBlock__figure__thumb {
+    max-width: 120px;
+    max-height: 120px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 

@@ -58,12 +58,16 @@
       .contact-info-card {
         background: #fff;
         border-radius: 20px;
-        padding: 40px;
+        padding: 22px 18px 18px 18px !important;
         box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
         height: 100%;
         position: relative;
         overflow: hidden;
+        min-height: unset;
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
       }
       .contact-info-card::before {
         content: '';
@@ -77,54 +81,48 @@
       .contact-info-card:hover {
         transform: translateY(-10px);
       }
-      .contact-info-card i {
-        font-size: 40px;
-        color: #4CAF50;
-        margin-bottom: 25px;
-        background: rgba(76, 175, 80, 0.1);
-        width: 80px;
-        height: 80px;
-        line-height: 80px;
-        border-radius: 50%;
-        display: inline-block;
-        transition: all 0.3s ease;
+      .contact-info-card .country-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 10px;
       }
-      .contact-info-card:hover i {
-        transform: scale(1.1);
-        background: #4CAF50;
-        color: #fff;
+      .contact-info-card img.flag {
+        width: 38px;
+        height: 26px;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px #0002;
+        transition: transform 0.25s, box-shadow 0.25s;
+        margin-bottom: 0;
+      }
+      .contact-info-card:hover img.flag {
+        transform: scale(1.12) rotate(-2deg);
+        box-shadow: 0 6px 18px #4caf5040;
       }
       .contact-info-card h3 {
-        font-size: 24px;
+        margin-bottom: 0;
+        font-size: 1.18rem;
+        font-weight: 700;
         color: #2c3e50;
-        margin-bottom: 20px;
-        font-weight: 600;
       }
       .contact-info-card p {
-        color: #666;
-        line-height: 1.8;
-        margin-bottom: 25px;
+        margin-bottom: 10px;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+        gap: 7px;
       }
       .contact-info-card .contact-link {
-        display: inline-flex;
-        align-items: center;
+        font-size: 1em;
+        display: inline;
+      }
+      .contact-info-card i {
+        font-size: 1.08em;
         color: #4CAF50;
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-      }
-      .contact-info-card .contact-link i {
-        font-size: 16px;
-        margin-right: 10px;
-        width: auto;
-        height: auto;
-        line-height: 1;
-        background: none;
-      }
-      .contact-info-card .contact-link:hover {
-        color: #388E3C;
-        transform: translateX(5px);
+        min-width: 18px;
+        text-align: center;
+        vertical-align: middle;
       }
       .contact-form-section {
         background: #f8f9fa;
@@ -389,38 +387,6 @@
             <div class="header__actions">
               <ul>
                 <li>
-                  <a href="products.html">
-                    <svg
-                      width="25"
-                      height="20"
-                      viewBox="0 0 25 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24.2344 7H20.9258L14.9102 0.382812C14.6523 0.0820312 14.2227 0.0820312 13.9648 0.339844C13.6641 0.597656 13.6641 1.02734 13.9219 1.28516L19.0781 7H5.62891L10.7852 1.28516C11.043 1.02734 11.043 0.597656 10.7422 0.339844C10.4844 0.0820312 10.0547 0.0820312 9.79688 0.382812L3.78125 7H0.515625C0.214844 7 0 7.25781 0 7.51562V7.85938C0 8.16016 0.214844 8.375 0.515625 8.375H1.20312L2.49219 17.6133C2.62109 18.6445 3.48047 19.375 4.51172 19.375H20.1953C21.2266 19.375 22.0859 18.6445 22.2148 17.6133L23.5039 8.375H24.2344C24.4922 8.375 24.75 8.16016 24.75 7.85938V7.51562C24.75 7.25781 24.4922 7 24.2344 7ZM20.8828 17.4414C20.7969 17.7852 20.5391 18 20.1953 18H4.51172C4.16797 18 3.91016 17.7852 3.82422 17.4414L2.57812 8.375H22.1289L20.8828 17.4414ZM13.0625 10.7812C13.0625 10.4375 12.7188 10.0938 12.375 10.0938C11.9883 10.0938 11.6875 10.4375 11.6875 10.7812V15.5938C11.6875 15.9805 11.9883 16.2812 12.375 16.2812C12.7188 16.2812 13.0625 15.9805 13.0625 15.5938V10.7812ZM17.875 10.7812C17.875 10.4375 17.5312 10.0938 17.1875 10.0938C16.8008 10.0938 16.5 10.4375 16.5 10.7812V15.5938C16.5 15.9805 16.8008 16.2812 17.1875 16.2812C17.5312 16.2812 17.875 15.9805 17.875 15.5938V10.7812ZM8.25 10.7812C8.25 10.4375 7.90625 10.0938 7.5625 10.0938C7.17578 10.0938 6.875 10.4375 6.875 10.7812V15.5938C6.875 15.9805 7.17578 16.2812 7.5625 16.2812C7.90625 16.2812 8.25 15.9805 8.25 15.5938V10.7812Z"
-                        fill="#7FB432"
-                      />
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <svg
-                      width="23"
-                      height="23"
-                      viewBox="0 0 23 23"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M21.8281 21.4609L16.2852 15.918C16.1992 15.832 16.0703 15.7891 15.9414 15.7891H15.4688C16.9727 14.1562 17.875 12.0508 17.875 9.6875C17.875 4.78906 13.8359 0.75 8.9375 0.75C3.99609 0.75 0 4.78906 0 9.6875C0 14.6289 3.99609 18.625 8.9375 18.625C11.2578 18.625 13.4062 17.7227 14.9961 16.2617V16.6914C14.9961 16.8633 15.0391 16.9922 15.125 17.0781L20.668 22.6211C20.8828 22.8359 21.1836 22.8359 21.3984 22.6211L21.8281 22.1914C22.043 21.9766 22.043 21.6758 21.8281 21.4609ZM8.9375 17.25C4.72656 17.25 1.375 13.8984 1.375 9.6875C1.375 5.51953 4.72656 2.125 8.9375 2.125C13.1055 2.125 16.5 5.51953 16.5 9.6875C16.5 13.8984 13.1055 17.25 8.9375 17.25Z"
-                        fill="#7FB432"
-                      />
-                    </svg>
-                  </a>
-                </li>
-                <li>
                   <button
                     class="headerBurgerMenu__button sidebarBtn"
                     onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
@@ -498,11 +464,6 @@
             <li>
               <a class="linkedin" href="https://www.linkedin.com/company/biogas-international-limited" rel="nofollow">
                 <i class="fab fa-linkedin-in"></i>
-              </a>
-            </li>
-            <li>
-              <a class="pinterest" href="http://www.biogas.co.ke/" rel="nofollow">
-                <i class="fab fa-pinterest-p"></i>
               </a>
             </li>
           </ul>
@@ -655,41 +616,43 @@
       <section class="contact-section">
         <div class="container">
           <div class="row">
+            <!-- Kenya Card -->
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="contact-info-card">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Our Location</h3>
-                <p>Visit our office in Nairobi for a face-to-face discussion about your biogas needs.</p>
-                <a href="https://maps.google.com" target="_blank" class="contact-link">
-                  <i class="fas fa-arrow-right"></i>
-                  Mwitu Close (No. 33), Karen, Nairobi, Kenya
-                </a>
+                <div class="country-header">
+                  <img src="image/flags/kenya.png" alt="Kenya Flag" class="flag">
+                  <h3>Kenya</h3>
+                </div>
+                <p><i class="fas fa-map-marker-alt"></i> Mwitu Close (No. 33), Karen, Nairobi, Kenya</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:biogasinternational@yahoo.com" class="contact-link">biogasinternational@yahoo.com</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@biogas.co.ke" class="contact-link">info@biogas.co.ke</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+254722700530" class="contact-link">+254-722 700 530</a></p>
               </div>
             </div>
+            <!-- Uganda Card -->
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="contact-info-card">
-                <i class="fas fa-envelope"></i>
-                <h3>Email Us</h3>
-                <p>Send us an email and we'll get back to you as soon as possible.</p>
-                <a href="mailto:biogasinternational@yahoo.com" class="contact-link">
-                  <i class="fas fa-arrow-right"></i>
-                  biogasinternational@yahoo.com
-                </a>
-                <a href="mailto:info@biogas.co.ke" class="contact-link">
-                  <i class="fas fa-arrow-right"></i>
-                  info@biogas.co.ke
-                </a>
+                <div class="country-header">
+                  <img src="image/flags/uganda.png" alt="Uganda Flag" class="flag">
+                  <h3>Uganda</h3>
+                </div>
+                <p><i class="fas fa-map-marker-alt"></i> Mwitu Close (No. 33), Karen, Nairobi, Kenya</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:biogasinternational@yahoo.com" class="contact-link">biogasinternational@yahoo.com</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@biogas.co.ke" class="contact-link">info@biogas.co.ke</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+254722700530" class="contact-link">+254-722 700 530</a></p>
               </div>
             </div>
+            <!-- Tanzania Card -->
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="contact-info-card">
-                <i class="fas fa-phone"></i>
-                <h3>Call Us</h3>
-                <p>Need immediate assistance? Give us a call and we'll be happy to help.</p>
-                <a href="tel:+254722700530" class="contact-link">
-                  <i class="fas fa-arrow-right"></i>
-                  +254-722 700 530
-                </a>
+                <div class="country-header">
+                  <img src="image/flags/tanzania.png" alt="Tanzania Flag" class="flag">
+                  <h3>Tanzania</h3>
+                </div>
+                <p><i class="fas fa-map-marker-alt"></i> Mwitu Close (No. 33), Karen, Nairobi, Kenya</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:biogasinternational@yahoo.com" class="contact-link">biogasinternational@yahoo.com</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@biogas.co.ke" class="contact-link">info@biogas.co.ke</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+254722700530" class="contact-link">+254-722 700 530</a></p>
               </div>
             </div>
           </div>
@@ -703,7 +666,7 @@
             <div class="col-lg-8">
               <div class="contact-form-card">
                 <h2>Send Us a Message</h2>
-                <form id="contact-form" action="https://formsubmit.co/biogasinternational@yahoo.com" method="POST" class="contact-form">
+                <form id="contact-form" action="https://formsubmit.co/info@biogas.co.ke" method="POST" class="contact-form">
                   <input type="hidden" name="_captcha" value="false">
                   <input type="hidden" name="_next" value="#success-modal">
                   <div class="row">
@@ -796,13 +759,22 @@
               <a href="https://www.linkedin.com/company/biogas-international-limited" rel="nofollow" class="linkedin">
                 <i class="fab fa-linkedin-in"></i>
               </a>
-              <a href="http://www.biogas.co.ke/" rel="nofollow" class="pinterest">
-                <i class="fab fa-pinterest-p"></i>
-              </a>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- Map Section -->
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-12">
+            <h4 class="mb-3" style="color:#33839d; font-weight:700;">Our Location</h4>
+            <div style="width: 100%; height: 350px; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px #33839d22;">
+              <iframe src="https://www.google.com/maps?q=-1.2921,36.8219&z=15&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <!-- Main End -->
     <!-- footer -->
@@ -846,11 +818,6 @@
                     <i class="fab fa-linkedin-in"></i>
                   </a>
                 </li>
-                <li>
-                  <a class="pinterest" href="http://www.biogas.co.ke/" rel="nofollow">
-                    <i class="fab fa-pinterest-p"></i>
-                  </a>
-                </li>
               </ul>
             </div>
           </div>
@@ -861,73 +828,29 @@
         <div class="row">
           <div class="footer__middle pt-65 pb-35">
             <div class="row justify-content-between">
-              <div class="col-lg-2 col-md-4 mb-30">
+              <div class="col-lg-3 col-md-6 mb-30">
                 <div class="footer__widget">
                   <div class="footer__title">
-                    <h2 class="footer__heading text-uppercase text-white">
-                      About us
-                    </h2>
-                  </div>
-                  <div class="footer__menu">
-                    <ul>
-                      <li><a href="index.html">Policy Priorities</a></li>
-                      <li><a href="index.html">Careers</a></li>
-                      <li><a href="index.html">Internships</a></li>
-                      <li><a href="index.html">Financial Reports</a></li>
-                      <li><a href="index.html">Contact Us</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-md-4 mb-30">
-                <div class="footer__widget">
-                  <div class="footer__title">
-                    <h2 class="footer__heading text-uppercase text-white">
-                      Support us
-                    </h2>
-                  </div>
-                  <div class="footer__menu">
-                    <ul>
-                      <li><a href="donation-listing.html">Donate Now</a></li>
-                      <li><a href="products.html">Store</a></li>
-                      <li><a href="index.html">Reports</a></li>
-                      <li><a href="index.html">Press Releases</a></li>
-                      <li><a href="index.html">Privacy & Policy</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-md-4 mb-30">
-                <div class="footer__widget">
-                  <div class="footer__title">
-                    <h2 class="footer__heading text-uppercase text-white">
-                      Quick LInks
-                    </h2>
+                    <h2 class="footer__heading text-uppercase text-white">Quick Links</h2>
                   </div>
                   <div class="footer__menu">
                     <ul>
                       <li><a href="index.html">Home</a></li>
-                      <li><a href="about.html">About us</a></li>
-                      <li><a href="contact.html">Contact us</a></li>
-                      <li><a href="donation-listing.html">Donation</a></li>
-                      <li><a href="stories.html">Join Volentter</a></li>
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="service.html">Products</a></li>
+                      <li><a href="faq.html">FAQs</a></li>
+                      <li><a href="contact.html">Contacts</a></li>
                     </ul>
                   </div>
                 </div>
               </div>
               <div class="col-lg-5 mb-30">
-                <form action="#" method="post" class="footer__newsletter">
+                <form action="https://formsubmit.co/info@biogas.co.ke" method="POST" class="footer__newsletter">
                   <div class="footer__title">
-                    <h2 class="footer__heading text-uppercase text-white">
-                      News Latter
-                    </h2>
+                    <h2 class="footer__heading text-uppercase text-white">News Latter</h2>
                   </div>
                   <div class="footer__newsletter__formGroup mb-20">
-                    <input
-                      type="text"
-                      class="footer__newsletter__input"
-                      placeholder="Enter mail"
-                    />
+                    <input type="text" class="footer__newsletter__input" placeholder="Enter mail" />
                     <a href="#" class="footer__newsletter__button btn btn--styleOne btn--secondary it-btn" style="display:inline-flex;align-items:center;min-width:140px;justify-content:center;height:48px;">
                       <span class="btn__text">Subscribe</span>
                       <span class="it-btn__inner">
@@ -950,15 +873,8 @@
                     </a>
                   </div>
                   <div class="footer__newsletter__formGroup">
-                    <input
-                      id="agree"
-                      type="checkbox"
-                      class="footer__newsletter__check form-check-input"
-                    />
-                    <label class="footer__newsletter__label" for="agree"
-                      >I agree that my submitted data is being collected and
-                      stored.</label
-                    >
+                    <input id="agree" type="checkbox" class="footer__newsletter__check form-check-input" />
+                    <label class="footer__newsletter__label" for="agree">I agree that my submitted data is being collected and stored.</label>
                   </div>
                 </form>
               </div>
@@ -974,7 +890,7 @@
               <div class="col mb-20">
                 <div class="footer__copyright pt-20">
                   <p class="footer__copyright__text mb-0">
-                    Copyright@example 2022 all right receved
+                    Working Wave © 2025. All Right Reserved.
                   </p>
                 </div>
               </div>
