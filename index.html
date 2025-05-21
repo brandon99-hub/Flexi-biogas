@@ -54,17 +54,30 @@
         }
       }
       .sponsor-logo {
-        filter: grayscale(100%);
-        transition: filter 0.3s, transform 0.3s;
+        filter: none !important;
+        -webkit-filter: none !important;
+        opacity: 1 !important;
+        transition: transform 0.3s;
         max-height: 60px;
         width: auto;
         display: block;
         margin: 0 auto;
+        will-change: filter;
+        isolation: isolate;
+        background: transparent;
+        mix-blend-mode: normal;
       }
       .sponsor-logo:hover {
-        filter: none !important;
-        -webkit-filter: none !important;
         transform: scale(1.05);
+      }
+      .sponsorsItem, .swiper-slide {
+        filter: none !important;
+      }
+      /* Test: plain image outside slider */
+      #partner-logo-test {
+        display: block;
+        margin: 30px auto;
+        max-height: 60px;
       }
       .sponsors.pb-60 {
         margin-top: 60px;
@@ -107,11 +120,11 @@
       }
       @media (max-width: 600px) {
         .donnerAreaContent__bigTitle {
-          font-size: 2rem !important;
-          line-height: 2.2rem !important;
+          font-size: 2.4rem !important;
+          line-height: 2.6rem !important;
         }
         .donnerAreaContent__bigTitle__number {
-          font-size: 2.5rem !important;
+          font-size: 3rem !important;
         }
         .donnerAreaContent__bigTitle__text {
           font-size: 1.2rem !important;
@@ -161,14 +174,21 @@
         height: 100%;
         border: 0;
       }
-      a.read-more-link {
-        color: #1976d2;
+      .read-more-link {
+        color: #257db2;
         text-decoration: none;
+        font-weight: 600;
         transition: color 0.2s, text-decoration 0.2s;
       }
-      a.read-more-link:hover {
-        color: #388e3c;
+      .read-more-link:hover {
+        color: #195a85;
         text-decoration: underline;
+      }
+      /* Add this to the <style> section or your main CSS */
+      .portfolioBlock__figure .responsive-iframe {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
       }
     </style>
   </head>
@@ -216,6 +236,7 @@
                       <li><a href="index.html"><i class="fa-solid fa-house" style="color: #4CAF50;"></i> Home</a></li>
                       <li><a href="about.html"><i class="fa-solid fa-circle-info" style="color: #4CAF50;"></i> About</a></li>
                       <li><a href="service.html"><i class="fa-solid fa-gear" style="color: #4CAF50;"></i> Products</a></li>
+                      <li><a href="projects.html"><i class="fa-solid fa-diagram-project" style="color: #4CAF50;"></i> Projects</a></li>
                       <li><a href="faq.html"><i class="fa-solid fa-circle-question" style="color: #4CAF50;"></i> FAQs</a></li>
                       <li><a href="contact.html"><i class="fa-solid fa-envelope" style="color: #4CAF50;"></i> Contacts</a></li>
                     </ul>
@@ -342,6 +363,9 @@
                 <a class="animation" href="service.html">Products</a>
               </li>
               <li class="list menu-item-parent">
+                <a class="animation" href="projects.html">Projects</a>
+              </li>
+              <li class="list menu-item-parent">
                 <a class="animation" href="faq.html">FAQs</a>
               </li>
               <li class="list menu-item-parent">
@@ -382,6 +406,11 @@
                 rel="nofollow"
               >
                 <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+            <li>
+              <a class="youtube" href="https://www.youtube.com/@FlexiBiogas" rel="nofollow" target="_blank">
+                <i class="fab fa-youtube"></i>
               </a>
             </li>
           </ul>
@@ -523,17 +552,17 @@
                 class="hero__figure wow animate__zoomIn animate__animated"
                 data-wow-duration="1200ms"
                 data-wow-delay="600ms"
+                style="border-radius: 24px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.12); -webkit-mask-image: none; mask-image: none; -webkit-mask-size: initial; mask-size: initial; -webkit-mask-repeat: initial; mask-repeat: initial; -webkit-mask-position: initial; mask-position: initial;"
               >
-                <img
-                  src="image/man/p1.jpeg"
-                  alt="Gainioz Man"
-                  class="hero__figure__thumbs"
-                />
-                <img
-                  class="hero__figure__overlay"
-                  src="image/shapes/shapes3.svg"
-                  alt="Gainioz"
-                />
+                <video 
+                  src="image/video/Kenyan Biogas system interview with Dominic Wanjihia.mp4" 
+                  autoplay 
+                  muted 
+                  loop 
+                  playsinline 
+                  controls
+                  style="width: 100%; height: auto; display: block; border-radius: 24px; background: #000;"
+                ></video>
               </figure>
             </div>
           </div>
@@ -565,24 +594,17 @@
             src="image/shapes/mask-shape3.svg"
             alt="Gainioz Shape"
           />
-          <div
-            class="mask mask--about wow animate__fadeInLeft animate__animated"
-            data-wow-duration="1200ms"
-            data-wow-delay="200ms"
-          >
-            <img
-              src="image/girls/p2.jpeg"
-              alt="Gainioz Shape"
-              class="mask__thumb"
-            />
-            <img
-              class="mask__overlay"
-              src="image/shapes/mask-shape2.svg"
-              alt="Gainioz Shape"
-            />
-          </div>
           <div class="container">
-            <div class="row justify-content-end">
+            <div class="row align-items-center">
+              <div class="col-lg-6 mb-30">
+                <div class="about-image-rectangular" style="max-width: 540px; margin-left: 0; margin-right: auto;">
+                  <img
+                    src="image/copy%20cat%20farming/emali/1%20month%20after/WhatsApp-Image-2022-09-28-at-10.29.08-PM-1-400x284.jpeg"
+                    alt="About Flexi Biogas"
+                    style="width: 100%; height: auto; display: block; border-radius: 18px; object-fit: cover;"
+                  />
+                </div>
+              </div>
               <div class="col-lg-6 mb-30">
                 <div class="aboutContent">
                   <!-- Section Heading/Title -->
@@ -681,8 +703,9 @@
                             </a>
                           </h3>
                           <p class="keyFeatureBlock__text">
-                            Large scale systems built according to energy demand need. Perfect for schools, farms, hotels, churches, markets, and children's homes.
+                            T-Rex Technology Systems are advanced, modular biogas plants designed for high-capacity energy needs in farms, schools, hotels, and institutions. These systems use a unique cross-flow fermentation process, ensuring complete digestion of all biodegradable materials. Prefabricated for quick installation and scalable to any size, T-Rex delivers maximum gas output and a constant supply of rich organic fertilizer.
                           </p>
+                          <a href="trex-technology.html" class="read-more-link">Read More</a>
                         </div>
                       </div>
                     </div>
@@ -704,8 +727,9 @@
                             </a>
                           </h3>
                           <p class="keyFeatureBlock__text">
-                            Systems designed for household energy demands. Installed in 3 hours, producing gas in 3-5 days, running on any biodegradable material.
+                            Flexi Biogas Technology offers a no-construction, plug-and-play biogas solution for homes and small businesses. Prefabricated and installed in as little as three hours, these systems run on any biodegradable material and produce clean cooking gas and organic fertilizer. The technology is user-friendly, quick to start, and adaptable to a wide range of environments.
                           </p>
+                          <a href="flexi-technology.html" class="read-more-link">Read More</a>
                         </div>
                       </div>
                     </div>
@@ -727,8 +751,9 @@
                             </a>
                           </h3>
                           <p class="keyFeatureBlock__text">
-                            Clean hygienic solution producing both biogas and rich fertilizer. Prefabricated and assembled on site in hours.
+                            Bio-San-Gas Systems provide a hygienic, sustainable solution for human waste management in institutions and communities. These expertly crafted, prefabricated systems never fill up or require emptying, eliminating odors and groundwater contamination. They convert waste into biogas for heating and power, while producing safe, nutrient-rich liquid fertilizer for irrigation.
                           </p>
+                          <a href="biosan-technology.html" class="read-more-link">Read More</a>
                         </div>
                       </div>
                     </div>
@@ -767,8 +792,9 @@
                             </a>
                           </h3>
                           <p class="keyFeatureBlock__text">
-                            The by-product of our biogas systems, the bio-slurry, is a mineral-rich organic fertilizer ready for use. It serves as an effective pest repellent and can be applied directly to plants, promoting healthier crops and reducing reliance on chemical fertilizers.
+                            The CopyCat Farming Model is a climate-smart, replicable farming system that leverages biogas and bio-fertiliser to promote sustainable agriculture. By integrating innovative irrigation and fertilisation techniques, this model empowers farmers to increase productivity, reduce costs, and build resilience to climate change. Demonstration sites showcase practical solutions for communities to adopt.
                           </p>
+                          <a href="copycat-farming.html" class="read-more-link">Read More</a>
                         </div>
                         <div
                           class="keyFeatureBlock__skill skill-bar"
@@ -802,13 +828,9 @@
                             </a>
                           </h3>
                           <p class="keyFeatureBlock__text">
-                            To maximize the benefits of biogas, we've developed
-                            additional products like biogas dryers and brooders.
-                            These innovations allow users to utilize biogas for
-                            various applications, from drying fruits and
-                            vegetables to providing heat for poultry brooding,
-                            enhancing the versatility of our systems.​
+                            Our biogas-powered Chicken Brooding systems offer a sustainable, cost-effective alternative to traditional brooding methods. Using radiant floor heating or pollutant-free space heaters, these systems maintain optimal temperatures for chicks while reducing energy costs. Suitable for both commercial and domestic setups, they improve poultry health and support circular farming.
                           </p>
+                          <a href="chicken-brooding.html" class="read-more-link">Read More</a>
                         </div>
                         <div
                           class="keyFeatureBlock__skill skill-bar"
@@ -842,13 +864,9 @@
                             </a>
                           </h3>
                           <p class="keyFeatureBlock__text">
-                            At Flexi Biogas, innovation is ongoing. We're
-                            continually developing new, more efficient, and
-                            user-friendly products to meet evolving energy
-                            needs. Our commitment to research and development
-                            ensures that we provide cutting-edge solutions for a
-                            sustainable future.
+                            Our biogas-powered Drying Fruits & Vegetables systems help farmers preserve their harvest, reduce post-harvest losses, and add value to their produce. The dryers use biogas burners to gently dehydrate fruits and vegetables, extending shelf life and enabling sales during off-seasons. Dried products retain nutrients and provide new market opportunities.
                           </p>
+                          <a href="drying-fruits.html" class="read-more-link">Read More</a>
                         </div>
                         <div
                           class="keyFeatureBlock__skill skill-bar"
@@ -881,10 +899,21 @@
                           </span>
                         </div>
                         <div class="keyFeatureBlock__content">
-                          <h3 class="keyFeatureBlock__heading">SCR</h3>
+                          <h3 class="keyFeatureBlock__heading">
+                            <a class="keyFeatureBlock__heading__link" href="csr.html">
+                              CSR
+                            </a>
+                          </h3>
                           <p class="keyFeatureBlock__text">
-                            The by-product of our biogas systems, the bio-slurry, is a mineral-rich organic fertilizer ready for use. It serves as an effective pest repellent and can be applied directly to plants, promoting healthier crops and reducing reliance on chemical fertilizers.
+                            Our Corporate Social Responsibility (CSR) initiatives are woven into every aspect of our work. We champion environmental stewardship by reducing carbon emissions and promoting sustainable waste management. Through social impact programs, we empower communities with education, training, and access to clean energy.
                           </p>
+                          <a href="csr.html" class="read-more-link">Read More</a>
+                        </div>
+                        <div
+                          class="keyFeatureBlock__skill skill-bar"
+                          data-width="80%"
+                        >
+                          <span class="keyFeatureBlock__skill__bar"></span>
                         </div>
                       </div>
                     </div>
@@ -912,13 +941,9 @@
                             </a>
                           </h3>
                           <p class="keyFeatureBlock__text">
-                            To maximize the benefits of biogas, we've developed
-                            additional products like biogas dryers and brooders.
-                            These innovations allow users to utilize biogas for
-                            various applications, from drying fruits and
-                            vegetables to providing heat for poultry brooding,
-                            enhancing the versatility of our systems.​
+                            Value Addition unlocks the full potential of biogas by enabling innovative uses beyond cooking. Our solutions include biogas ovens for baking and grilling, water heaters for hygiene and showers, and systems for food processing, irrigation, and electricity generation. This empowers users to maximize energy efficiency and create new income streams.
                           </p>
+                          <a href="value-addition.html" class="read-more-link">Read More</a>
                         </div>
                         <div
                           class="keyFeatureBlock__skill skill-bar"
@@ -952,13 +977,9 @@
                             </a>
                           </h3>
                           <p class="keyFeatureBlock__text">
-                            At Flexi Biogas, innovation is ongoing. We're
-                            continually developing new, more efficient, and
-                            user-friendly products to meet evolving energy
-                            needs. Our commitment to research and development
-                            ensures that we provide cutting-edge solutions for a
-                            sustainable future.
+                            Discover our latest biogas tools and solutions for conservation, agro practices, and energy access. From compressed biogas to biogas-powered vehicles and generators, our innovations address real-world challenges and promote sustainability. Explore how we are shaping the future of clean energy.
                           </p>
+                          <a href="new-innovations.html" class="read-more-link">Read More</a>
                         </div>
                         <div
                           class="keyFeatureBlock__skill skill-bar"
@@ -1001,9 +1022,9 @@
                       class="btn btn--styleOne btn--black it-btn wow animate__fadeInUp"
                       data-wow-duration="1200ms"
                       data-wow-delay="400ms"
-                      href="donation-listing.html"
+                      href="projects.html"
                     >
-                      <span class="btn__text">BECAME A VOLEENTEER</span>
+                      <span class="btn__text">Learn More</span>
                       <i class="fa-solid fa-tree btn__icon"></i>
                       <span class="it-btn__inner">
                         <span class="it-btn__blobs">
@@ -2126,8 +2147,8 @@
                     >
                       <path
                         d="M5.75 9.40625L6.375 8.78125C6.5 8.625 6.5 8.40625 6.34375 8.25L3.84375 5.8125H14.625C14.8125 5.8125 15 5.65625 15 5.4375V4.5625C15 4.375 14.8125 4.1875 14.625 4.1875H3.84375L6.34375 1.78125C6.5 1.625 6.5 1.40625 6.375 1.25L5.75 0.625C5.59375 0.5 5.375 0.5 5.21875 0.625L1.09375 4.75C0.96875 4.90625 0.96875 5.125 1.09375 5.28125L5.21875 9.40625C5.375 9.53125 5.59375 9.53125 5.75 9.40625Z"
-                        fill="currentColor"
-                      ></path>
+                        fill="white"
+                      />
                     </svg>
                   </span>
                   <span
@@ -2144,8 +2165,8 @@
                     >
                       <path
                         d="M9.21875 0.625L8.59375 1.25C8.46875 1.40625 8.46875 1.625 8.625 1.78125L11.125 4.1875H0.375C0.15625 4.1875 0 4.375 0 4.5625V5.4375C0 5.65625 0.15625 5.8125 0.375 5.8125H11.125L8.625 8.25C8.46875 8.40625 8.46875 8.625 8.59375 8.78125L9.21875 9.40625C9.375 9.53125 9.59375 9.53125 9.75 9.40625L13.875 5.28125C14 5.125 14 4.90625 13.875 4.75L9.75 0.625C9.59375 0.5 9.375 0.5 9.21875 0.625Z"
-                        fill="currentColor"
-                      ></path>
+                        fill="white"
+                      />
                     </svg>
                   </span>
                 </div>
@@ -2478,9 +2499,12 @@
                 <figure class="portfolioBlock__figure">
                   <div class="responsive-iframe">
                     <iframe
-                      src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fflexi.biogas&tabs=timeline&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                      src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fflexi.biogas&tabs=timeline&width=400&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                      width="400"
+                      height="500"
                       style="border: none; overflow: hidden"
                       scrolling="no"
+                      frameborder="0"
                       allowfullscreen="true"
                       allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                     ></iframe>
@@ -2556,7 +2580,7 @@
               <div class="sponsorsTitle">
                 <span class="sponsorsTitle__line"></span>
                 <h2 class="sponsorsTitle__heading text-uppercase">
-                  " Become Support Partner "
+                  Our Partners
                 </h2>
                 <span class="sponsorsTitle__line"></span>
               </div>
@@ -2634,6 +2658,13 @@
         </div>
       </section>
       <!-- Sponsors End -->
+      <!-- Replace the map section with a Google Maps embed similar to the contact page -->
+      <section class="map-section" style="padding: 0; margin: 0;">
+        <div class="container-fluid p-0">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.753424583174!2d36.686197773260886!3d-1.3238057986636371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1d0b08fd5573%3A0x84392a792830c1b8!2sBiogas%20International%20limited!5e0!3m2!1sen!2ske!4v1747768876661!5m2!1sen!2ske" width="100%" height="400" style="border:0; display:block; width:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </section>
     </main>
     <!-- Main End -->
     <!-- footer -->
@@ -2677,6 +2708,11 @@
                     <i class="fab fa-linkedin-in"></i>
                   </a>
                 </li>
+                <li>
+                  <a class="youtube" href="https://www.youtube.com/@FlexiBiogas" rel="nofollow" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -2697,6 +2733,7 @@
                       <li><a href="index.html">Home</a></li>
                       <li><a href="about.html">About</a></li>
                       <li><a href="service.html">Products</a></li>
+                      <li><a href="projects.html">Projects</a></li>
                       <li><a href="faq.html">FAQs</a></li>
                       <li><a href="contact.html">Contacts</a></li>
                     </ul>
@@ -2704,6 +2741,16 @@
                 </div>
               </div>
               <div class="col-lg-5 mb-30">
+                <div class="footer__contact mb-3" style="font-size:1.1em; color:#fff; display:flex; gap:32px; align-items:center; flex-wrap:wrap;">
+                  <div style="display:flex; align-items:center; gap:10px;">
+                    <i class="fas fa-envelope" style="color:#7fb432; font-size:1.2em;"></i>
+                    <a href="mailto:info@biogas.co.ke" style="color:#fff; text-decoration:underline;">info@biogas.co.ke</a>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:10px;">
+                    <i class="fas fa-phone" style="color:#7fb432; font-size:1.2em;"></i>
+                    <a href="tel:+254722365784" style="color:#fff; text-decoration:underline;">+254 722 365784</a>
+                  </div>
+                </div>
                 <form action="https://formsubmit.co/info@biogas.co.ke" method="POST" class="footer__newsletter">
                   <div class="footer__title">
                     <h2 class="footer__heading text-uppercase text-white">News Latter</h2>
@@ -2793,5 +2840,51 @@
     <script src="assets/validator.min.js"></script>
     <script src="assets/animation/wow.min.js"></script>
     <script src="js/app.js"></script>
+    <script>
+      // Counting animation for 2000+ projects (even smoother, cubic ease-out)
+      document.addEventListener('DOMContentLoaded', function() {
+        var counted = false;
+        function animateCount() {
+          if (counted) return;
+          var el = document.querySelector('.donnerAreaContent__bigTitle__number');
+          if (!el) return;
+          var target = 2000;
+          var duration = 3000;
+          var start = 0;
+          var startTime = null;
+          function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+          function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            var eased = easeOutCubic(progress);
+            var value = Math.floor(eased * (target - start) + start);
+            el.textContent = value + '+';
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              el.textContent = target + '+';
+            }
+          }
+          requestAnimationFrame(step);
+          counted = true;
+        }
+        function isInViewport(elem) {
+          var rect = elem.getBoundingClientRect();
+          return (
+            rect.top < window.innerHeight &&
+            rect.bottom > 0
+          );
+        }
+        function onScroll() {
+          var section = document.querySelector('.donnerAreaContent__bigTitle');
+          if (section && isInViewport(section)) {
+            animateCount();
+            window.removeEventListener('scroll', onScroll);
+          }
+        }
+        window.addEventListener('scroll', onScroll);
+        onScroll(); // in case already in view
+      });
+    </script>
   </body>
 </html>

@@ -467,4 +467,60 @@
     wow.init();
 
     // End Activation
+
+    // Modal Gallery Logic for Bio-Fertiliser Page
+    document.addEventListener('DOMContentLoaded', function() {
+        const galleryImgs = Array.from(document.querySelectorAll('.gallery-img'));
+        if (!galleryImgs.length) return;
+        const modal = document.getElementById('galleryModal');
+        const swiperWrapper = document.getElementById('gallery-swiper-wrapper');
+        const captionDiv = document.getElementById('gallery-caption');
+        let gallerySwiper;
+
+        // Prepare slides
+        function openGalleryModal(startIndex) {
+            swiperWrapper.innerHTML = '';
+            galleryImgs.forEach(img => {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+                const image = document.createElement('img');
+                image.src = img.src;
+                image.alt = img.alt;
+                image.style.maxWidth = '100%';
+                image.style.maxHeight = '70vh';
+                image.style.display = 'block';
+                image.style.margin = '0 auto';
+                slide.appendChild(image);
+                swiperWrapper.appendChild(slide);
+            });
+            // Show initial caption
+            captionDiv.textContent = galleryImgs[startIndex].getAttribute('data-caption') || galleryImgs[startIndex].alt || '';
+            // Show modal
+            var bsModal = new bootstrap.Modal(modal);
+            bsModal.show();
+            // Init Swiper
+            if (gallerySwiper) gallerySwiper.destroy(true, true);
+            gallerySwiper = new Swiper('.gallery-swiper', {
+                initialSlide: startIndex,
+                slidesPerView: 1,
+                navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+                pagination: { el: '.swiper-pagination', clickable: true },
+                loop: true,
+                keyboard: true,
+                spaceBetween: 10,
+                on: {
+                    slideChange: function() {
+                        const realIndex = gallerySwiper.realIndex;
+                        captionDiv.textContent = galleryImgs[realIndex].getAttribute('data-caption') || galleryImgs[realIndex].alt || '';
+                    }
+                }
+            });
+        }
+        galleryImgs.forEach((img, idx) => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', function() {
+                openGalleryModal(idx);
+            });
+        });
+    });
 })();

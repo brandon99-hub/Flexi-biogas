@@ -329,6 +329,7 @@
                         <li><a href="index.html"><i class="fa-solid fa-house" style="color: #4CAF50;"></i> Home</a></li>
                         <li><a href="about.html"><i class="fa-solid fa-circle-info" style="color: #4CAF50;"></i> About</a></li>
                         <li><a href="service.html"><i class="fa-solid fa-gear" style="color: #4CAF50;"></i> Products</a></li>
+                        <li><a href="projects.html"><i class="fa-solid fa-diagram-project" style="color: #4CAF50;"></i> Projects</a></li>
                         <li><a href="faq.html"><i class="fa-solid fa-circle-question" style="color: #4CAF50;"></i> FAQs</a></li>
                         <li><a href="contact.html"><i class="fa-solid fa-envelope" style="color: #4CAF50;"></i> Contacts</a></li>
                       </ul>
@@ -436,6 +437,9 @@
                 <a class="animation" href="service.html">Products</a>
               </li>
               <li class="list menu-item-parent">
+                <a class="animation" href="projects.html">Projects</a>
+              </li>
+              <li class="list menu-item-parent">
                 <a class="animation" href="faq.html">FAQs</a>
               </li>
               <li class="list menu-item-parent">
@@ -519,7 +523,8 @@
       <!-- Page Breadcumb -->
       <section
         class="pageBreadcumb pageBreadcumb--style1 position-relative"
-        data-bg-image="image/about/aboutDetailsthumb3.jpg"
+        data-bg-image="image/utilites/volunteer-thumb1.jpg"
+        style="background-image: url('image/utilites/volunteer-thumb1.jpg'); background-size: cover; background-position: center; min-height: 350px; display: flex; align-items: center;"
       >
         <div class="pageBreadcumbTopDown">
           <a
@@ -646,8 +651,8 @@
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="contact-info-card">
                 <div class="country-header">
-                  <img src="image/flags/tanzania.png" alt="Tanzania Flag" class="flag">
-                  <h3>Tanzania</h3>
+                  <img src="image/flags/download (1).jpeg" alt="South Sudan Flag" class="flag">
+                  <h3>South Sudan</h3>
                 </div>
                 <p><i class="fas fa-map-marker-alt"></i> Mwitu Close (No. 33), Karen, Nairobi, Kenya</p>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:biogasinternational@yahoo.com" class="contact-link">biogasinternational@yahoo.com</a></p>
@@ -720,25 +725,28 @@
                   </div>
                 </form>
                 <!-- Success Modal -->
-                <div id="success-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-70 flex items-center justify-center">
-                  <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-8 text-center relative">
-                    <button id="close-success-modal" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl">&times;</button>
-                    <div class="mb-4">
-                      <i class="fa-solid fa-circle-check text-green-600 text-5xl mb-2"></i>
-                      <h4 class="text-2xl font-bold text-green-700 mb-2">Message Sent!</h4>
-                      <p class="text-gray-700">Thank you for reaching out. We have received your message and will get back to you soon.</p>
+                <div id="success-modal" class="modal fade" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header border-0">
+                        <h5 class="modal-title text-success" id="successModalLabel"><i class="fa-solid fa-circle-check me-2"></i>Message Sent!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body text-center">
+                        <p>Thank you for reaching out. We have received your message and will get back to you soon.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <script>
-                  // Show success modal if redirected with #success-modal
-                  if(window.location.hash === '#success-modal') {
-                    document.getElementById('success-modal').classList.remove('hidden');
-                    window.location.hash = '';
-                  }
-                  document.getElementById('close-success-modal').onclick = function() {
-                    document.getElementById('success-modal').classList.add('hidden');
-                  };
+                  // Show modal on successful form submission
+                  document.addEventListener('DOMContentLoaded', function() {
+                    if(window.location.hash === '#success-modal') {
+                      var modal = new bootstrap.Modal(document.getElementById('success-modal'));
+                      modal.show();
+                      window.location.hash = '';
+                    }
+                  });
                 </script>
               </div>
             </div>
@@ -759,6 +767,9 @@
               <a href="https://www.linkedin.com/company/biogas-international-limited" rel="nofollow" class="linkedin">
                 <i class="fab fa-linkedin-in"></i>
               </a>
+              <a href="https://www.youtube.com/@FlexiBiogas" rel="nofollow" target="_blank" class="youtube">
+                <i class="fab fa-youtube"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -770,7 +781,7 @@
           <div class="col-12">
             <h4 class="mb-3" style="color:#33839d; font-weight:700;">Our Location</h4>
             <div style="width: 100%; height: 350px; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px #33839d22;">
-              <iframe src="https://www.google.com/maps?q=-1.2921,36.8219&z=15&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.753424583174!2d36.686197773260886!3d-1.3238057986636371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1d0b08fd5573%3A0x84392a792830c1b8!2sBiogas%20International%20limited!5e0!3m2!1sen!2ske!4v1747768876661!5m2!1sen!2ske" width="100%" height="400" style="border:0; display:block; width:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </div>
@@ -818,6 +829,11 @@
                     <i class="fab fa-linkedin-in"></i>
                   </a>
                 </li>
+                <li>
+                  <a class="youtube" href="https://www.youtube.com/@FlexiBiogas" rel="nofollow" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -838,6 +854,7 @@
                       <li><a href="index.html">Home</a></li>
                       <li><a href="about.html">About</a></li>
                       <li><a href="service.html">Products</a></li>
+                      <li><a href="projects.html">Projects</a></li>
                       <li><a href="faq.html">FAQs</a></li>
                       <li><a href="contact.html">Contacts</a></li>
                     </ul>
@@ -845,13 +862,23 @@
                 </div>
               </div>
               <div class="col-lg-5 mb-30">
+                <div class="footer__contact mb-3" style="font-size:1.1em; color:#fff; display:flex; gap:32px; align-items:center; flex-wrap:wrap;">
+                  <div style="display:flex; align-items:center; gap:10px;">
+                    <i class="fas fa-envelope" style="color:#7fb432; font-size:1.2em;"></i>
+                    <a href="mailto:info@biogas.co.ke" style="color:#fff; text-decoration:underline;">info@biogas.co.ke</a>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:10px;">
+                    <i class="fas fa-phone" style="color:#7fb432; font-size:1.2em;"></i>
+                    <a href="tel:+254722365784" style="color:#fff; text-decoration:underline;">+254 722 365784</a>
+                  </div>
+                </div>
                 <form action="https://formsubmit.co/info@biogas.co.ke" method="POST" class="footer__newsletter">
                   <div class="footer__title">
                     <h2 class="footer__heading text-uppercase text-white">News Latter</h2>
                   </div>
                   <div class="footer__newsletter__formGroup mb-20">
                     <input type="text" class="footer__newsletter__input" placeholder="Enter mail" />
-                    <a href="#" class="footer__newsletter__button btn btn--styleOne btn--secondary it-btn" style="display:inline-flex;align-items:center;min-width:140px;justify-content:center;height:48px;">
+                    <button type="submit" class="footer__newsletter__button btn btn--styleOne btn--secondary it-btn" style="display:inline-flex;align-items:center;min-width:140px;justify-content:center;height:48px;">
                       <span class="btn__text">Subscribe</span>
                       <span class="it-btn__inner">
                         <span class="it-btn__blobs">
@@ -870,7 +897,7 @@
                           </filter>
                         </defs>
                       </svg>
-                    </a>
+                    </button>
                   </div>
                   <div class="footer__newsletter__formGroup">
                     <input id="agree" type="checkbox" class="footer__newsletter__check form-check-input" />
@@ -890,6 +917,7 @@
               <div class="col mb-20">
                 <div class="footer__copyright pt-20">
                   <p class="footer__copyright__text mb-0">
+                    <img src="image/workingwavewhitelogo.png" alt="Working Wave Logo" style="max-height:28px;vertical-align:middle;margin-right:10px;display:inline-block;" />
                     Working Wave © 2025. All Right Reserved.
                   </p>
                 </div>

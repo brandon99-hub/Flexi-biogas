@@ -35,6 +35,7 @@
                                     <li><a href="index.html"><i class="fa-solid fa-house" style="color: #4CAF50;"></i> Home</a></li>
                                     <li><a href="about.html"><i class="fa-solid fa-circle-info" style="color: #4CAF50;"></i> About</a></li>
                                     <li><a href="service.html"><i class="fa-solid fa-gear" style="color: #4CAF50;"></i> Products</a></li>
+                                    <li><a href="projects.html"><i class="fa-solid fa-diagram-project" style="color: #4CAF50;"></i> Projects</a></li>
                                     <li><a href="faq.html"><i class="fa-solid fa-circle-question" style="color: #4CAF50;"></i> FAQs</a></li>
                                     <li><a href="contact.html"><i class="fa-solid fa-envelope" style="color: #4CAF50;"></i> Contacts</a></li>
                                 </ul>
@@ -80,27 +81,6 @@
         </div>
     </section>
     <!-- Page Breadcumb End -->
-    <!-- Product Details Section -->
-    <section class="productDetails pt-120 pb-105">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Section Heading/Title -->
-                    <div class="sectionTitle text-center mb-30">
-                        <span class="sectionTitle__small justify-content-center">
-                            <i class="fa-solid fa-tree btn__icon"></i>
-                            Bio-Sanitation Solution
-                        </span>
-                        <h2 class="sectionTitle__big">
-                            Expertly crafted systems for hygienic, safe, and environmentally responsible waste management
-                        </h2>
-                    </div>
-                    <!-- Section Heading/Title End -->
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Main Content -->
     <main class="main-content">
         <div class="container my-4">
@@ -121,7 +101,48 @@
                     </div>
                         <div class="col-md-4 d-flex align-items-center">
                             <div class="card shadow-sm w-100">
-                                <img src="image/biosans technology/overview/biosans.jpg" class="card-img-top" alt="BioSan Overview">
+                                <div id="overviewCarousel" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#overviewCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#overviewCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#overviewCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                        <button type="button" data-bs-target="#overviewCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                        <button type="button" data-bs-target="#overviewCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                        <button type="button" data-bs-target="#overviewCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                        <button type="button" data-bs-target="#overviewCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                                    </div>
+                                    <div class="carousel-inner rounded-4">
+                                        <div class="carousel-item active">
+                                            <img src="image/biosans technology/overview/biosans.jpg" class="d-block w-100" alt="BioSan Overview 1" style="height: 320px; object-fit: cover;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="image/biosans technology/overview/bio-san-e1670922800945-400x284.jpeg" class="d-block w-100" alt="BioSan Overview 2" style="height: 320px; object-fit: cover;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="image/biosans technology/overview/biosan-3-400x284.jpeg" class="d-block w-100" alt="BioSan Overview 3" style="height: 320px; object-fit: cover;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="image/biosans technology/overview/bio-san-2-400x284.jpeg" class="d-block w-100" alt="BioSan Overview 4" style="height: 320px; object-fit: cover;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="image/biosans technology/overview/BioSanGas.jpg" class="d-block w-100" alt="BioSan Overview 5" style="height: 320px; object-fit: cover;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="image/biosans technology/overview/IMG_20181217_124003.png" class="d-block w-100" alt="BioSan Overview 6" style="height: 320px; object-fit: cover;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="image/biosans technology/overview/15.jpg" class="d-block w-100" alt="BioSan Overview 7" style="height: 320px; object-fit: cover;">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#overviewCarousel" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#overviewCarousel" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
                                 <div class="card-body p-2"><p class="card-text small mb-0">BioSan System Overview</p></div>
                             </div>
                         </div>
@@ -131,7 +152,7 @@
                     <div class="row my-4">
                         <div class="col-md-6 d-flex align-items-center">
                             <div class="card shadow-sm w-100">
-                                <img src="image/biosans technology/overview/bio-san-2-400x284.jpeg" class="card-img-top" alt="BioSan Key Advantages">
+                                <img src="image/biosans technology/overview/bio-san-2-400x284.jpeg" class="card-img-top advantages-gallery-img" alt="BioSan Key Advantages" data-caption="BioSan System - Key Advantages">
                                 <div class="card-body p-2"><p class="card-text small mb-0">BioSan System - Key Advantages</p></div>
                             </div>
                         </div>
@@ -148,37 +169,22 @@
                         </div>
                     </div>
 
-                    <!-- Main Video Section -->
-                    <div class="container-fluid py-5" style="background: #f8f9fa; border-radius: 16px;">
-                        <h2 class="text-center mb-4" style="font-weight: 700; letter-spacing: 1px;">BioSanGas in Action</h2>
-                        <div class="row justify-content-center">
-                            <div class="col-md-8 d-flex">
-                                <div class="card flex-fill h-100 shadow-lg rounded-4 border-0">
-                                    <div class="ratio ratio-16x9 rounded-top-4 overflow-hidden">
-                                        <iframe src="https://www.youtube.com/embed/fdEEIBtzjgA" title="BioSanGas System Video" allowfullscreen style="border-radius: 12px 12px 0 0;"></iframe>
-                                    </div>
-                                    <div class="card-body"><p class="card-text text-center">BioSanGas System in Action</p></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Installation Images Carousel -->
                     <div class="container my-5">
                         <h2 class="text-center mb-4" style="font-weight: 700; letter-spacing: 1px;">Installation Highlights</h2>
                         <div id="installCarousel" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner rounded-4 shadow-lg">
                                 <div class="carousel-item active">
-                                    <img src="image/biosans technology/installation/BioSanGas-Toilet-block.jpg" class="d-block w-100" alt="Installation 1" style="max-height:320px; object-fit:cover;">
+                                    <img src="image/biosans technology/installation/BioSanGas-Toilet-block.jpg" class="d-block w-100 install-gallery-img gallery-img" alt="Installation 1" data-caption="BioSanGas Toilet Block Installation" style="object-fit:cover;width:100%;height:400px;cursor:pointer;">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="image/biosans technology/installation/IMG-20200218-WA0010.jpg" class="d-block w-100" alt="Installation 2" style="max-height:320px; object-fit:cover;">
+                                    <img src="image/biosans technology/installation/IMG-20200218-WA0010.jpg" class="d-block w-100 install-gallery-img gallery-img" alt="Installation 2" data-caption="BioSanGas Installation Process" style="object-fit:cover;width:100%;height:400px;cursor:pointer;">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="image/biosans technology/installation/IMG_20200229_131054_493.jpg" class="d-block w-100" alt="Installation 3" style="max-height:320px; object-fit:cover;">
+                                    <img src="image/biosans technology/installation/IMG_20200229_131054_493.jpg" class="d-block w-100 install-gallery-img gallery-img" alt="Installation 3" data-caption="BioSanGas System Setup" style="object-fit:cover;width:100%;height:400px;cursor:pointer;">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="image/biosans technology/installation/IMG_20200229_131054_388.jpg" class="d-block w-100" alt="Installation 4" style="max-height:320px; object-fit:cover;">
+                                    <img src="image/biosans technology/installation/IMG_20200229_131054_388.jpg" class="d-block w-100 install-gallery-img gallery-img" alt="Installation 4" data-caption="BioSanGas Installation Complete" style="object-fit:cover;width:100%;height:400px;cursor:pointer;">
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#installCarousel" data-bs-slide="prev">
@@ -222,7 +228,39 @@
                         <div class="row align-items-center">
                             <div class="col-md-5">
                                 <div class="card shadow-sm w-100">
-                                    <img src="image/biosans technology/merry loo.jpeg" class="card-img-top" alt="The Merry Loo">
+                                    <div id="merryLooCarousel" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner rounded-4">
+                                            <div class="carousel-item active">
+                                                <img src="image/merry loo/WhatsApp-Image-2020-01-23-at-8.33.28-PM-400x284.jpeg" class="card-img-top merryloo-gallery-img" alt="Merry Loo 1" data-caption="Merry Loo 1">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="image/merry loo/82036770_1043859635951061_3292786782566875136_n-400x284.jpg" class="card-img-top merryloo-gallery-img" alt="Merry Loo 2" data-caption="Merry Loo 2">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="image/merry loo/WhatsApp-Image-2020-01-20-at-1.14.36-PM-2-400x284.jpeg" class="card-img-top merryloo-gallery-img" alt="Merry Loo 3" data-caption="Merry Loo 3">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="image/merry loo/WhatsApp-Image-2020-01-23-at-6.31.15-PM-400x284.jpeg" class="card-img-top merryloo-gallery-img" alt="Merry Loo 4" data-caption="Merry Loo 4">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="image/merry loo/WhatsApp-Image-2020-01-23-at-4.40.27-AM-400x284.jpeg" class="card-img-top merryloo-gallery-img" alt="Merry Loo 5" data-caption="Merry Loo 5">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="image/merry loo/WhatsApp-Image-2020-01-23-at-4.36.49-AM-400x284.jpeg" class="card-img-top merryloo-gallery-img" alt="Merry Loo 6" data-caption="Merry Loo 6">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="image/merry loo/WhatsApp-Image-2020-01-20-at-1.15.17-PM-400x284.jpeg" class="card-img-top merryloo-gallery-img" alt="Merry Loo 7" data-caption="Merry Loo 7">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#merryLooCarousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#merryLooCarousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
                                     <div class="card-body p-2"><p class="card-text small mb-0">The Merry Loo</p></div>
                                 </div>
                             </div>
@@ -262,11 +300,116 @@
                                     ✅– Shower basin<br>
                                     ✅– EM priming culture<br><br>
                                     Ideal for rural homes of 5 – 6 members</p>
+
+                                    <!-- Carousels Container -->
+                                    <div class="row mb-4">
+                                        <!-- Busia Carousel Column -->
+                                        <div class="col-md-6">
+                                            <div id="busiaCarousel" class="carousel slide" data-bs-ride="carousel">
+                                                <div class="carousel-indicators">
+                                                    <button type="button" data-bs-target="#busiaCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#busiaCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                    <button type="button" data-bs-target="#busiaCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                    <button type="button" data-bs-target="#busiaCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                                    <button type="button" data-bs-target="#busiaCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                                    <button type="button" data-bs-target="#busiaCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                                    <button type="button" data-bs-target="#busiaCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                                                    <button type="button" data-bs-target="#busiaCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                                                </div>
+                                                <div class="carousel-inner rounded-4">
+                                                    <div class="carousel-item active">
+                                                        <img src="image/merry loo/busia/biogas-merry-loo-toilet-400x284.jpeg" class="d-block w-100" alt="Busia 1" style="height: 250px; object-fit: cover;">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="image/merry loo/busia/merry-loo-biogas-toilet-400x284.jpeg" class="d-block w-100" alt="Busia 2" style="height: 250px; object-fit: cover;">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="image/merry loo/busia/merry-loo-toilet-400x284.jpeg" class="d-block w-100" alt="Busia 3" style="height: 250px; object-fit: cover;">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="image/merry loo/busia/merry-loo-2-400x284.jpeg" class="d-block w-100" alt="Busia 4" style="height: 250px; object-fit: cover;">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="image/merry loo/busia/merry-loo-toilet-septic-toilet-400x284.jpeg" class="d-block w-100" alt="Busia 5" style="height: 250px; object-fit: cover;">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="image/merry loo/busia/merry-loo-septic-toilet-400x284.jpeg" class="d-block w-100" alt="Busia 6" style="height: 250px; object-fit: cover;">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="image/merry loo/busia/merry-loo-4-400x284.jpeg" class="d-block w-100" alt="Busia 7" style="height: 250px; object-fit: cover;">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="image/merry loo/busia/septic-merry-loo-toilet-400x284.jpeg" class="d-block w-100" alt="Busia 8" style="height: 250px; object-fit: cover;">
+                                                    </div>
+                                                </div>
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#busiaCarousel" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button" data-bs-target="#busiaCarousel" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            </div>
+                                            <div class="mt-2"><p class="card-text small mb-0 text-center">Merry Loo training in Mukhobola Village in Busia county in partnership with International Center of Insect Physiology and Ecology (ICIPE).</p></div>
+                                        </div>
+
+                                        <!-- Kwale Carousel Column -->
+                                        <div class="col-md-6">
+                                            <div id="kwaleCarousel" class="carousel slide" data-bs-ride="carousel">
+                                                <div class="carousel-indicators">
+                                                    <button type="button" data-bs-target="#kwaleCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#kwaleCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                    <button type="button" data-bs-target="#kwaleCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                    <button type="button" data-bs-target="#kwaleCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                                    <button type="button" data-bs-target="#kwaleCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                                    <button type="button" data-bs-target="#kwaleCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                                    <button type="button" data-bs-target="#kwaleCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                                                    <button type="button" data-bs-target="#kwaleCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                                                </div>
+                                                <div class="carousel-inner rounded-4">
+                                                    <div class="carousel-item active">
+                                                        <img src="image/merry loo/kwale/merry-loo-toilet-400x284.jpeg" class="d-block w-100" alt="Kwale 1" style="height: 250px; object-fit: cover;">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="image/merry loo/kwale/merry-loo-3-400x284.jpeg" class="d-block w-100" alt="Kwale 2" style="height: 250px; object-fit: cover;">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="image/merry loo/kwale/merry-loo-2-400x284.jpeg" class="d-block w-100" alt="Kwale 3" style="height: 250px; object-fit: cover;">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="image/merry loo/kwale/Merry-loo-biogas-toilet-7-400x284.jpeg" class="d-block w-100" alt="Kwale 4" style="height: 250px; object-fit: cover;">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="image/merry loo/kwale/Merry-loo-biogas-toilet-6-400x284.jpeg" class="d-block w-100" alt="Kwale 5" style="height: 250px; object-fit: cover;">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="image/merry loo/kwale/Merry-loo-biogas-toilet-400x284.jpeg" class="d-block w-100" alt="Kwale 6" style="height: 250px; object-fit: cover;">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="image/merry loo/kwale/Merry-loo-biogas-toilet-8-400x284.jpeg" class="d-block w-100" alt="Kwale 7" style="height: 250px; object-fit: cover;">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="image/merry loo/kwale/Merry-loo-biogas-toilet-9-400x284.jpeg" class="d-block w-100" alt="Kwale 8" style="height: 250px; object-fit: cover;">
+                                                    </div>
+                                                </div>
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#kwaleCarousel" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button" data-bs-target="#kwaleCarousel" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            </div>
+                                            <div class="mt-2"><p class="card-text small mb-0 text-center">Merry Loo installation training at Muhaka Village in Kwale County in partnership with International Center of insect Physiology and Ecology -(ICIPE).</p></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- YouTube Video -->
                                     <div class="ratio ratio-16x9 mb-3">
                                         <iframe src="https://www.youtube.com/embed/Y-NnVzkrilo" title="Merry Loo Installation Training" allowfullscreen></iframe>
                                     </div>
-                                    <p>Merry Loo installation training at Muhaka Village in Kwale County in partnership with International Center of insect Physiology and Ecology -(ICIPE).</p>
-                                    <p>Merry Loo training in Mukhobola Village in Busia county in partnership with International Center of Insect Physiology and Ecology (ICIPE).</p>
                                 </div>
                             </div>
                         </div>
@@ -275,6 +418,21 @@
             </div>
         </div>
     </main>
+
+    <!-- Main Video Section moved to bottom -->
+    <div class="container-fluid py-5" style="background: #f8f9fa; border-radius: 16px;">
+        <h2 class="text-center mb-4" style="font-weight: 700; letter-spacing: 1px;">BioSanGas in Action</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8 d-flex">
+                <div class="card flex-fill h-100 shadow-lg rounded-4 border-0">
+                    <div class="ratio ratio-16x9 rounded-top-4 overflow-hidden">
+                        <iframe src="https://www.youtube.com/embed/fdEEIBtzjgA" title="BioSanGas System Video" allowfullscreen style="border-radius: 12px 12px 0 0;"></iframe>
+                    </div>
+                    <div class="card-body"><p class="card-text text-center">BioSanGas System in Action</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer Section -->
     <footer class="footer footer--bg footer--styleOne pt-70 pb-40">
@@ -293,6 +451,7 @@
                             <li><a class="twitter" href="https://twitter.com/Flexi_Biogas" rel="nofollow"><i class="fab fa-twitter"></i></a></li>
                             <li><a class="instagram" href="https://www.instagram.com/flexibiogas/" rel="nofollow"><i class="fab fa-instagram"></i></a></li>
                             <li><a class="linkedin" href="https://www.linkedin.com/company/biogas-international-limited" rel="nofollow"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a class="youtube" href="https://www.youtube.com/@FlexiBiogas" rel="nofollow" target="_blank"><i class="fab fa-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -313,6 +472,7 @@
                                         <li><a href="index.html">Home</a></li>
                                         <li><a href="about.html">About</a></li>
                                         <li><a href="service.html">Products</a></li>
+                                        <li><a href="projects.html">Projects</a></li>
                                         <li><a href="faq.html">FAQs</a></li>
                                         <li><a href="contact.html">Contacts</a></li>
                                     </ul>
@@ -320,13 +480,23 @@
                             </div>
                         </div>
                         <div class="col-lg-5 mb-30">
+                            <div class="footer__contact mb-3" style="font-size:1.1em; color:#fff; display:flex; gap:32px; align-items:center; flex-wrap:wrap;">
+                              <div style="display:flex; align-items:center; gap:10px;">
+                                <i class="fas fa-envelope" style="color:#7fb432; font-size:1.2em;"></i>
+                                <a href="mailto:info@biogas.co.ke" style="color:#fff; text-decoration:underline;">info@biogas.co.ke</a>
+                              </div>
+                              <div style="display:flex; align-items:center; gap:10px;">
+                                <i class="fas fa-phone" style="color:#7fb432; font-size:1.2em;"></i>
+                                <a href="tel:+254722365784" style="color:#fff; text-decoration:underline;">+254 722 365784</a>
+                              </div>
+                            </div>
                             <form action="https://formsubmit.co/info@biogas.co.ke" method="POST" class="footer__newsletter">
                                 <div class="footer__title">
                                     <h2 class="footer__heading text-uppercase text-white">News Latter</h2>
                                 </div>
                                 <div class="footer__newsletter__formGroup mb-20">
                                     <input type="text" class="footer__newsletter__input" placeholder="Enter mail" />
-                                    <a href="#" class="footer__newsletter__button btn btn--styleOne btn--secondary it-btn" style="display:inline-flex;align-items:center;min-width:140px;justify-content:center;height:48px;">
+                                    <button type="submit" class="footer__newsletter__button btn btn--styleOne btn--secondary it-btn" style="display:inline-flex;align-items:center;min-width:140px;justify-content:center;height:48px;">
                                         <span class="btn__text">Subscribe</span>
                                         <span class="it-btn__inner">
                                             <span class="it-btn__blobs">
@@ -345,7 +515,7 @@
                                                 </filter>
                                             </defs>
                                         </svg>
-                                    </a>
+                                    </button>
                                 </div>
                                 <div class="footer__newsletter__formGroup">
                                     <input id="agree" type="checkbox" class="footer__newsletter__check form-check-input" />
@@ -376,6 +546,26 @@
         </div>
     </footer>
 
+    <!-- Modal Gallery Structure -->
+    <div id="galleryModal" class="modal fade" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content bg-dark p-0" style="border-radius:18px;">
+          <div class="modal-body p-0">
+            <div class="swiper gallery-swiper">
+              <div class="swiper-wrapper" id="gallery-swiper-wrapper">
+                <!-- Slides will be injected by JS -->
+              </div>
+              <div class="swiper-button-next" style="color:#fff;"></div>
+              <div class="swiper-button-prev" style="color:#fff;"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <div class="gallery-caption text-center text-white py-3" id="gallery-caption"></div>
+          </div>
+          <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close" style="z-index:10;"></button>
+        </div>
+      </div>
+    </div>
+
     <script src="assets/jquery/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="assets/swiper/swiper.min.js"></script>
@@ -383,6 +573,107 @@
     <script src="assets/validator.min.js"></script>
     <script src="assets/animation/wow.min.js"></script>
     <script src="js/app.js"></script>
+    <script>
+        // Initialize gallery modal Swiper
+        document.addEventListener('DOMContentLoaded', function() {
+            // Image groups
+            const overviewImgs = document.querySelectorAll('#overviewCarousel .carousel-item img');
+            const installImgs = document.querySelectorAll('.install-gallery-img');
+            const advantagesImgs = document.querySelectorAll('.advantages-gallery-img');
+            const merrylooImgs = document.querySelectorAll('.merryloo-gallery-img');
+            const busiaImgs = document.querySelectorAll('#busiaCarousel .carousel-item img');
+            const kwaleImgs = document.querySelectorAll('#kwaleCarousel .carousel-item img');
+            const modal = document.getElementById('galleryModal');
+            const swiperWrapper = document.getElementById('gallery-swiper-wrapper');
+            const captionDiv = document.getElementById('gallery-caption');
+            let gallerySwiper;
+
+            // Helper to open modal for a group
+            function openModalForGroup(imgs, startIndex) {
+                swiperWrapper.innerHTML = '';
+                imgs.forEach((img, index) => {
+                    const slide = document.createElement('div');
+                    slide.className = 'swiper-slide';
+                    const image = document.createElement('img');
+                    image.src = img.src;
+                    image.alt = img.alt || '';
+                    slide.appendChild(image);
+                    swiperWrapper.appendChild(slide);
+                });
+                const bsModal = new bootstrap.Modal(modal);
+                bsModal.show();
+                if (gallerySwiper) {
+                    gallerySwiper.destroy(true, true);
+                }
+                gallerySwiper = new Swiper('.gallery-swiper', {
+                    initialSlide: startIndex,
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true,
+                    keyboard: { enabled: true },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    on: {
+                        slideChange: function() {
+                            const realIndex = this.realIndex;
+                            const currentImg = imgs[realIndex];
+                            captionDiv.textContent = currentImg.getAttribute('data-caption') || currentImg.alt || '';
+                        }
+                    }
+                });
+            }
+
+            // Add click handlers for each group
+            overviewImgs.forEach((img, index) => {
+                img.style.cursor = 'pointer';
+                img.setAttribute('data-caption', 'BioSan System Overview');
+                img.addEventListener('click', () => openModalForGroup(overviewImgs, index));
+            });
+            installImgs.forEach((img, index) => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', () => openModalForGroup(installImgs, index));
+            });
+            advantagesImgs.forEach((img, index) => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', () => openModalForGroup(advantagesImgs, index));
+            });
+            merrylooImgs.forEach((img, index) => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', () => openModalForGroup(merrylooImgs, index));
+            });
+            busiaImgs.forEach((img, index) => {
+                img.style.cursor = 'pointer';
+                img.setAttribute('data-caption', 'Merry Loo training in Mukhobola Village in Busia county in partnership with International Center of Insect Physiology and Ecology (ICIPE)');
+                img.addEventListener('click', () => openModalForGroup(busiaImgs, index));
+            });
+            kwaleImgs.forEach((img, index) => {
+                img.style.cursor = 'pointer';
+                img.setAttribute('data-caption', 'Merry Loo installation training at Muhaka Village in Kwale County in partnership with International Center of insect Physiology and Ecology -(ICIPE)');
+                img.addEventListener('click', () => openModalForGroup(kwaleImgs, index));
+            });
+
+            // Clean up Swiper and modal content on close
+            modal.addEventListener('hidden.bs.modal', function () {
+                if (gallerySwiper) {
+                    gallerySwiper.destroy(true, true);
+                    gallerySwiper = null;
+                }
+                swiperWrapper.innerHTML = '';
+                captionDiv.textContent = '';
+                // Remove modal-open class and any leftover backdrops
+                document.body.classList.remove('modal-open');
+                document.body.style.overflow = '';
+                document.body.removeAttribute('style');
+                document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+            });
+        });
+    </script>
     <style>
         .footer__newsletter__formGroup {
             display: flex;
@@ -415,6 +706,62 @@
                 width: 100%;
                 margin: 0 0 10px 0 !important;
             }
+        }
+        .modal-backdrop.show { background: rgba(30, 30, 40, 0.75) !important; }
+        #galleryModal .modal-content { background: rgba(30, 30, 40, 0.85) !important; box-shadow: 0 8px 48px #0008; border: none; }
+        
+        /* Gallery Modal Swiper Styles */
+        .gallery-swiper {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+        }
+        .gallery-swiper .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            min-height: 60vh;
+        }
+        .gallery-swiper .swiper-slide img {
+            display: block;
+            margin: 0 auto;
+            max-width: 90%;
+            max-height: 70vh;
+            object-fit: contain;
+        }
+        .gallery-swiper .swiper-button-next,
+        .gallery-swiper .swiper-button-prev {
+            color: #fff;
+            background: rgba(0, 0, 0, 0.3);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .gallery-swiper .swiper-button-next:hover,
+        .gallery-swiper .swiper-button-prev:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .gallery-swiper .swiper-button-next:after,
+        .gallery-swiper .swiper-button-prev:after {
+            font-size: 20px;
+        }
+        .gallery-swiper .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            opacity: 0.5;
+        }
+        .gallery-swiper .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #4CAF50;
+        }
+        .gallery-caption {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            font-size: 1.1em;
+            font-weight: 500;
         }
     </style>
 </body>

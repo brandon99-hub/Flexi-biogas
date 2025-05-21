@@ -15,6 +15,40 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;family=Oswald:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/main.css" />
+    <style>
+        .footer__newsletter__formGroup {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+        .footer__newsletter__input {
+            flex: 1 1 220px;
+            min-width: 0;
+            border-radius: 6px 0 0 6px;
+            border-right: none;
+        }
+        .footer__newsletter__button {
+            border-radius: 0 6px 6px 0 !important;
+            margin-left: 0 !important;
+            height: 48px;
+            font-size: 1.1em;
+            font-weight: 600;
+            min-width: 140px;
+            justify-content: center;
+            align-items: center;
+            display: inline-flex;
+        }
+        @media (max-width: 600px) {
+            .footer__newsletter__formGroup {
+                flex-direction: column;
+            }
+            .footer__newsletter__input, .footer__newsletter__button {
+                border-radius: 6px !important;
+                width: 100%;
+                margin: 0 0 10px 0 !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -34,7 +68,8 @@
                                 <ul>
                                     <li><a href="index.html"><i class="fa-solid fa-house" style="color: #4CAF50;"></i> Home</a></li>
                                     <li><a href="about.html"><i class="fa-solid fa-circle-info" style="color: #4CAF50;"></i> About</a></li>
-                                    <li><a href="service.html"><i class="fa-solid fa-gear" style="color: #4CAF50;"></i> Services</a></li>
+                                    <li><a href="service.html"><i class="fa-solid fa-gear" style="color: #4CAF50;"></i> Products</a></li>
+                                    <li><a href="projects.html"><i class="fa-solid fa-diagram-project" style="color: #4CAF50;"></i> Projects</a></li>
                                     <li><a href="faq.html"><i class="fa-solid fa-circle-question" style="color: #4CAF50;"></i> FAQs</a></li>
                                     <li><a href="contact.html"><i class="fa-solid fa-envelope" style="color: #4CAF50;"></i> Contacts</a></li>
                                 </ul>
@@ -46,18 +81,39 @@
         </div>
     </header>
 
-    <!-- Hero/Header Section with Background Image (fix navbar overlap) -->
-    <div class="hero-section position-relative" style="background: url('image/innovations/DSC_1053.jpg') center center/cover no-repeat; min-height: 350px; display: flex; align-items: center; justify-content: center; padding-top: 120px;">
+    <!-- Page Breadcumb (Hero Section) -->
+    <section class="pageBreadcumb pageBreadcumb--style1 position-relative" style="background-image: url('image/innovations/DSC_1053.jpg'); background-size: cover; background-position: center; min-height: 350px;">
+        <div class="sectionShape sectionShape--top">
+            <img src="image/shapes/pagebreadcumbShapeTop.svg" alt="Gainioz" />
+        </div>
+        <div class="sectionShape sectionShape--bottom">
+            <img src="image/shapes/pagebreadcumbShapeBottom.svg" alt="Gainioz" />
+        </div>
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center text-white" style="background: rgba(0,0,0,0.45); border-radius: 16px; padding: 2.5em 1em;">
-                    <h1 class="display-4 fw-bold mb-3" style="letter-spacing: 2px;">INNOVATIONS</h1>
-                    <p class="lead mb-0">Continuous innovation for poverty alleviation, conservation, and better agro practices.</p>
+            <div class="row">
+                <div class="col-12">
+                    <div class="pageTitle text-center">
+                        <h2 class="pageTitle__heading text-white text-uppercase mb-25">
+                            INNOVATIONS
+                        </h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="service.html">Products</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    New Innovations
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Hero/Header Section -->
+    </section>
 
     <!-- Main Content (REPLACED with provided content, images, and video) -->
     <main class="main-content">
@@ -69,123 +125,105 @@
                 </div>
                 <div class="col-md-4 d-flex align-items-center">
                     <div class="card shadow-sm w-100">
-                        <img src="image/innovations/compressed-biogas.jpeg" class="card-img-top" alt="Compressed Biogas">
+                        <img src="image/innovations/compressed-biogas.jpeg" class="card-img-top gallery-img" alt="Compressed Biogas" data-caption="Compressed Biogas Innovation">
                         <div class="card-body p-2"><p class="card-text small mb-0">Compressed Biogas Innovation</p></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Some of the Innovations Section -->
-            <div class="row my-5">
-                <div class="col-12">
-                    <h4 class="mb-3">SOME OF THE INNOVATIONS</h4>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow-sm h-100">
-                        <img src="image/innovations/20220423_110047.jpg" class="card-img-top" alt="Compressed Biogas Bottles">
-                        <div class="card-body">
-                            <h5 class="card-title">Compressed biogas</h5>
-                            <p class="card-text">Compressed Biogas Bottles</p>
+            <!-- Some of the Innovations Section (Redesigned) -->
+            <div class="row my-5 align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card shadow-sm w-100 mx-auto" style="max-width: 540px;">
+                        <div id="compressedBiogasCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner rounded-4 shadow-lg">
+                                <div class="carousel-item active">
+                                    <img src="image/innovations/20220423_110047.jpg" class="d-block w-100 gallery-img" alt="Compressed Biogas 1" style="object-fit:cover;" data-caption="Compressed Biogas 1" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="image/innovations/20220423_110249.jpg" class="d-block w-100 gallery-img" alt="Compressed Biogas 2" style="object-fit:cover;" data-caption="Compressed Biogas 2" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="image/innovations/compressed-biogas.jpeg" class="d-block w-100 gallery-img" alt="Compressed Biogas 3" style="object-fit:cover;" data-caption="Compressed Biogas 3" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="image/innovations/DSC_1111.jpg" class="d-block w-100 gallery-img" alt="CNG Cylinders" style="object-fit:cover;" data-caption="CNG Cylinders" />
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#compressedBiogasCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#compressedBiogasCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
+                        <div class="card-body p-2"><p class="card-text small mb-0 text-center">Compressed Biogas & CNG Innovations</p></div>
                     </div>
                 </div>
-                                    <div class="col-md-6 mb-4">
-                    <div class="card shadow-sm h-100">
-                        <img src="image/innovations/20220423_110249.jpg" class="card-img-top" alt="LPG Cylinders">
-                        <div class="card-body">
-                            <h5 class="card-title">LPG – Liquid Petroleum Gas</h5>
-                            <p class="card-text">Butane and propane that make up LPG turn to liquid at very low pressure around 40 – 60 psi at average ambient temperature. So with safety as the major priority, LPG cylinders are designed to hold a max pressure around 400psi. The cylinders can be relatively lightweight allowing them to be easily portable.</p>
-                        </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-4">
-                    <div class="card shadow-sm h-100">
-                        <img src="image/innovations/DSC_1103.jpg" class="card-img-top" alt="LNG Technology">
-                        <div class="card-body">
-                            <h5 class="card-title">LNG – Liquid Natural Gas</h5>
-                            <p class="card-text">The combustable component of biogas is Methane, which is Natural Gas. Methane does not like to liquify, and will only do so at -162degC. This process is a whole different level of technology, and only possible at industrial level.</p>
-                        </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-4">
-                    <div class="card shadow-sm h-100">
-                        <img src="image/innovations/DSC_1111.jpg" class="card-img-top" alt="CNG Cylinders">
-                        <div class="card-body">
-                            <h5 class="card-title">CNG – Compressed Natural Gas</h5>
-                            <p class="card-text">So the most simple low-tech method of getting large quantities of natural or biogas into a small space is to compress it at very high pressure. Biogas in these cylinders is at a max of 3,000 psi. CNG cylinders are similar to industrial gas cylinders, and are extremely heavy. For example, a single cylinder pictured here will contain about the same amount of gas as a 12kg LPG cylinder, that is around 30m3. Where an empty LPG cylinder weights a manageable 20 – 25kg, the empty CNG cylinder weights 130kg. So portability at a domestic level is completely non viable. Hence the trailer. We can move around 100m3 in a single trailer. The cylinders remain on the trailer, that is plugged into the point of use like a commercial kitchen, restaurants, school's, or mini-grided apartments, flats and slums. Different Pay As You Go -PAYG metering systems for payment models. When the gas is used up, a replacement trailer is brought in and the empty taken for refill. So in short, mini-grid biogas networks can be setup in urban centers where there is no space for digesters, and the biogas can be supplied in trailer form.</p>
-                        </div>
-                    </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-2">LPG – Liquid Petroleum Gas</h5>
+                    <ul class="mb-3">
+                        <li>Butane and propane that make up LPG turn to liquid at very low pressure around 40 – 60 psi at average ambient temperature.</li>
+                        <li>So with safety as the major priority, LPG cylinders are designed to hold a max pressure around 400psi.</li>
+                        <li>The cylinders can be relatively lightweight allowing them to be easily portable.</li>
+                    </ul>
+                    <h5 class="fw-bold mb-2">LNG – Liquid Natural Gas</h5>
+                    <ul class="mb-3">
+                        <li>The combustable component of biogas is Methane, which is Natural Gas.</li>
+                        <li>Methane does not like to liquify, and will only do so at -162degC. This process is a whole different level of technology, and only possible at industrial level.</li>
+                    </ul>
+                    <h5 class="fw-bold mb-2">CNG – Compressed Natural Gas</h5>
+                    <ul>
+                        <li>The most simple low-tech method of getting large quantities of natural or biogas into a small space is to compress it at very high pressure. Biogas in these cylinders is at a max of 3,000 psi. CNG cylinders are similar to industrial gas cylinders, and are extremely heavy.</li>
+                        <li>For example, a single cylinder pictured here will contain about the same amount of gas as a 12kg LPG cylinder, that is around 30m3. Where an empty LPG cylinder weights a manageable 20 – 25kg, the empty CNG cylinder weights 130kg. So portability at a domestic level is completely non viable.</li>
+                        <li>Hence the trailer. We can move around 100m3 in a single trailer. The cylinders remain on the trailer, that is plugged into the point of use like a commercial kitchen, restaurants, school's, or mini-grided apartments, flats and slums. Different Pay As You Go -PAYG metering systems for payment models.</li>
+                        <li>When the gas is used up, a replacement trailer is brought in and the empty taken for refill.</li>
+                        <li>So in short, mini-grid biogas networks can be setup in urban centers where there is no space for digesters, and the biogas can be supplied in trailer form.</li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Carousel Section: Swipe to View More Images -->
-            <div class="container my-5">
-                <div id="innovationsCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner rounded-4 shadow-lg">
-                        <div class="carousel-item active">
-                            <img src="image/innovations/DSC_1053.jpg" class="d-block w-100" alt="Innovation 1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="image/innovations/DSC_1075.jpg" class="d-block w-100" alt="Innovation 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="image/innovations/DSC_1103.jpg" class="d-block w-100" alt="Innovation 3">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="image/innovations/DSC_1111.jpg" class="d-block w-100" alt="Innovation 4">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#innovationsCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#innovationsCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <div class="text-center small mt-2">Biogas Innovations Gallery</div>
-            </div>
-
-            <!-- Biogas Tuk tuk Section -->
-            <div class="row my-5">
-                <div class="col-md-6 d-flex align-items-center">
+            <!-- Biogas Tuk tuk Section (Redesigned) -->
+            <div class="row my-5 align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
                     <div class="card shadow-sm w-100">
-                        <img src="image/innovations/20220423_110047.jpg" class="card-img-top" alt="Biogas Tuk tuk">
-                        <div class="card-body p-2"><p class="card-text small mb-0">Biogas Tuk tuk</p></div>
+                        <img src="image/innovations/DSC_1103.jpg" class="card-img-top gallery-img" alt="Biogas Tuk tuk" style="object-fit:cover;" data-caption="Biogas Tuk tuk" />
+                        <div class="card-body p-2"><p class="card-text small mb-0 text-center">Biogas Tuk tuk</p></div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <h4>Biogas Tuk tuk</h4>
-                    <p>We are modifying three -wheeled wagons ( tuktuks ) to run on biogas as an alternative fuel to conventional fuel.</p>
+                    <p>We are modifying three-wheeled wagons (tuktuks) to run on biogas as an alternative fuel to conventional fuel.</p>
                 </div>
             </div>
 
-            <!-- Biogas Generators Section -->
-            <div class="row my-5">
+            <!-- Biogas Generators Section (Image Right, Text Left) -->
+            <div class="row my-5 align-items-center">
                 <div class="col-md-6">
                     <h4>Biogas Generators</h4>
                     <p>The biogas power generator generates power by utilizing biogas as an alternative fuel.</p>
                 </div>
-                <div class="col-md-6 d-flex align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
                     <div class="card shadow-sm w-100">
-                        <img src="image/innovations/DSC_1075.jpg" class="card-img-top" alt="Biogas Generators">
-                        <div class="card-body p-2"><p class="card-text small mb-0">Biogas Generators</p></div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <img src="image/innovations/DSC_1075.jpg" class="card-img-top gallery-img" alt="Biogas Generators" style="object-fit:cover;" data-caption="Biogas Generators" />
+                        <div class="card-body p-2"><p class="card-text small mb-0 text-center">Biogas Generators</p></div>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Biogas Milk Pasteurizer Section -->
-            <div class="row my-5">
-                <div class="col-md-6 d-flex align-items-center">
+            <!-- Biogas Milk Pasteurizer Section (Redesigned) -->
+            <div class="row my-5 align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
                     <div class="card shadow-sm w-100">
-                        <img src="image/innovations/DSC_1103.jpg" class="card-img-top" alt="Biogas Milk Pasteurizer">
-                        <div class="card-body p-2"><p class="card-text small mb-0">Biogas Milk Pasteurizer</p></div>
+                        <img src="image/innovations/DSC_1053.jpg" class="card-img-top gallery-img" alt="Biogas Milk Pasteurizer" style="object-fit:cover;" data-caption="Biogas Milk Pasteurizer" />
+                        <div class="card-body p-2"><p class="card-text small mb-0 text-center">Biogas Milk Pasteurizer</p></div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <h4>Biogas Milk Pasteurizer</h4>
-                    <p>We are currently innovating on a biogas milk pasteurizer to help their farmers preserve milk much more efficiently and affordably.</p>
+                    <p>We are currently innovating on a biogas milk pasteurizer to help farmers preserve milk much more efficiently and affordably.</p>
                 </div>
             </div>
 
@@ -208,138 +246,135 @@
 
     <!-- Footer Section -->
     <footer class="footer footer--bg footer--styleOne pt-70 pb-40">
-      <img
-        src="image/shapes/footerShape2.png"
-        alt="Gainioz Shape"
-        class="footer__shape"
-      />
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col">
-            <div class="footer__logo">
-              <img
-                src="image/logos/logo_2.png"
-                alt="Gainioz Logo"
-                class="footer__logo__image"
-              />
-            </div>
-          </div>
-          <div class="col">
-            <div class="footer__social itSocial">
-              <ul>
-                <li>
-                  <a class="facebook" href="https://www.facebook.com/flexi.biogas" rel="nofollow">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li>
-                  <a class="twitter" href="https://twitter.com/Flexi_Biogas" rel="nofollow">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li>
-                  <a class="instagram" href="https://www.instagram.com/flexibiogas/" rel="nofollow">
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                </li>
-                <li>
-                  <a class="linkedin" href="https://www.linkedin.com/company/biogas-international-limited" rel="nofollow">
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-12">
-            <hr class="footer__line" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="footer__middle pt-65 pb-35">
-            <div class="row justify-content-between">
-              <div class="col-lg-3 col-md-6 mb-30">
-                <div class="footer__widget">
-                  <div class="footer__title">
-                    <h2 class="footer__heading text-uppercase text-white">Quick Links</h2>
-                  </div>
-                  <div class="footer__menu">
-                    <ul>
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="about.html">About</a></li>
-                      <li><a href="service.html">Products</a></li>
-                      <li><a href="faq.html">FAQs</a></li>
-                      <li><a href="contact.html">Contacts</a></li>
-                    </ul>
-                  </div>
+        <img src="image/shapes/footerShape2.png" alt="Gainioz Shape" class="footer__shape" />
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+                    <div class="footer__logo">
+                        <img src="image/logos/logo_2.png" alt="Gainioz Logo" class="footer__logo__image" />
+                    </div>
                 </div>
-              </div>
-              <div class="col-lg-5 mb-30">
-                <form action="https://formsubmit.co/info@biogas.co.ke" method="POST" class="footer__newsletter">
-                  <div class="footer__title">
-                    <h2 class="footer__heading text-uppercase text-white">News Latter</h2>
-                  </div>
-                  <div class="footer__newsletter__formGroup mb-20">
-                    <input
-                      type="text"
-                      class="footer__newsletter__input"
-                      placeholder="Enter mail"
-                    />
-                    <a href="#" class="footer__newsletter__button btn btn--styleOne btn--secondary it-btn" style="display:inline-flex;align-items:center;min-width:140px;justify-content:center;height:48px;">
-                      <span class="btn__text">Subscribe</span>
-                      <span class="it-btn__inner">
-                        <span class="it-btn__blobs">
-                          <span class="it-btn__blob"></span>
-                          <span class="it-btn__blob"></span>
-                          <span class="it-btn__blob"></span>
-                          <span class="it-btn__blob"></span>
-                        </span>
-                      </span>
-                      <svg class="it-btn__animation" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                        <defs>
-                          <filter id="goo">
-                            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
-                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
-                            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
-                          </filter>
-                        </defs>
-                      </svg>
-                    </a>
-                  </div>
-                  <div class="footer__newsletter__formGroup">
-                    <input
-                      id="agree"
-                      type="checkbox"
-                      class="footer__newsletter__check form-check-input"
-                    />
-                    <label class="footer__newsletter__label" for="agree"
-                      >I agree that my submitted data is being collected and
-                      stored.</label
-                    >
-                  </div>
-                </form>
-              </div>
+                <div class="col">
+                    <div class="footer__social itSocial">
+                        <ul>
+                            <li><a class="facebook" href="https://www.facebook.com/flexi.biogas" rel="nofollow"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a class="twitter" href="https://twitter.com/Flexi_Biogas" rel="nofollow"><i class="fab fa-twitter"></i></a></li>
+                            <li><a class="instagram" href="https://www.instagram.com/flexibiogas/" rel="nofollow"><i class="fab fa-instagram"></i></a></li>
+                            <li><a class="linkedin" href="https://www.linkedin.com/company/biogas-international-limited" rel="nofollow"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a class="youtube" href="https://www.youtube.com/@FlexiBiogas" rel="nofollow" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <hr class="footer__line" />
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="footer__bottom">
             <div class="row">
-              <div class="col-12">
-                <hr class="footer__line" />
-              </div>
-              <div class="col mb-20">
-                <div class="footer__copyright pt-20">
-                  <p class="footer__copyright__text mb-0">
-                    <img src="image/workingwavewhitelogo.png" alt="Working Wave Logo" style="max-height:28px;vertical-align:middle;margin-right:10px;display:inline-block;" />
-                    Working Wave © 2025. All Right Reserved.
-                  </p>
+                <div class="footer__middle pt-65 pb-35">
+                    <div class="row justify-content-between">
+                        <div class="col-lg-3 col-md-6 mb-30">
+                            <div class="footer__widget">
+                                <div class="footer__title">
+                                    <h2 class="footer__heading text-uppercase text-white">Quick Links</h2>
+                                </div>
+                                <div class="footer__menu">
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="service.html">Products</a></li>
+                                        <li><a href="projects.html">Projects</a></li>
+                                        <li><a href="faq.html">FAQs</a></li>
+                                        <li><a href="contact.html">Contacts</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 mb-30">
+                            <div class="footer__contact mb-3" style="font-size:1.1em; color:#fff; display:flex; gap:32px; align-items:center; flex-wrap:wrap;">
+                                <div style="display:flex; align-items:center; gap:10px;">
+                                    <i class="fas fa-envelope" style="color:#7fb432; font-size:1.2em;"></i>
+                                    <a href="mailto:info@biogas.co.ke" style="color:#fff; text-decoration:underline;">info@biogas.co.ke</a>
+                                </div>
+                                <div style="display:flex; align-items:center; gap:10px;">
+                                    <i class="fas fa-phone" style="color:#7fb432; font-size:1.2em;"></i>
+                                    <a href="tel:+254722365784" style="color:#fff; text-decoration:underline;">+254 722 365784</a>
+                                </div>
+                            </div>
+                            <form action="https://formsubmit.co/info@biogas.co.ke" method="POST" class="footer__newsletter">
+                                <div class="footer__title">
+                                    <h2 class="footer__heading text-uppercase text-white">News Latter</h2>
+                                </div>
+                                <div class="footer__newsletter__formGroup mb-20">
+                                    <input type="text" class="footer__newsletter__input" placeholder="Enter mail" name="email" required />
+                                    <button type="submit" class="footer__newsletter__button btn btn--styleOne btn--secondary it-btn" style="display:inline-flex;align-items:center;min-width:140px;justify-content:center;height:48px;">
+                                        <span class="btn__text">Subscribe</span>
+                                        <span class="it-btn__inner">
+                                            <span class="it-btn__blobs">
+                                                <span class="it-btn__blob"></span>
+                                                <span class="it-btn__blob"></span>
+                                                <span class="it-btn__blob"></span>
+                                                <span class="it-btn__blob"></span>
+                                            </span>
+                                        </span>
+                                        <svg class="it-btn__animation" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                            <defs>
+                                                <filter id="goo">
+                                                    <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                                                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                                                    <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+                                                </filter>
+                                            </defs>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="footer__newsletter__formGroup">
+                                    <input id="agree" type="checkbox" class="footer__newsletter__check form-check-input" required />
+                                    <label class="footer__newsletter__label" for="agree">I agree that my submitted data is being collected and stored.</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
+            <div class="row">
+                <div class="footer__bottom">
+                    <div class="row">
+                        <div class="col-12">
+                            <hr class="footer__line" />
+                        </div>
+                        <div class="col mb-20">
+                            <div class="footer__copyright pt-20">
+                                <p class="footer__copyright__text mb-0">
+                                    <img src="image/workingwavewhitelogo.png" alt="Working Wave Logo" style="max-height:28px;vertical-align:middle;margin-right:10px;display:inline-block;" />
+                                    Working Wave © 2025. All Right Reserved.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Gallery Structure -->
+    <div id="galleryModal" class="modal fade" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content bg-dark p-0" style="border-radius:18px;">
+          <div class="modal-body p-0">
+            <div class="swiper gallery-swiper">
+              <div class="swiper-wrapper" id="gallery-swiper-wrapper">
+                <!-- Slides will be injected by JS -->
+              </div>
+              <div class="swiper-button-next" style="color:#fff;"></div>
+              <div class="swiper-button-prev" style="color:#fff;"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <div class="gallery-caption text-center text-white py-3" id="gallery-caption"></div>
           </div>
+          <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close" style="z-index:10;"></button>
         </div>
       </div>
-    </footer>
+    </div>
 
     <script src="assets/jquery/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
@@ -348,5 +383,145 @@
     <script src="assets/validator.min.js"></script>
     <script src="assets/animation/wow.min.js"></script>
     <script src="js/app.js"></script>
+    <script>
+        // Initialize gallery modal Swiper
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryImgs = document.querySelectorAll('.gallery-img');
+            const modal = document.getElementById('galleryModal');
+            const swiperWrapper = document.getElementById('gallery-swiper-wrapper');
+            const captionDiv = document.getElementById('gallery-caption');
+            let gallerySwiper;
+
+            // Function to open gallery modal
+            function openGalleryModal(startIndex) {
+                // Clear existing slides
+                swiperWrapper.innerHTML = '';
+                
+                // Add all images as slides
+                galleryImgs.forEach((img, index) => {
+                    const slide = document.createElement('div');
+                    slide.className = 'swiper-slide';
+                    const image = document.createElement('img');
+                    image.src = img.src;
+                    image.alt = img.alt || '';
+                    slide.appendChild(image);
+                    swiperWrapper.appendChild(slide);
+                });
+
+                // Show modal
+                const bsModal = new bootstrap.Modal(modal);
+                bsModal.show();
+
+                // Initialize or reinitialize Swiper
+                if (gallerySwiper) {
+                    gallerySwiper.destroy(true, true);
+                }
+
+                gallerySwiper = new Swiper('.gallery-swiper', {
+                    initialSlide: startIndex,
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true,
+                    keyboard: {
+                        enabled: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    on: {
+                        slideChange: function() {
+                            const realIndex = this.realIndex;
+                            const currentImg = galleryImgs[realIndex];
+                            captionDiv.textContent = currentImg.getAttribute('data-caption') || currentImg.alt || '';
+                        }
+                    }
+                });
+            }
+
+            // Add click handlers to all gallery images
+            galleryImgs.forEach((img, index) => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', () => openGalleryModal(index));
+            });
+
+            // Clean up Swiper and modal content on close
+            modal.addEventListener('hidden.bs.modal', function () {
+                if (gallerySwiper) {
+                    gallerySwiper.destroy(true, true);
+                    gallerySwiper = null;
+                }
+                swiperWrapper.innerHTML = '';
+                captionDiv.textContent = '';
+                // Remove modal-open class and any leftover backdrops
+                document.body.classList.remove('modal-open');
+                document.body.style.overflow = '';
+                document.body.removeAttribute('style');
+                document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+            });
+        });
+    </script>
+    <style>
+        .modal-backdrop.show { background: rgba(30, 30, 40, 0.75) !important; }
+        #galleryModal .modal-content { background: rgba(30, 30, 40, 0.85) !important; box-shadow: 0 8px 48px #0008; border: none; }
+        
+        /* Gallery Modal Swiper Styles */
+        .gallery-swiper {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+        }
+        .gallery-swiper .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            min-height: 60vh;
+        }
+        .gallery-swiper .swiper-slide img {
+            display: block;
+            margin: 0 auto;
+            max-width: 90%;
+            max-height: 70vh;
+            object-fit: contain;
+        }
+        .gallery-swiper .swiper-button-next,
+        .gallery-swiper .swiper-button-prev {
+            color: #fff;
+            background: rgba(0, 0, 0, 0.3);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .gallery-swiper .swiper-button-next:hover,
+        .gallery-swiper .swiper-button-prev:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .gallery-swiper .swiper-button-next:after,
+        .gallery-swiper .swiper-button-prev:after {
+            font-size: 20px;
+        }
+        .gallery-swiper .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            opacity: 0.5;
+        }
+        .gallery-swiper .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #4CAF50;
+        }
+        .gallery-caption {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+    </style>
 </body>
 </html> 
