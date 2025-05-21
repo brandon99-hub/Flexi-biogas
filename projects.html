@@ -95,6 +95,149 @@
         margin: 0 0 10px 0 !important;
       }
     }
+    .project-section-title {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family: 'Barlow', 'Oswald', sans-serif;
+      letter-spacing: 1.5px;
+      font-size: 1.5rem;
+      color: #33839d;
+      margin-bottom: 1.5rem;
+    }
+    /* Responsive grid for project cards */
+    #projectsGrid .project-card { display: none; }
+    @media (min-width: 992px) {
+      #projectsGrid .col-lg-4 { flex: 0 0 auto; width: 33.3333%; }
+    }
+    @media (max-width: 991.98px) and (min-width: 768px) {
+      #projectsGrid .col-md-6 { flex: 0 0 auto; width: 50%; }
+    }
+    @media (max-width: 767.98px) {
+      #projectsGrid .col-12, #projectsGrid .col-md-6, #projectsGrid .col-lg-4 { flex: 0 0 auto; width: 100%; }
+    }
+    /* Redesign filter tabs and search bar */
+    #projectFilterBar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 50px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    #projectFilterBar .btn {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      color: #333;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      border-radius: 50px;
+      padding: 8px 20px;
+      transition: all 0.3s ease;
+    }
+    #projectFilterBar .btn:hover, #projectFilterBar .btn.active {
+      background: #4CAF50;
+      border-color: #4CAF50;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(76, 175, 80, 0.18);
+      transform: translateY(-1px);
+    }
+    /* Fix search icon alignment */
+    .search-bar-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 400px;
+      margin: 0 auto;
+      position: relative;
+    }
+    #projectSearchInput {
+      flex: 1;
+      padding-right: 38px;
+    }
+    .search-icon {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #aaa;
+      pointer-events: none;
+      font-size: 1.2em;
+    }
+    /* Project card hover underline and image zoom */
+    .project-card .keyFeatureBlock__heading__link {
+      display: inline-block;
+      padding-bottom: 2px;
+      background: linear-gradient(to bottom, #4CAF50 0%, #4CAF50 98%);
+      background-size: 0 2px;
+      background-repeat: no-repeat;
+      background-position: left 100%;
+      transition: background-size 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .project-card:hover .keyFeatureBlock__heading__link {
+      background-size: 100% 2px;
+    }
+    .project-card {
+      transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s;
+    }
+    .project-card:hover {
+      transform: scale(1.04);
+      z-index: 2;
+      box-shadow: 0 8px 32px rgba(37, 125, 178, 0.13), 0 2px 8px rgba(60,60,60,0.10);
+    }
+    .project-card .card-img-top {
+      transition: none;
+    }
+    #projectSearchInput:hover, #projectSearchInput:focus {
+      border-color: #4CAF50;
+      box-shadow: 0 2px 8px rgba(76, 175, 80, 0.1);
+      outline: none;
+    }
+    #loadMoreProjectsBtn {
+      background: #4CAF50;
+      border-color: #4CAF50;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+    #loadMoreProjectsBtn:hover, #loadMoreProjectsBtn:focus {
+      background: #388E3C;
+      border-color: #388E3C;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(56, 142, 60, 0.18);
+    }
+    .header.header--styleOne.sticky-on {
+      position: sticky;
+      top: 0;
+      z-index: 1050;
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(60,60,60,0.07);
+      transition: box-shadow 0.2s, background 0.2s;
+      margin-bottom: 0;
+    }
+    @media (max-width: 991px) {
+      .header.header--styleOne.sticky-on {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        right: 0;
+      }
+    }
+    .bg-white.py-4.mb-4.shadow-sm.rounded-4[style] {
+      padding-top: 12px !important;
+      padding-bottom: 12px !important;
+      margin-bottom: 18px !important;
+    }
+    @media (max-width: 991px) {
+      .bg-white.py-4.mb-4.shadow-sm.rounded-4[style] {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -161,9 +304,190 @@
   <!-- Page Breadcumb End -->
 
   <main>
-    <div class="container">
-      <div class="projects-placeholder">
-        <span>Project cards and details coming soon...</span>
+    <div class="container py-5">
+      <!-- Redesigned filter/search bar layout -->
+      <div class="bg-white py-4 mb-4 shadow-sm rounded-4" style="z-index: 10;">
+        <div class="d-flex flex-column align-items-center gap-3">
+          <div class="btn-group flex-wrap" id="projectFilterBar" role="group" aria-label="Project category filters">
+            <button type="button" class="btn active" data-filter="all">All</button>
+            <button type="button" class="btn" data-filter="waste">Waste Management</button>
+            <button type="button" class="btn" data-filter="invasive">Invasive Species</button>
+            <button type="button" class="btn" data-filter="institutions">Schools/Hotels/Farms</button>
+            <button type="button" class="btn" data-filter="domestic">Domestic</button>
+          </div>
+          <div class="search-bar-wrapper">
+            <input type="text" class="form-control" id="projectSearchInput" placeholder="Search projects..." />
+            <i class="fas fa-search search-icon"></i>
+          </div>
+        </div>
+      </div>
+      <!-- Projects Grid -->
+      <div class="row g-4" id="projectsGrid">
+        <!-- Project cards will be filtered/shown here -->
+        <!-- Add data-category attributes to each card for filtering -->
+        <!-- Example: <div class="col-md-6 col-lg-4 project-card" data-category="waste">...</div> -->
+        <!-- Category: Waste Management Projects -->
+        <div class="row mb-4">
+          <div class="col-12">
+            <h3 class="project-section-title">Waste Management Projects</h3>
+          </div>
+          <div class="col-md-6 col-lg-4 project-card" data-category="waste">
+            <div class="card h-100 shadow-sm">
+              <img src="image/what weve done/biogas-in-Kisumu-Ahero-Market-400x250.jpeg" class="card-img-top" alt="Ahero Town's Biogas Plant" />
+              <div class="card-body">
+                <h3 class="keyFeatureBlock__heading"><span class="keyFeatureBlock__heading__link">AHERO TOWN'S BIOGAS PLANT</span></h3>
+                <p class="card-text">
+                  The County Government of Kisumu, in partnership with Flexi Biogas, manages 1 ton of organic waste daily at Ahero Market. This project is a model for circular economy, turning waste that would have ended up in dumpsites into valuable resources. The biogas plant not only reduces environmental pollution but also provides clean energy and organic fertilizer, supporting local farmers and traders. The initiative demonstrates how effective waste management can transform communities and promote sustainability.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 project-card" data-category="waste">
+            <div class="card h-100 shadow-sm">
+              <img src="image/what weve done/EM-treatment-of-waste-water-for-irrigation-400x250.jpeg" class="card-img-top" alt="Biogas Plant at The New Ngong Market" />
+              <div class="card-body">
+                <h3 class="keyFeatureBlock__heading"><span class="keyFeatureBlock__heading__link">BIAGAS PLANT AT THE NEW NGONG MARKET</span></h3>
+                <p class="card-text">
+                  The New Ngong Market, with over 2500 traders, generates more than 1 ton of waste daily. Thanks to the biogas system, all waste is processed, ensuring zero waste ends up at the dumpsite. The project demonstrates effective waste management, environmental conservation, and the production of clean energy for the market community. It serves as a replicable model for other markets and urban centers seeking sustainable solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 project-card" data-category="waste">
+            <div class="card h-100 shadow-sm">
+              <img src="image/what weve done/EM-treatment-of-waste-water-for-irrigation-400x250.jpeg" class="card-img-top" alt="Waste Water Treatment for Re-use in Agriculture" />
+              <div class="card-body">
+                <h3 class="keyFeatureBlock__heading"><span class="keyFeatureBlock__heading__link">WASTE WATER TREATMENT FOR RE-USE IN AGRICULTURE</span></h3>
+                <p class="card-text">
+                  Our grey water treatment project uses Effective Microorganisms (EM) to break down solids and destroy pathogens, making water safe for irrigation. This approach not only prevents environmental pollution but also enhances the quality of water for agricultural use. By recycling wastewater, we support sustainable farming and reduce the demand for fresh water resources, contributing to food security and environmental health.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Category: Dealing with Invasive Species Projects -->
+        <div class="row mb-4">
+          <div class="col-12">
+            <h3 class="project-section-title">Dealing with Invasive Species Projects</h3>
+          </div>
+          <div class="col-md-6 col-lg-4 project-card" data-category="invasive">
+            <div class="card h-100 shadow-sm">
+              <img src="image/what weve done/cactus-to-biogas-20-400x250.jpeg" class="card-img-top" alt="Dol Dol's Green Transformation" />
+              <div class="card-body">
+                <h3 class="keyFeatureBlock__heading"><span class="keyFeatureBlock__heading__link">FROM INVASIVE CACTUS TO CLEAN ENERGY: DOL DOL'S GREEN TRANSFORMATION</span></h3>
+                <p class="card-text">
+                  Earlier this year, we embarked on a transformative journey in Dol Dol, Laikipia County, installing 8 domestic biogas systems to harness the power of invasive opuntia cactus. With the support of our partners, we introduced innovative solutions like cactus choppers, unique beehives, and vertical gardens. This project not only provides clean energy but also promotes organic farming and food security, creating a self-sustaining ecosystem for the community. The initiative is a model for turning environmental challenges into opportunities.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 project-card" data-category="invasive">
+            <div class="card h-100 shadow-sm">
+              <img src="image/what weve done/flexi-biogas-tz-9-400x250.jpeg" class="card-img-top" alt="Kenyan Turns Water Hyacinth Weed into Cooking Fuel" />
+              <div class="card-body">
+                <h3 class="keyFeatureBlock__heading"><span class="keyFeatureBlock__heading__link">KENYAN TURNS WATER HYACINTH WEED INTO COOKING FUEL</span></h3>
+                <p class="card-text">
+                  In Kenya, our T-rex biogas system is used to convert invasive water hyacinth into clean cooking fuel. This innovative project, in partnership with AstraZeneca, addresses two major pollution problems by transforming a harmful weed into a valuable energy resource. The initiative not only provides clean energy but also helps restore aquatic ecosystems and supports local livelihoods, demonstrating the power of biogas technology in environmental management.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Category: Schools, Hotels & Farms -->
+        <div class="row mb-4">
+          <div class="col-12">
+            <h3 class="project-section-title">Schools, Hotels & Farms</h3>
+          </div>
+          <div class="col-md-6 col-lg-4 project-card" data-category="institutions">
+            <div class="card h-100 shadow-sm">
+              <img src="image/what weve done/jet-inn-gardens-2-1-400x250.jpg" class="card-img-top" alt="Friends Theological College Kaimosi" />
+              <div class="card-body">
+                <h3 class="keyFeatureBlock__heading"><span class="keyFeatureBlock__heading__link">FRIENDS THEOLOGICAL COLLEGE KAIMOSI</span></h3>
+                <p class="card-text">
+                  Friends Theological College Kaimosi implemented a large-scale T-rex M100 biogas system to enhance waste management and reduce energy costs. The system processes organic waste from the institution, providing a sustainable source of clean energy for cooking and heating. This project not only supports the college's environmental goals but also serves as a model for other educational institutions seeking to adopt green technologies. The initiative demonstrates the practical benefits of biogas in institutional settings, including cost savings and improved sustainability.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 project-card" data-category="institutions">
+            <div class="card h-100 shadow-sm">
+              <img src="image/what weve done/jet-inn-gardens-2-1-400x250.jpg" class="card-img-top" alt="Jet Inn Gardens Hotel, Emali" />
+              <div class="card-body">
+                <h3 class="keyFeatureBlock__heading"><span class="keyFeatureBlock__heading__link">JET INN GARDENS HOTEL, EMALI</span></h3>
+                <p class="card-text">
+                  At Jet Inn Gardens Hotel in Emali, we installed a large capacity T-rex 50m³ biogas unit capable of producing 40,000–50,000 liters of biogas daily. The system utilizes food and kitchen waste from the hotel, turning it into clean energy and organic fertilizer. This project highlights the effectiveness of biogas technology in the hospitality industry, reducing waste disposal costs and providing a reliable, eco-friendly energy source for daily operations. The hotel's commitment to sustainability is evident in its adoption of innovative waste-to-energy solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 project-card" data-category="institutions">
+            <div class="card h-100 shadow-sm">
+              <img src="image/what weve done/biogas-in-Kisumu-Ahero-Market-400x250.jpeg" class="card-img-top" alt="Empowering Nairobi Dairy Farmers" />
+              <div class="card-body">
+                <h3 class="keyFeatureBlock__heading"><span class="keyFeatureBlock__heading__link">EMPOWERING NAIROBI DAIRY FARMERS</span></h3>
+                <p class="card-text">
+                  In collaboration with the Nairobi County Government, Flexi Biogas installed 5 domestic biogas systems for model dairy farmers. These systems process animal and organic waste, providing clean energy for cooking and heating while producing nutrient-rich fertilizer for crops. The project has improved waste management, reduced reliance on firewood, and enhanced the livelihoods of participating farmers. It stands as a successful example of how biogas can empower agricultural communities and promote sustainable farming practices.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 project-card" data-category="institutions">
+            <div class="card h-100 shadow-sm">
+              <img src="image/what weve done/flexi-biogas-tz-9-400x250.jpeg" class="card-img-top" alt="Flexi Biogas Solutions in Togo" />
+              <div class="card-body">
+                <h3 class="keyFeatureBlock__heading"><span class="keyFeatureBlock__heading__link">FLEXI BIOGAS SOLUTIONS IN TOGO</span></h3>
+                <p class="card-text">
+                  In partnership with the National Agency for Grassroots Development Support (ANADEB), we installed 10 Flexi Biogas units in Togo as a pilot project to replace wood-fuel. The systems serve as a sustainable energy solution for local communities, reducing deforestation and providing clean cooking gas. The project demonstrates the adaptability of Flexi Biogas technology in diverse environments and its potential to drive positive environmental and social change across Africa.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Category: Domestic Systems -->
+        <div class="row mb-4">
+          <div class="col-12">
+            <h3 class="project-section-title">Domestic Systems</h3>
+          </div>
+          <div class="col-md-6 col-lg-4 project-card" data-category="domestic">
+            <div class="card h-100 shadow-sm">
+              <img src="image/what weve done/flexi-biogas-tz-9-400x250.jpeg" class="card-img-top" alt="Flexi Biogas Installation in Tanzania" />
+              <div class="card-body">
+                <h3 class="keyFeatureBlock__heading"><span class="keyFeatureBlock__heading__link">FLEXI BIOGAS INSTALLATION IN TANZANIA</span></h3>
+                <p class="card-text">
+                  In partnership with Flint Global, Biogas International installed 32 domestic Flexi Biogas units across Tanzania. These systems provide clean cooking energy, significantly reduce indoor air pollution, and promote sustainable waste management. The project empowers vulnerable communities, improves health outcomes, and supports a greener future by turning organic waste into valuable resources. Local families now benefit from reliable, eco-friendly energy and organic fertilizer for their farms, fostering both environmental and economic sustainability.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 project-card" data-category="domestic">
+            <div class="card h-100 shadow-sm">
+              <img src="image/what weve done/WhatsApp-Image-2022-10-02-at-2.26.53-AM-1-400x250.jpeg" class="card-img-top" alt="Empowering Communities with Clean Energy (Christmas)" />
+              <div class="card-body">
+                <h3 class="keyFeatureBlock__heading"><span class="keyFeatureBlock__heading__link">EMPOWERING COMMUNITIES WITH CLEAN ENERGY (CHRISTMAS)</span></h3>
+                <p class="card-text">
+                  Our collaboration with Aga Khan Foundation brought clean energy to over 35 households in Kirinyaga and Kwale. Through Flexi Biogas, families now enjoy sustainable, clean energy for cooking and heating. The initiative also provides a sustainable source of organic fertilizer, supporting greener agriculture and improving the quality of life for beneficiaries. The smiles of our recipients are a testament to the positive impact of this project.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 project-card" data-category="domestic">
+            <div class="card h-100 shadow-sm">
+              <img src="image/what weve done/clean-green-ngong-market-400x250.png" class="card-img-top" alt="Women in Uganda Embrace Flexi Biogas" />
+              <div class="card-body">
+                <h3 class="keyFeatureBlock__heading"><span class="keyFeatureBlock__heading__link">WOMEN IN UGANDA EMBRACE FLEXI BIOGAS</span></h3>
+                <p class="card-text">
+                  Flexi Biogas technology is transforming lives for families in Uganda. Previously, women had to cut down trees for firewood, but with the installation of Flexi Biogas units, families now cook with clean energy. This shift reduces deforestation, improves health, and empowers women to focus on other economic activities, fostering sustainable development in their communities. The project highlights the social and environmental benefits of biogas adoption.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Load More Button -->
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <button id="loadMoreProjectsBtn" class="btn btn-outline-success px-5 py-2 rounded-pill" style="font-weight:600; font-size:1.1em;">Load More</button>
+        </div>
       </div>
     </div>
   </main>
@@ -289,5 +613,6 @@
   <script src="assets/nice-select/jquery.nice-select.min.js"></script>
   <script src="assets/wow/wow.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="projects.js"></script>
 </body>
 </html> 
