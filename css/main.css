@@ -2653,14 +2653,6 @@ html {
 }
 
 .hero__figure {
-  -webkit-mask-image: url(../image/shapes/shapes2.svg);
-  mask-image: url(../image/shapes/shapes2.svg);
-  -webkit-mask-size: 100%;
-  mask-size: 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center center;
-  mask-position: center center;
   position: relative;
   margin-right: -70px;
   margin-left: 108px;

@@ -91,32 +91,25 @@
         margin: 24px 12px;
         overflow: hidden;
         transition: box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
       }
       .portfolioBlock:hover {
         box-shadow: 0 8px 32px 0 rgba(51,131,157,0.18);
-      }
-      .portfolioBlock__figure iframe {
-        border-radius: 12px 12px 0 0;
-        width: 100%;
-        height: 340px;
-        display: block;
       }
       .portfolioBlock__content {
         padding: 18px 16px 12px 16px;
         text-align: center;
       }
       @media (max-width: 991px) {
-        .portfolioBlock__figure iframe {
-          height: 220px;
-        }
+        /* .portfolioBlock__figure iframe { height: 220px; } */
       }
       @media (max-width: 767px) {
         .portfolioBlock {
           margin: 18px 0;
         }
-        .portfolioBlock__figure iframe {
-          height: 180px;
-        }
+        /* .portfolioBlock__figure iframe { height: 180px; } */
       }
       @media (max-width: 600px) {
         .donnerAreaContent__bigTitle {
@@ -151,7 +144,7 @@
       .responsive-iframe {
         position: relative;
         width: 100%;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio for mobile */
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
         height: 0;
         overflow: hidden;
         background: #f8f8f8;
@@ -160,8 +153,8 @@
       }
       @media (min-width: 768px) {
         .responsive-iframe {
-          padding-bottom: 85%; /* Slightly taller for desktop */
-          max-width: 600px;
+          padding-bottom: 56.25%; /* Keep 16:9 aspect ratio for desktop */
+          max-width: 800px;
           margin-left: auto;
           margin-right: auto;
         }
@@ -173,6 +166,8 @@
         width: 100%;
         height: 100%;
         border: 0;
+        object-fit: cover;
+        display: block;
       }
       .read-more-link {
         color: #257db2;
@@ -185,10 +180,32 @@
         text-decoration: underline;
       }
       /* Add this to the <style> section or your main CSS */
-      .portfolioBlock__figure .responsive-iframe {
-        max-width: 400px;
+      .portfolioBlock__figure .responsive-iframe,
+      .portfolioBlock__figure .responsive-iframe iframe {
+        max-width: 500px;
         margin-left: auto;
         margin-right: auto;
+      }
+      .portfolioBlock__figure {
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        flex: 1 1 auto;
+        height: 100%;
+      }
+      .responsive-iframe {
+        height: 100% !important;
+        min-height: 300px !important;
+        padding-bottom: 0 !important;
+        flex: 1 1 auto;
+        display: flex;
+      }
+      .responsive-iframe iframe {
+        height: 100% !important;
+        min-height: 300px !important;
+        width: 100%;
+        display: block;
       }
     </style>
   </head>
@@ -552,7 +569,7 @@
                 class="hero__figure wow animate__zoomIn animate__animated"
                 data-wow-duration="1200ms"
                 data-wow-delay="600ms"
-                style="border-radius: 24px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.12); -webkit-mask-image: none; mask-image: none; -webkit-mask-size: initial; mask-size: initial; -webkit-mask-repeat: initial; mask-repeat: initial; -webkit-mask-position: initial; mask-position: initial;"
+                style="border-radius: 24px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.12); max-width: 900px; width: 100%; margin: 0 auto; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;"
               >
                 <video 
                   src="image/video/Kenyan Biogas system interview with Dominic Wanjihia.mp4" 
@@ -561,7 +578,7 @@
                   loop 
                   playsinline 
                   controls
-                  style="width: 100%; height: auto; display: block; border-radius: 24px; background: #000;"
+                  style="width: 100%; height: 100%; aspect-ratio: 16/9; display: block; border-radius: 24px; background: #000; object-fit: cover;"
                 ></video>
               </figure>
             </div>
@@ -1155,47 +1172,6 @@
                           </p>
                         </div>
                       </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span
-                              class="featureBlock__donation__text skill-bar"
-                              data-width="85%"
-                              >85%</span
-                            >
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span
-                                  class="skill-bars__line skill-bar"
-                                  data-width="85%"
-                                ></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title"
-                              >our goal</span
-                            >
-                            <span class="featureBlock__eqn__price"
-                              >$28.0000</span
-                            >
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price"
-                              >$9,9098</span
-                            >
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price"
-                              >$34,000</span
-                            >
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                   <div class="swiper-slide">
@@ -1237,47 +1213,6 @@
                           </p>
                         </div>
                       </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span
-                              class="featureBlock__donation__text skill-bar"
-                              data-width="75%"
-                              >75%</span
-                            >
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span
-                                  class="skill-bars__line skill-bar"
-                                  data-width="75%"
-                                ></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title"
-                              >our goal</span
-                            >
-                            <span class="featureBlock__eqn__price"
-                              >$34.0000</span
-                            >
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price"
-                              >$11.9098</span
-                            >
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price"
-                              >$56,000</span
-                            >
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                   <div class="swiper-slide">
@@ -1316,47 +1251,6 @@
                           </p>
                         </div>
                       </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span
-                              class="featureBlock__donation__text skill-bar"
-                              data-width="80%"
-                              >80%</span
-                            >
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span
-                                  class="skill-bars__line skill-bar"
-                                  data-width="80%"
-                                ></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title"
-                              >our goal</span
-                            >
-                            <span class="featureBlock__eqn__price"
-                              >$13.0000</span
-                            >
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price"
-                              >$22.9098</span
-                            >
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price"
-                              >$38,000</span
-                            >
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                   <!-- Example of new entries to append in the swiper-wrapper for 'What we've been up-to' -->
@@ -1378,32 +1272,6 @@
                           <p class="featureBlock__text">
                             Discover how Biogas International, in partnership with Flint Global, is transforming lives in Tanzania by installing 32 domestic Flexi Biogas units. These systems provide clean cooking energy, reduce indoor air pollution, and promote sustainable waste management, empowering vulnerable communities toward a greener future.
                           </p>
-                        </div>
-                      </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span class="featureBlock__donation__text skill-bar" data-width="60%">60%</span>
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span class="skill-bars__line skill-bar" data-width="60%"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">our goal</span>
-                            <span class="featureBlock__eqn__price">$20,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price">$12,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price">$8,000</span>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -1428,32 +1296,6 @@
                           </p>
                         </div>
                       </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span class="featureBlock__donation__text skill-bar" data-width="70%">70%</span>
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span class="skill-bars__line skill-bar" data-width="70%"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">our goal</span>
-                            <span class="featureBlock__eqn__price">$25,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price">$17,500</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price">$7,500</span>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                   <div class="swiper-slide">
@@ -1474,32 +1316,6 @@
                           <p class="featureBlock__text">
                             Earlier this year, we embarked on a transformative journey in Dol Dol, Laikipia County, installing 8 domestic biogas systems to harness the power of invasive opuntia cactus. Through the support of our partners, we've introduced innovative solutions like cactus choppers, unique beehives, and vertical gardens, creating a self-sustaining ecosystem that promotes clean energy, organic farming, and food security.
                           </p>
-                        </div>
-                      </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span class="featureBlock__donation__text skill-bar" data-width="85%">85%</span>
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span class="skill-bars__line skill-bar" data-width="85%"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">our goal</span>
-                            <span class="featureBlock__eqn__price">$30,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price">$25,500</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price">$4,500</span>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -1524,32 +1340,6 @@
                           </p>
                         </div>
                       </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span class="featureBlock__donation__text skill-bar" data-width="50%">50%</span>
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span class="skill-bars__line skill-bar" data-width="50%"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">our goal</span>
-                            <span class="featureBlock__eqn__price">$15,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price">$7,500</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price">$7,500</span>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                   <div class="swiper-slide">
@@ -1570,32 +1360,6 @@
                           <p class="featureBlock__text">
                             Nairobi County Government in collaboration with Flexi Biogas recently implemented a transformative biogas project that is changing lives in remarkable ways in Nairobi. We proudly installed 5 domestic Flexi Biogas systems for 5 model farmers, and we're excited to share the success story of one extraordinary farmer, Mary Wainaina from Dagoretti, Nairobi.
                           </p>
-                        </div>
-                      </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span class="featureBlock__donation__text skill-bar" data-width="90%">90%</span>
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span class="skill-bars__line skill-bar" data-width="90%"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">our goal</span>
-                            <span class="featureBlock__eqn__price">$40,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price">$36,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price">$4,000</span>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -1620,32 +1384,6 @@
                           </p>
                         </div>
                       </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span class="featureBlock__donation__text skill-bar" data-width="65%">65%</span>
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span class="skill-bars__line skill-bar" data-width="65%"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">our goal</span>
-                            <span class="featureBlock__eqn__price">$22,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price">$14,300</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price">$7,700</span>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                   <div class="swiper-slide">
@@ -1666,32 +1404,6 @@
                           <p class="featureBlock__text">
                             We are thrilled to announce the installation of our brand new T-rex 30 biogas system in the heart of North Kivu, Democratic Republic of Congo! This cutting-edge system has found its home in the Mweson rural health zone, where it will revolutionize energy and agriculture.
                           </p>
-                        </div>
-                      </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span class="featureBlock__donation__text skill-bar" data-width="75%">75%</span>
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span class="skill-bars__line skill-bar" data-width="75%"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">our goal</span>
-                            <span class="featureBlock__eqn__price">$28,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price">$21,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price">$7,000</span>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -1716,32 +1428,6 @@
                           </p>
                         </div>
                       </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span class="featureBlock__donation__text skill-bar" data-width="80%">80%</span>
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span class="skill-bars__line skill-bar" data-width="80%"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">our goal</span>
-                            <span class="featureBlock__eqn__price">$35,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price">$28,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price">$7,000</span>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                   <div class="swiper-slide">
@@ -1762,32 +1448,6 @@
                           <p class="featureBlock__text">
                             In collaboration with the National Agency for Grassroots Development Support (ANADEB) in Togo, we have installed 10 flexi biogas units that will serve as a pilot project with the objective of replacing wood-fuel as a source of energy. The initiative is in effect...
                           </p>
-                        </div>
-                      </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span class="featureBlock__donation__text skill-bar" data-width="55%">55%</span>
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span class="skill-bars__line skill-bar" data-width="55%"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">our goal</span>
-                            <span class="featureBlock__eqn__price">$18,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price">$9,900</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price">$8,100</span>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -1812,32 +1472,6 @@
                           </p>
                         </div>
                       </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span class="featureBlock__donation__text skill-bar" data-width="95%">95%</span>
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span class="skill-bars__line skill-bar" data-width="95%"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">our goal</span>
-                            <span class="featureBlock__eqn__price">$45,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price">$42,750</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price">$2,250</span>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                   <div class="swiper-slide">
@@ -1858,32 +1492,6 @@
                           <p class="featureBlock__text">
                             The County Government of Kisumu is aiming at 0 waste to dumpsite in a #circulareconomy model where all the #waste gets turned to valuables. Here we are managing 1 ton of #organic waste daily at Ahero Market, waste that could have otherwise ended up getting dumped...
                           </p>
-                        </div>
-                      </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span class="featureBlock__donation__text skill-bar" data-width="70%">70%</span>
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span class="skill-bars__line skill-bar" data-width="70%"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">our goal</span>
-                            <span class="featureBlock__eqn__price">$26,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price">$18,200</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price">$7,800</span>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -1908,32 +1516,6 @@
                           </p>
                         </div>
                       </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span class="featureBlock__donation__text skill-bar" data-width="60%">60%</span>
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span class="skill-bars__line skill-bar" data-width="60%"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">our goal</span>
-                            <span class="featureBlock__eqn__price">$21,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price">$12,600</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price">$8,400</span>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                   <div class="swiper-slide">
@@ -1954,32 +1536,6 @@
                           <p class="featureBlock__text">
                             Kenyan Biogas Technology is Transforming Lives for families in Uganda. For years, Caroline and most of her neighbours have had to cut down trees so they could prepare meals for their families. Once the #flexibiogas units were installed, all the families now...
                           </p>
-                        </div>
-                      </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span class="featureBlock__donation__text skill-bar" data-width="70%">70%</span>
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span class="skill-bars__line skill-bar" data-width="70%"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">our goal</span>
-                            <span class="featureBlock__eqn__price">$26,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price">$18,200</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price">$7,800</span>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -2004,32 +1560,6 @@
                           </p>
                         </div>
                       </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span class="featureBlock__donation__text skill-bar" data-width="60%">60%</span>
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span class="skill-bars__line skill-bar" data-width="60%"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">our goal</span>
-                            <span class="featureBlock__eqn__price">$21,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price">$12,600</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price">$8,400</span>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                   <div class="swiper-slide">
@@ -2052,32 +1582,6 @@
                           </p>
                         </div>
                       </div>
-                      <div class="featureBlock__donation">
-                        <div class="featureBlock__donation__progress">
-                          <div class="featureBlock__donation__bar">
-                            <span class="featureBlock__donation__text skill-bar" data-width="60%">60%</span>
-                            <div class="featureBlock__donation__line">
-                              <span class="skill-bars">
-                                <span class="skill-bars__line skill-bar" data-width="60%"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="featureBlock__eqn">
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">our goal</span>
-                            <span class="featureBlock__eqn__price">$21,000</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">Raised</span>
-                            <span class="featureBlock__eqn__price">$12,600</span>
-                          </div>
-                          <div class="featureBlock__eqn__block">
-                            <span class="featureBlock__eqn__title">to go</span>
-                            <span class="featureBlock__eqn__price">$8,400</span>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -2091,28 +1595,6 @@
       <section
         class="review pt-110 pb-100 position-relative overflow-hidden cc-slide-wrap3"
       >
-        <img
-          src="image/shapes/testi-shape1.svg"
-          alt="Gainioz Shape"
-          class="review__shape review__shape--one"
-        />
-        <img
-          src="image/shapes/testi-shape2.svg"
-          alt="Gainioz Shape"
-          class="review__shape review__shape--two"
-        />
-        <div class="mask mask--review position-absolute">
-          <img
-            src="image/man/p11.jpeg"
-            alt="Gainioz Shape"
-            class="mask__thumb"
-          />
-          <img
-            class="mask__overlay"
-            src="image/shapes/testi-shape4.svg"
-            alt="Gainioz Shape"
-          />
-        </div>
         <div class="container">
           <div class="row">
             <div class="col-lg-6 col-md-8 mx-auto">
@@ -2290,7 +1772,7 @@
                         aria-controls="v-pills-home"
                         aria-selected="true"
                       >
-                        Our MIssion
+                        OUR MISSION
                       </button>
                       <button
                         class="mvvTabs__button nav-link"
@@ -2302,7 +1784,7 @@
                         aria-controls="v-pills-profile"
                         aria-selected="false"
                       >
-                        Our Vision
+                        OUR VISION
                       </button>
                       <button
                         class="mvvTabs__button nav-link"
@@ -2314,7 +1796,7 @@
                         aria-controls="v-pills-messages"
                         aria-selected="false"
                       >
-                        Our Values
+                        OUR VALUES
                       </button>
                     </div>
                     <div class="tab-content mb-30" id="v-pills-tabContent">
@@ -2325,44 +1807,9 @@
                         aria-labelledby="v-pills-home-tab"
                       >
                         <div class="mvvTabs__content">
-                          <h2 class="mvvTabs__heading">
-                            Powering Communities. Protecting the Planet.
-                          </h2>
+                          <h2 class="mvvTabs__heading">POWERING COMMUNITIES. PROTECTING THE PLANET.</h2>
                           <p class="mvvTabs__text mb-25">
                             We exist to bridge the gap between waste and energy. At Flexi Biogas, our mission is to make renewable energy a reality for households, institutions, and farms — no matter their size or location. By offering user-friendly biogas systems, we enable people to take control of their energy sources, reduce dependency on unsustainable fuels, and build healthier, more resilient lives. From kitchen leftovers to animal waste, we turn what many see as trash into a valuable, everyday solution.
-                          </p>
-                          <div class="mvvTabs__skills">
-                            <div class="mvvTabs__skills__block mb-20">
-                              <h4 class="mvvTabs__skills__counter">
-                                <span class="mvvTabs__skills__counter">45</span
-                                >%
-                              </h4>
-                              <span class="mvvTabs__skills__title color-title"
-                                >kids need help</span
-                              >
-                            </div>
-                            <div class="mvvTabs__skills__block mb-20">
-                              <h4 class="mvvTabs__skills__counter">
-                                $<span class="mvvTabs__skills__counter"
-                                  >140</span
-                                >k
-                              </h4>
-                              <span class="mvvTabs__skills__title color-title"
-                                >raised Now</span
-                              >
-                            </div>
-                            <div class="mvvTabs__skills__block mb-20">
-                              <h4 class="mvvTabs__skills__counter">
-                                <span class="mvvTabs__skills__counter">189</span
-                                >+
-                              </h4>
-                              <span class="mvvTabs__skills__title color-title"
-                                >Voleenteer</span
-                              >
-                            </div>
-                          </div>
-                          <p class="mvvTabs__text mb-0">
-                            "To provide accessible, sustainable, and innovative biogas solutions that transform organic waste into clean energy, empowering communities and protecting the environment."
                           </p>
                         </div>
                       </div>
@@ -2373,44 +1820,9 @@
                         aria-labelledby="v-pills-profile-tab"
                       >
                         <div class="mvvTabs__content">
-                          <h2 class="mvvTabs__heading">
-                            Clean Energy in Every Home, One System at a Time.
-                          </h2>
+                          <h2 class="mvvTabs__heading">CLEAN ENERGY IN EVERY HOME, ONE SYSTEM AT A TIME.</h2>
                           <p class="mvvTabs__text mb-25">
                             We envision a future where biogas is not the alternative — but the norm. Our goal is to expand the reach of clean energy to every corner of the continent, and beyond. In this future, smoke-filled kitchens are a thing of the past, organic waste is no longer wasted, and families thrive in energy-secure environments. With every system installed, we take a step toward a cleaner, fairer, and more sustainable world.
-                          </p>
-                          <div class="mvvTabs__skills">
-                            <div class="mvvTabs__skills__block mb-20">
-                              <h4 class="mvvTabs__skills__counter">
-                                <span class="mvvTabs__skills__counter">45</span
-                                >%
-                              </h4>
-                              <span class="mvvTabs__skills__title color-title"
-                                >kids need help</span
-                              >
-                            </div>
-                            <div class="mvvTabs__skills__block mb-20">
-                              <h4 class="mvvTabs__skills__counter">
-                                $<span class="mvvTabs__skills__counter"
-                                  >140</span
-                                >k
-                              </h4>
-                              <span class="mvvTabs__skills__title color-title"
-                                >raised Now</span
-                              >
-                            </div>
-                            <div class="mvvTabs__skills__block mb-20">
-                              <h4 class="mvvTabs__skills__counter">
-                                <span class="mvvTabs__skills__counter">189</span
-                                >+
-                              </h4>
-                              <span class="mvvTabs__skills__title color-title"
-                                >Voleenteer</span
-                              >
-                            </div>
-                          </div>
-                          <p class="mvvTabs__text mb-0">
-                            "A world where every home, institution, and farm has access to clean, renewable energy — creating healthier lives, greener environments, and a sustainable future for all."
                           </p>
                         </div>
                       </div>
@@ -2421,9 +1833,7 @@
                         aria-labelledby="v-pills-messages-tab"
                       >
                         <div class="mvvTabs__content">
-                          <h2 class="mvvTabs__heading">
-                            Powering Lives. Protecting Nature.
-                          </h2>
+                          <h2 class="mvvTabs__heading">Our Values</h2>
                           <p class="mvvTabs__text mb-25">
                             <b>Sustainability</b>
                             <p>We are committed to environmental stewardship through solutions that reduce waste, conserve natural resources, and fight climate change.</p>
@@ -2432,14 +1842,10 @@
                             <b>Community Empowerment</b>
                             <p>We work hand-in-hand with households, farmers, and institutions to create ownership and promote long-term, positive change.</p>
                             <b>Integrity</b>
-                            <p>We deliver on our promises with honesty, reliability, and transparency in all our operations.
+                            <p>We deliver on our promises with honesty, reliability, and transparency in all our operations.</p>
                             <b>Accessibility</b>
                             <p>We design products that are affordable, practical, and user-friendly — because clean energy should be for everyone.</p>
-
-                            </p>
                           </p>
-                          
-                        
                         </div>
                       </div>
                     </div>
@@ -2499,9 +1905,8 @@
                 <figure class="portfolioBlock__figure">
                   <div class="responsive-iframe">
                     <iframe
-                      src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fflexi.biogas&tabs=timeline&width=400&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-                      width="400"
-                      height="500"
+                      src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fflexi.biogas&tabs=timeline&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId&width=500"
+                      width="500"
                       style="border: none; overflow: hidden"
                       scrolling="no"
                       frameborder="0"
@@ -2744,11 +2149,11 @@
                 <div class="footer__contact mb-3" style="font-size:1.1em; color:#fff; display:flex; gap:32px; align-items:center; flex-wrap:wrap;">
                   <div style="display:flex; align-items:center; gap:10px;">
                     <i class="fas fa-envelope" style="color:#7fb432; font-size:1.2em;"></i>
-                    <a href="mailto:info@biogas.co.ke" style="color:#fff; text-decoration:underline;">info@biogas.co.ke</a>
+                    <a href="mailto:biogasinternational@yahoo.com" style="color:#fff; text-decoration:underline;">biogasinternational@yahoo.com</a>
                   </div>
                   <div style="display:flex; align-items:center; gap:10px;">
                     <i class="fas fa-phone" style="color:#7fb432; font-size:1.2em;"></i>
-                    <a href="tel:+254722365784" style="color:#fff; text-decoration:underline;">+254 722 365784</a>
+                    <a href="tel:+254722700530" style="color:#fff; text-decoration:underline;">+254722700530</a>
                   </div>
                 </div>
                 <form action="https://formsubmit.co/info@biogas.co.ke" method="POST" class="footer__newsletter">
