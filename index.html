@@ -208,6 +208,83 @@
         display: block;
       }
     </style>
+    <style>
+      /* Service cards (exact styling from Products page) */
+      .serviceCard--modern {
+        position: relative;
+        overflow: hidden;
+        transition: box-shadow 0.35s, border-color 0.35s, background 0.35s;
+        box-shadow: 0 6px 32px rgba(60,60,60,0.13), 0 1.5px 6px rgba(60,60,60,0.08);
+        border: 2px solid transparent;
+        background: #fff;
+        min-height: 480px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        cursor: pointer;
+      }
+      .serviceCard--modern:hover {
+        box-shadow: 0 12px 48px 0 #4CAF50cc, 0 2px 8px rgba(60,60,60,0.10);
+        border-color: #4CAF50;
+        background: linear-gradient(120deg, #f6faf7 60%, #e8f5e9 100%);
+      }
+      /* Gradient Shine Sweep */
+      .serviceCard--modern::before {
+        content: '';
+        position: absolute;
+        top: -60%;
+        left: -60%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(120deg, rgba(255,255,255,0) 60%, rgba(76,175,80,0.18) 80%, rgba(255,255,255,0.25) 100%);
+        transform: skewX(-24deg);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s;
+      }
+      .serviceCard--modern:hover::before {
+        animation: shineSweep 0.9s cubic-bezier(.4,2,.6,1);
+        opacity: 1;
+      }
+      @keyframes shineSweep {
+        0% { transform: translateX(-80%) skewX(-24deg); opacity: 0.2; }
+        40% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { transform: translateX(80%) skewX(-24deg); opacity: 0; }
+      }
+      .serviceCard__img {
+        border-radius: 18px 18px 0 0;
+        transition: filter 0.4s, box-shadow 0.4s;
+      }
+      .serviceCard--modern:hover .serviceCard__img {
+        filter: brightness(1.08) saturate(1.18);
+        box-shadow: 0 0 0 4px #4CAF5044;
+      }
+      .serviceCard__content {
+        flex: 1 1 auto;
+        transition: transform 0.35s cubic-bezier(.4,2,.6,1);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      /* Button Slide-In */
+      .service-readmore-btn {
+        transform: translateY(120%);
+        opacity: 0;
+        transition: transform 0.45s cubic-bezier(.4,2,.6,1), opacity 0.35s;
+      }
+      .serviceCard--modern:hover .service-readmore-btn {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: 0.18s;
+      }
+      @media (max-width: 991px) {
+        .serviceCard--modern { min-height: 420px; }
+      }
+      @media (max-width: 767px) {
+        .serviceCard--modern { min-height: 340px; }
+      }
+    </style>
   </head>
 
   <body>
@@ -480,6 +557,41 @@
       </div>
       <!-- Mobile Menu Navbar End -->
       <!-- Header Style One End -->
+      <!-- Domestic & T-REX Highlight (duplicated cards, structure-only) -->
+      <section class="home-feature-intro pt-60 pb-20">
+        <div class="container">
+          <div class="row g-4 align-items-stretch">
+            <div class="col-lg-6 col-md-6">
+              <div class="serviceCard serviceCard--modern shadow-lg rounded-4 position-relative overflow-hidden h-100">
+                <img src="image/flexi-systems/overview/Flexi-Domestic.jpg" alt="Domestic Biogas" class="serviceCard__img w-100" style="height: 260px; object-fit: cover; border-radius: 18px 18px 0 0; transition: transform 0.3s;">
+                <div class="serviceCard__content p-4 bg-white rounded-bottom-4">
+                  <h3 class="keyFeatureBlock__heading"><a class="keyFeatureBlock__heading__link" href="flexi-technology.html">Domestic Biogas</a></h3>
+                  <p class="card-text">No‑construction, plug‑and‑play biogas for homes and small businesses. Runs on any biodegradable waste to deliver clean cooking gas and organic fertilizer in days.</p>
+                  <a href="flexi-technology.html" class="btn btn--styleOne btn--secondary w-100 it-btn service-readmore-btn">
+                    <span class="btn__text">Read More</span>
+                    <span class="it-btn__inner"><span class="it-btn__blobs"><span class="it-btn__blob"></span><span class="it-btn__blob"></span><span class="it-btn__blob"></span><span class="it-btn__blob"></span></span></span>
+                    <svg class="it-btn__animation" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><filter id="goo"><feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur><feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix><feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend></filter></defs></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="serviceCard serviceCard--modern shadow-lg rounded-4 position-relative overflow-hidden h-100">
+                <img src="image/trex-technology/overview/18.jpg" alt="Large Capacity Biogas" class="serviceCard__img w-100" style="height: 260px; object-fit: cover; border-radius: 18px 18px 0 0; transition: transform 0.3s;">
+                <div class="serviceCard__content p-4 bg-white rounded-bottom-4">
+                  <h3 class="keyFeatureBlock__heading"><a class="keyFeatureBlock__heading__link" href="trex-technology.html">Large Capacity Biogas</a></h3>
+                  <p class="card-text">Modular large‑capacity biogas for farms and institutions. True cross‑flow fermentation, quick installation, high output, and scalable to any size.</p>
+                  <a href="trex-technology.html" class="btn btn--styleOne btn--secondary w-100 it-btn service-readmore-btn">
+                    <span class="btn__text">Read More</span>
+                    <span class="it-btn__inner"><span class="it-btn__blobs"><span class="it-btn__blob"></span><span class="it-btn__blob"></span><span class="it-btn__blob"></span><span class="it-btn__blob"></span></span></span>
+                    <svg class="it-btn__animation" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><filter id="goo"><feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur><feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix><feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend></filter></defs></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- Hero/Welcome Section Start -->
       <section class="hero hero--style1 overflow-hidden">
         <img src="image/shapes/shapes1.svg" alt="Gainioz" class="hero__shape" />
@@ -586,31 +698,37 @@
         </div>
       </section>
       <!-- Hero/Welcome Section End -->
-      <!-- About && Features && Donner Section -->
+      <!-- About && Features && Donner Section (hidden by request; nested HTML comments inside prevent full block-commenting safely) -->
       <section class="about">
         <img
           class="about__shape about__shape--one"
           src="image/shapes/love-shape3.svg"
           alt="Gainioz Shape"
+          hidden
         />
         <img
           class="about__shape about__shape--two"
           src="image/shapes/love-shape4.svg"
           alt="Gainioz Shape"
+          hidden
         />
         <img
           class="about__shape about__shape--three"
           src="image/shapes/love-shape5.svg"
           alt="Gainioz Shape"
+          hidden
         />
-        <div class="aboutArea aboutArea--padding position-relative">
+        <div class="aboutArea aboutArea--padding position-relative" hidden>
           <img
             class="mask-aboutBack wow animate__fadeInLeft animate__animated"
             data-wow-duration="1200ms"
             data-wow-delay="300ms"
             src="image/shapes/mask-shape3.svg"
             alt="Gainioz Shape"
+            hidden
           />
+          <!-- First and second 3-card grids (hidden by request) -->
+          <!--
           <div class="container">
             <div class="row align-items-center">
               <div class="col-lg-6 mb-30">
@@ -697,6 +815,8 @@
           <div class="featureArea__map">
             <img src="image/shapes/map.png" alt="Gainioz Map" />
           </div>
+          <!-- HOME FEATURE CARDS (commented out by request) -->
+          <!-- First 3-card row (CopyCat, Chicken Brooding, Drying Fruits) commented out by request
           <div class="container">
             <div class="row">
               <div class="col-12">
@@ -706,54 +826,6 @@
                       class="col-lg-4 wow animate__fadeInLeft"
                       data-wow-duration="1200ms"
                       data-wow-delay="200ms"
-                    >
-                      <div class="keyFeatureBlock mb-30">
-                        <div class="keyFeatureBlock__left">
-                          <span class="keyFeatureBlock__icon">
-                            <img src="image/icons/feature-icon-1.svg" alt="Large Capacity Systems" />
-                          </span>
-                        </div>
-                        <div class="keyFeatureBlock__content">
-                          <h3 class="keyFeatureBlock__heading">
-                            <a class="keyFeatureBlock__heading__link" href="trex-technology.html">
-                              T-REX TECHNOLOGY SYSTEMS
-                            </a>
-                          </h3>
-                          <p class="keyFeatureBlock__text">
-                            T-Rex Technology Systems are advanced, modular biogas plants designed for high-capacity energy needs in farms, schools, hotels, and institutions. These systems use a unique cross-flow fermentation process, ensuring complete digestion of all biodegradable materials. Prefabricated for quick installation and scalable to any size, T-Rex delivers maximum gas output and a constant supply of rich organic fertilizer.
-                          </p>
-                          <a href="trex-technology.html" class="read-more-link">Read More</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="col-lg-4 wow animate__fadeInLeft"
-                      data-wow-duration="1200ms"
-                      data-wow-delay="300ms"
-                    >
-                      <div class="keyFeatureBlock mb-30">
-                        <div class="keyFeatureBlock__left">
-                          <span class="keyFeatureBlock__icon">
-                            <img src="image/icons/feature-icon-2.svg" alt="Flexi Domestic Systems" />
-                          </span>
-                        </div>
-                        <div class="keyFeatureBlock__content">
-                          <h3 class="keyFeatureBlock__heading">
-                            <a class="keyFeatureBlock__heading__link" href="flexi-technology.html">
-                              FLEXI-BIOGAS-TECHNOLOGY
-                            </a>
-                          </h3>
-                          <p class="keyFeatureBlock__text">
-                            Flexi Biogas Technology offers a no-construction, plug-and-play biogas solution for homes and small businesses. Prefabricated and installed in as little as three hours, these systems run on any biodegradable material and produce clean cooking gas and organic fertilizer. The technology is user-friendly, quick to start, and adaptable to a wide range of environments.
-                          </p>
-                          <a href="flexi-technology.html" class="read-more-link">Read More</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="col-lg-4 wow animate__fadeInLeft"
-                      data-wow-duration="1200ms"
-                      data-wow-delay="400ms"
                     >
                       <div class="keyFeatureBlock mb-30">
                         <div class="keyFeatureBlock__left">
@@ -779,7 +851,11 @@
               </div>
             </div>
           </div>
+          -->
+          -->
 
+          <!-- Second 3-card row (CSR, Value Addition, New Innovations) commented out by request-->
+          <!--
           <div class="container">
             <div class="row">
               <div class="col-12">
@@ -898,7 +974,9 @@
               </div>
             </div>
           </div>
+          -->
 
+          <!--
           <div class="container">
             <div class="row">
               <div class="col-12">
@@ -1011,6 +1089,7 @@
               </div>
             </div>
           </div>
+          -->
           <div class="donnerArea pt-70 pb-95">
             <div class="container">
               <div class="row">
@@ -1590,274 +1669,7 @@
           </div>
         </div>
       </section>
-      <!-- About && Features && Doner End -->
-      <!-- Testimonials -->
-      <section
-        class="review pt-110 pb-100 position-relative overflow-hidden cc-slide-wrap3"
-      >
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-md-8 mx-auto">
-              <!-- Section Heading/Title -->
-              <div class="sectionTitle text-center mb-65">
-                <span class="sectionTitle__small justify-content-center">
-                  <i class="fa-solid fa-tree btn__icon"></i>
-                  Testimonial
-                </span>
-                <h2 class="sectionTitle__big">
-                  People Say about our foundation
-                </h2>
-              </div>
-              <!-- Section Heading/Title End -->
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="review__box mb-30">
-                <div class="sliderNav sliderNav--style2">
-                  <span
-                    class="sliderNav__btn btn-prev"
-                    tabindex="0"
-                    role="button"
-                  >
-                    <svg
-                      width="15"
-                      height="10"
-                      viewBox="0 0 15 10"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5.75 9.40625L6.375 8.78125C6.5 8.625 6.5 8.40625 6.34375 8.25L3.84375 5.8125H14.625C14.8125 5.8125 15 5.65625 15 5.4375V4.5625C15 4.375 14.8125 4.1875 14.625 4.1875H3.84375L6.34375 1.78125C6.5 1.625 6.5 1.40625 6.375 1.25L5.75 0.625C5.59375 0.5 5.375 0.5 5.21875 0.625L1.09375 4.75C0.96875 4.90625 0.96875 5.125 1.09375 5.28125L5.21875 9.40625C5.375 9.53125 5.59375 9.53125 5.75 9.40625Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </span>
-                  <span
-                    class="sliderNav__btn btn-next"
-                    tabindex="0"
-                    role="button"
-                  >
-                    <svg
-                      width="14"
-                      height="10"
-                      viewBox="0 0 14 10"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M9.21875 0.625L8.59375 1.25C8.46875 1.40625 8.46875 1.625 8.625 1.78125L11.125 4.1875H0.375C0.15625 4.1875 0 4.375 0 4.5625V5.4375C0 5.65625 0.15625 5.8125 0.375 5.8125H11.125L8.625 8.25C8.46875 8.40625 8.46875 8.625 8.59375 8.78125L9.21875 9.40625C9.375 9.53125 9.59375 9.53125 9.75 9.40625L13.875 5.28125C14 5.125 14 4.90625 13.875 4.75L9.75 0.625C9.59375 0.5 9.375 0.5 9.21875 0.625Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </span>
-                </div>
-                <ul class="review__box__images">
-                  <li>
-                    <img src="image/auth/paula.jpg" alt="Paula Kahumbu" style="width:60px;height:60px;border-radius:50%;opacity:0.6;object-fit:cover;" />
-                  </li>
-                  <li>
-                    <img src="image/auth/chris.jpg" alt="Chris Nzuve" style="width:60px;height:60px;border-radius:50%;opacity:0.6;object-fit:cover;" />
-                  </li>
-                  <li>
-                    <img src="image/auth/andrew.jpg" alt="Andrew Amadi" style="width:60px;height:60px;border-radius:50%;opacity:0.6;object-fit:cover;" />
-                  </li>
-                  <li>
-                    <img src="image/auth/paula.jpg" alt="Paula Kahumbu" style="width:60px;height:60px;border-radius:50%;opacity:0.6;object-fit:cover;" />
-                  </li>
-                </ul>
-                <div class="reviewblock text-center">
-                  <span class="reviewblock__quoteIcon__two">
-                    <svg
-                      width="300"
-                      height="263"
-                      viewBox="0 0 300 263"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M271.875 131.5H225V94C225 73.4922 241.406 56.5 262.5 56.5H267.188C274.805 56.5 281.25 50.6406 281.25 42.4375V14.3125C281.25 6.69531 274.805 0.25 267.188 0.25H262.5C210.352 0.25 168.75 42.4375 168.75 94V234.625C168.75 250.445 181.055 262.75 196.875 262.75H271.875C287.109 262.75 300 250.445 300 234.625V159.625C300 144.391 287.109 131.5 271.875 131.5ZM103.125 131.5H56.25V94C56.25 73.4922 72.6562 56.5 93.75 56.5H98.4375C106.055 56.5 112.5 50.6406 112.5 42.4375V14.3125C112.5 6.69531 106.055 0.25 98.4375 0.25H93.75C41.6016 0.25 0 42.4375 0 94V234.625C0 250.445 12.3047 262.75 28.125 262.75H103.125C118.359 262.75 131.25 250.445 131.25 234.625V159.625C131.25 144.391 118.359 131.5 103.125 131.5Z"
-                        fill="#F8F7F7"
-                      />
-                    </svg>
-                  </span>
-                  <div class="testi-slider-active1 swiper">
-                    <div class="swiper-wrapper">
-                      <!-- Andrew Amadi -->
-                      <div class="swiper-slide">
-                        <div class="reviewblock__content">
-                          <img class="reviewblock__author__image" src="image/auth/andrew.jpg" alt="Andrew Amadi" style="width: 90px; height: 90px; object-fit: cover; border-radius: 50%; border: 4px solid #fff; margin-bottom: 33px;" />
-                          <span class="reviewblock__quoteIcon__one">
-                            <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M21.75 10.9951H18V7.99512C18 6.35449 19.3125 4.99512 21 4.99512H21.375C21.9844 4.99512 22.5 4.52637 22.5 3.87012V1.62012C22.5 1.01074 21.9844 0.495117 21.375 0.495117H21C16.8281 0.495117 13.5 3.87012 13.5 7.99512V19.2451C13.5 20.5107 14.4844 21.4951 15.75 21.4951H21.75C22.9688 21.4951 24 20.5107 24 19.2451V13.2451C24 12.0264 22.9688 10.9951 21.75 10.9951ZM8.25 10.9951H4.5V7.99512C4.5 6.35449 5.8125 4.99512 7.5 4.99512H7.875C8.48438 4.99512 9 4.52637 9 3.87012V1.62012C9 1.01074 8.48438 0.495117 7.875 0.495117H7.5C3.32812 0.495117 0 3.87012 0 7.99512V19.2451C0 20.5107 0.984375 21.4951 2.25 21.4951H8.25C9.46875 21.4951 10.5 20.5107 10.5 19.2451V13.2451C10.5 12.0264 9.46875 10.9951 8.25 10.9951Z" fill="#6b9949"/>
-                            </svg>
-                          </span>
-                          <h4 class="reviewblock__qotes">
-                            Thanks to the digester, women no longer have to collect firewood, but can use the biogas from the digester for cooking. Plus the waste product from the system is an excellent fertiliser.
-                          </h4>
-                          <span class="reviewblock__author__name">Andrew Amadi</span>
-                          <span class="reviewblock__authorDes">Business Developing Consultant, Biogas International Limited</span>
-                        </div>
-                      </div>
-                      <!-- Chris Nzuve -->
-                      <div class="swiper-slide">
-                        <div class="reviewblock__content">
-                          <img class="reviewblock__author__image" src="image/auth/chris.jpg" alt="Chris Nzuve" style="width: 90px; height: 90px; object-fit: cover; border-radius: 50%; border: 4px solid #fff; margin-bottom: 33px;" />
-                          <span class="reviewblock__quoteIcon__one">
-                            <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M21.75 10.9951H18V7.99512C18 6.35449 19.3125 4.99512 21 4.99512H21.375C21.9844 4.99512 22.5 4.52637 22.5 3.87012V1.62012C22.5 1.01074 21.9844 0.495117 21.375 0.495117H21C16.8281 0.495117 13.5 3.87012 13.5 7.99512V19.2451C13.5 20.5107 14.4844 21.4951 15.75 21.4951H21.75C22.9688 21.4951 24 20.5107 24 19.2451V13.2451C24 12.0264 22.9688 10.9951 21.75 10.9951ZM8.25 10.9951H4.5V7.99512C4.5 6.35449 5.8125 4.99512 7.5 4.99512H7.875C8.48438 4.99512 9 4.52637 9 3.87012V1.62012C9 1.01074 8.48438 0.495117 7.875 0.495117H7.5C3.32812 0.495117 0 3.87012 0 7.99512V19.2451C0 20.5107 0.984375 21.4951 2.25 21.4951H8.25C9.46875 21.4951 10.5 20.5107 10.5 19.2451V13.2451C10.5 12.0264 9.46875 10.9951 8.25 10.9951Z" fill="#6b9949"/>
-                            </svg>
-                          </span>
-                          <h4 class="reviewblock__qotes">
-                            This is one of a kind biogas system; easy to install and extremely efficient. I love it!
-                          </h4>
-                          <span class="reviewblock__author__name">Chris Nzuve</span>
-                          <span class="reviewblock__authorDes">CEO/ Director, Bigartta Group</span>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="reviewblock__content">
-                          <img
-                            class="reviewblock__author__image"
-                            src="image/auth/paula.jpg"
-                            alt="Gainioz Reviewer"
-                          />
-                          <span class="reviewblock__quoteIcon__one">
-                            <svg
-                              width="24"
-                              height="22"
-                              viewBox="0 0 24 22"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M21.75 10.9951H18V7.99512C18 6.35449 19.3125 4.99512 21 4.99512H21.375C21.9844 4.99512 22.5 4.52637 22.5 3.87012V1.62012C22.5 1.01074 21.9844 0.495117 21.375 0.495117H21C16.8281 0.495117 13.5 3.87012 13.5 7.99512V19.2451C13.5 20.5107 14.4844 21.4951 15.75 21.4951H21.75C22.9688 21.4951 24 20.5107 24 19.2451V13.2451C24 12.0264 22.9688 10.9951 21.75 10.9951ZM8.25 10.9951H4.5V7.99512C4.5 6.35449 5.8125 4.99512 7.5 4.99512H7.875C8.48438 4.99512 9 4.52637 9 3.87012V1.62012C9 1.01074 8.48438 0.495117 7.875 0.495117H7.5C3.32812 0.495117 0 3.87012 0 7.99512V19.2451C0 20.5107 0.984375 21.4951 2.25 21.4951H8.25C9.46875 21.4951 10.5 20.5107 10.5 19.2451V13.2451C10.5 12.0264 9.46875 10.9951 8.25 10.9951Z"
-                                fill="#6b9949"
-                              />
-                            </svg>
-                          </span>
-                          <h4 class="reviewblock__qotes">
-                            Flexi biogas is not just about an amazing invention that produces tons of gas but some clever uses of the gas and the bio-fertiliser which nutrifies the plants and improves gardening.
-                          </h4>
-                          <span class="reviewblock__author__name"
-                            >Paula Kahumbu</span
-                          >
-                          <h4 class="reviewblock__qotes">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mvv pt-100">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <div class="mvvTabs">
-                  <div class="mvvTabs__wrapper d-flex align-items-start">
-                    <div
-                      class="nav nav-pills mb-30"
-                      id="v-pills-tab"
-                      role="tablist"
-                      aria-orientation="vertical"
-                    >
-                      <button
-                        class="mvvTabs__button nav-link active"
-                        id="v-pills-home-tab"
-                        data-bs-toggle="pill"
-                        data-bs-target="#v-pills-home"
-                        type="button"
-                        role="tab"
-                        aria-controls="v-pills-home"
-                        aria-selected="true"
-                      >
-                        OUR MISSION
-                      </button>
-                      <button
-                        class="mvvTabs__button nav-link"
-                        id="v-pills-profile-tab"
-                        data-bs-toggle="pill"
-                        data-bs-target="#v-pills-profile"
-                        type="button"
-                        role="tab"
-                        aria-controls="v-pills-profile"
-                        aria-selected="false"
-                      >
-                        OUR VISION
-                      </button>
-                      <button
-                        class="mvvTabs__button nav-link"
-                        id="v-pills-messages-tab"
-                        data-bs-toggle="pill"
-                        data-bs-target="#v-pills-messages"
-                        type="button"
-                        role="tab"
-                        aria-controls="v-pills-messages"
-                        aria-selected="false"
-                      >
-                        OUR VALUES
-                      </button>
-                    </div>
-                    <div class="tab-content mb-30" id="v-pills-tabContent">
-                      <div
-                        class="tab-pane fade show active"
-                        id="v-pills-home"
-                        role="tabpanel"
-                        aria-labelledby="v-pills-home-tab"
-                      >
-                        <div class="mvvTabs__content">
-                          <h2 class="mvvTabs__heading">POWERING COMMUNITIES. PROTECTING THE PLANET.</h2>
-                          <p class="mvvTabs__text mb-25">
-                            We exist to bridge the gap between waste and energy. At Flexi Biogas, our mission is to make renewable energy a reality for households, institutions, and farms — no matter their size or location. By offering user-friendly biogas systems, we enable people to take control of their energy sources, reduce dependency on unsustainable fuels, and build healthier, more resilient lives. From kitchen leftovers to animal waste, we turn what many see as trash into a valuable, everyday solution.
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        class="tab-pane fade"
-                        id="v-pills-profile"
-                        role="tabpanel"
-                        aria-labelledby="v-pills-profile-tab"
-                      >
-                        <div class="mvvTabs__content">
-                          <h2 class="mvvTabs__heading">CLEAN ENERGY IN EVERY HOME, ONE SYSTEM AT A TIME.</h2>
-                          <p class="mvvTabs__text mb-25">
-                            We envision a future where biogas is not the alternative — but the norm. Our goal is to expand the reach of clean energy to every corner of the continent, and beyond. In this future, smoke-filled kitchens are a thing of the past, organic waste is no longer wasted, and families thrive in energy-secure environments. With every system installed, we take a step toward a cleaner, fairer, and more sustainable world.
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        class="tab-pane fade"
-                        id="v-pills-messages"
-                        role="tabpanel"
-                        aria-labelledby="v-pills-messages-tab"
-                      >
-                        <div class="mvvTabs__content">
-                          <h2 class="mvvTabs__heading">Our Values</h2>
-                          <p class="mvvTabs__text mb-25">
-                            <b>Sustainability</b>
-                            <p>We are committed to environmental stewardship through solutions that reduce waste, conserve natural resources, and fight climate change.</p>
-                            <b>Innovation</b>
-                            <p>We continuously improve our technologies to meet the evolving needs of communities and maximize the impact of biogas.</p>
-                            <b>Community Empowerment</b>
-                            <p>We work hand-in-hand with households, farmers, and institutions to create ownership and promote long-term, positive change.</p>
-                            <b>Integrity</b>
-                            <p>We deliver on our promises with honesty, reliability, and transparency in all our operations.</p>
-                            <b>Accessibility</b>
-                            <p>We design products that are affordable, practical, and user-friendly — because clean energy should be for everyone.</p>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Testimonials End -->
-      <!-- Portfolio -->
+       <!-- Social & Videos (below Blog) -->
       <section class="portfolio">
         <div class="container-fluid p-0 overflow-hidden">
           <div class="row g-0">
@@ -1875,27 +1687,16 @@
                       allowfullscreen
                     ></iframe>
                   </div>
-                  <!-- <img
-                    class="portfolioBlock__figure__thumb"
-                    src="image/portfolio/portfolio-thumb1.jpg"
-                    alt="Gainioz Portfolio"
-                  />
-                  <div class="portfolioBlock__figure__shape">
-                    <img src="image/shapes/portfolio-shape.png" alt="Gainioz" />
-                  </div> -->
                 </figure>
                 <div class="portfolioBlock__content">
                   <h2 class="portfolioBlock__heading text-uppercase">
-                    <a
-                      href="https://codercredit.com/tf/gainioz/story-details.html"
-                      >Homeless People In africa</a
-                    >
+                     <a href="#">YouTube Channel</a>
                   </h2>
                   <a
                     class="portfolioBlock__hashLink"
-                    href="https://instagram.com"
+                     href="https://www.youtube.com/@FlexiBiogas"
                     target="_blank"
-                    ><span># Build Home</span></a
+                     ><span># videos</span></a
                   >
                 </div>
               </div>
@@ -1914,27 +1715,16 @@
                       allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                     ></iframe>
                   </div>
-                  <!-- <img
-                    class="portfolioBlock__figure__thumb"
-                    src="image/portfolio/portfolio-thumb2.jpg.png"
-                    alt="Gainioz Portfolio"
-                  />
-                  <div class="portfolioBlock__figure__shape">
-                    <img src="image/shapes/portfolio-shape.png" alt="Gainioz" />
-                  </div> -->
                 </figure>
                 <div class="portfolioBlock__content">
                   <h2 class="portfolioBlock__heading text-uppercase">
-                    <a
-                      href="https://codercredit.com/tf/gainioz/story-details.html"
-                      >Our Facebook feeds</a
-                    >
+                     <a href="#">Our Facebook Feeds</a>
                   </h2>
                   <a
                     class="portfolioBlock__hashLink"
-                    href="https://instagram.com"
+                     href="https://www.facebook.com/flexi.biogas"
                     target="_blank"
-                    ><span># Build Home</span></a
+                     ><span># updates</span></a
                   >
                 </div>
               </div>
@@ -1948,35 +1738,22 @@
                       allowfullscreen
                     ></iframe>
                   </div>
-                  <!-- <img
-                    class="portfolioBlock__figure__thumb"
-                    src="image/portfolio/portfolio-thumb3.jpg"
-                    alt="Gainioz Portfolio"
-                  /> -->
-                  <!-- <div class="portfolioBlock__figure__shape">
-                    <img src="image/shapes/portfolio-shape.png" alt="Gainioz" />
-                  </div> -->
                 </figure>
                 <div class="portfolioBlock__content">
                   <h2 class="portfolioBlock__heading text-uppercase">
-                    <a
-                      href="https://codercredit.com/tf/gainioz/story-details.html"
-                      >Installation Map</a
-                    >
+                    <a href="#">Installation Map</a>
                   </h2>
-                  <a
-                    class="portfolioBlock__hashLink"
-                    href="https://instagram.com"
-                    target="_blank"
-                    ><span># Grow Grain</span></a
-                  >
+                  <a class="portfolioBlock__hashLink" href="contact.html"><span># locations</span></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
+          
       </section>
       <!-- Portfolio End -->
+       <!-- About && Features && Doner End -->
+       <!-- Testimonials moved below map -->
       <!-- Sponsors -->
       <section class="sponsors pb-60">
         <div class="container">
@@ -2070,6 +1847,78 @@
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.753424583174!2d36.686197773260886!3d-1.3238057986636371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1d0b08fd5573%3A0x84392a792830c1b8!2sBiogas%20International%20limited!5e0!3m2!1sen!2ske!4v1747768876661!5m2!1sen!2ske" width="100%" height="400" style="border:0; display:block; width:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </section>
+      <!-- Testimonials (commented out by request)
+      <section class="review pt-110 pb-100 position-relative overflow-hidden cc-slide-wrap3">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-8 mx-auto">
+              <div class="sectionTitle text-center mb-65">
+                <span class="sectionTitle__small justify-content-center">
+                  <i class="fa-solid fa-tree btn__icon"></i>
+                  Testimonial
+                </span>
+                <h2 class="sectionTitle__big">People Say about our foundation</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="review__box mb-30">
+                <div class="sliderNav sliderNav--style2">
+                  <span class="sliderNav__btn btn-prev" tabindex="0" role="button">
+                    <svg width="15" height="10" viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.75 9.40625L6.375 8.78125C6.5 8.625 6.5 8.40625 6.34375 8.25L3.84375 5.8125H14.625C14.8125 5.8125 15 5.65625 15 5.4375V4.5625C15 4.375 14.8125 4.1875 14.625 4.1875H3.84375L6.34375 1.78125C6.5 1.625 6.5 1.40625 6.375 1.25L5.75 0.625C5.59375 0.5 5.375 0.5 5.21875 0.625L1.09375 4.75C0.96875 4.90625 0.96875 5.125 1.09375 5.28125L5.21875 9.40625C5.375 9.53125 5.59375 9.53125 5.75 9.40625Z" fill="white"/></svg>
+                  </span>
+                  <span class="sliderNav__btn btn-next" tabindex="0" role="button">
+                    <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.21875 0.625L8.59375 1.25C8.46875 1.40625 8.46875 1.625 8.625 1.78125L11.125 4.1875H0.375C0.15625 4.1875 0 4.375 0 4.5625V5.4375C0 5.65625 0.15625 5.8125 0.375 5.8125H11.125L8.625 8.25C8.46875 8.40625 8.46875 8.625 8.59375 8.78125L9.21875 9.40625C9.375 9.53125 9.59375 9.53125 9.75 9.40625L13.875 5.28125C14 5.125 14 4.90625 13.875 4.75L9.75 0.625C9.59375 0.5 9.375 0.5 9.21875 0.625Z" fill="white"/></svg>
+                  </span>
+                </div>
+                <ul class="review__box__images">
+                  <li><img src="image/auth/paula.jpg" alt="Paula Kahumbu" style="width:60px;height:60px;border-radius:50%;opacity:0.6;object-fit:cover;" /></li>
+                  <li><img src="image/auth/chris.jpg" alt="Chris Nzuve" style="width:60px;height:60px;border-radius:50%;opacity:0.6;object-fit:cover;" /></li>
+                  <li><img src="image/auth/andrew.jpg" alt="Andrew Amadi" style="width:60px;height:60px;border-radius:50%;opacity:0.6;object-fit:cover;" /></li>
+                  <li><img src="image/auth/paula.jpg" alt="Paula Kahumbu" style="width:60px;height:60px;border-radius:50%;opacity:0.6;object-fit:cover;" /></li>
+                </ul>
+                <div class="reviewblock text-center">
+                  <span class="reviewblock__quoteIcon__two">
+                    <svg width="300" height="263" viewBox="0 0 300 263" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M271.875 131.5H225V94C225 73.4922 241.406 56.5 262.5 56.5H267.188C274.805 56.5 281.25 50.6406 281.25 42.4375V14.3125C281.25 6.69531 274.805 0.25 267.188 0.25H262.5C210.352 0.25 168.75 42.4375 168.75 94V234.625C168.75 250.445 181.055 262.75 196.875 262.75H271.875C287.109 262.75 300 250.445 300 234.625V159.625C300 144.391 287.109 131.5 271.875 131.5ZM103.125 131.5H56.25V94C56.25 73.4922 72.6562 56.5 93.75 56.5H98.4375C106.055 56.5 112.5 50.6406 112.5 42.4375V14.3125C112.5 6.69531 106.055 0.25 98.4375 0.25H93.75C41.6016 0.25 0 42.4375 0 94V234.625C0 250.445 12.3047 262.75 28.125 262.75H103.125C118.359 262.75 131.25 250.445 131.25 234.625V159.625C131.25 144.391 118.359 131.5 103.125 131.5Z" fill="#F8F7F7"/></svg>
+                  </span>
+                  <div class="testi-slider-active1 swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="reviewblock__content">
+                          <img class="reviewblock__author__image" src="image/auth/andrew.jpg" alt="Andrew Amadi" style="width: 90px; height: 90px; object-fit: cover; border-radius: 50%; border: 4px solid #fff; margin-bottom: 33px;" />
+                          <span class="reviewblock__quoteIcon__one"><svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.75 10.9951H18V7.99512C18 6.35449 19.3125 4.99512 21 4.99512H21.375C21.9844 4.99512 22.5 4.52637 22.5 3.87012V1.62012C22.5 1.01074 21.9844 0.495117 21.375 0.495117H21C16.8281 0.495117 13.5 3.87012 13.5 7.99512V19.2451C13.5 20.5107 14.4844 21.4951 15.75 21.4951H21.75C22.9688 21.4951 24 20.5107 24 19.2451V13.2451C24 12.0264 22.9688 10.9951 21.75 10.9951ZM8.25 10.9951H4.5V7.99512C4.5 6.35449 5.8125 4.99512 7.5 4.99512H7.875C8.48438 4.99512 9 4.52637 9 3.87012V1.62012C9 1.01074 8.48438 0.495117 7.875 0.495117H7.5C3.32812 0.495117 0 3.87012 0 7.99512V19.2451C0 20.5107 0.984375 21.4951 2.25 21.4951H8.25C9.46875 21.4951 10.5 20.5107 10.5 19.2451V13.2451C10.5 12.0264 9.46875 10.9951 8.25 10.9951Z" fill="#6b9949"/></svg></span>
+                          <h4 class="reviewblock__qotes">Thanks to the digester, women no longer have to collect firewood, but can use the biogas from the digester for cooking. Plus the waste product from the system is an excellent fertiliser.</h4>
+                          <span class="reviewblock__author__name">Andrew Amadi</span>
+                          <span class="reviewblock__authorDes">Business Developing Consultant, Biogas International Limited</span>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="reviewblock__content">
+                          <img class="reviewblock__author__image" src="image/auth/chris.jpg" alt="Chris Nzuve" style="width: 90px; height: 90px; object-fit: cover; border-radius: 50%; border: 4px solid #fff; margin-bottom: 33px;" />
+                          <span class="reviewblock__quoteIcon__one"><svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.75 10.9951H18V7.99512C18 6.35449 19.3125 4.99512 21 4.99512H21.375C21.9844 4.99512 22.5 4.52637 22.5 3.87012V1.62012C22.5 1.01074 21.9844 0.495117 21.375 0.495117H21C16.8281 0.495117 13.5 3.87012 13.5 7.99512V19.2451C13.5 20.5107 14.4844 21.4951 15.75 21.4951H21.75C22.9688 21.4951 24 20.5107 24 19.2451V13.2451C24 12.0264 22.9688 10.9951 21.75 10.9951ZM8.25 10.9951H4.5V7.99512C4.5 6.35449 5.8125 4.99512 7.5 4.99512H7.875C8.48438 4.99512 9 4.52637 9 3.87012V1.62012C9 1.01074 8.48438 0.495117 7.875 0.495117H7.5C3.32812 0.495117 0 3.87012 0 7.99512V19.2451C0 20.5107 0.984375 21.4951 2.25 21.4951H8.25C9.46875 21.4951 10.5 20.5107 10.5 19.2451V13.2451C10.5 12.0264 9.46875 10.9951 8.25 10.9951Z" fill="#6b9949"/></svg></span>
+                          <h4 class="reviewblock__qotes">This is one of a kind biogas system; easy to install and extremely efficient. I love it!</h4>
+                          <span class="reviewblock__author__name">Chris Nzuve</span>
+                          <span class="reviewblock__authorDes">CEO/ Director, Bigartta Group</span>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="reviewblock__content">
+                          <img class="reviewblock__author__image" src="image/auth/paula.jpg" alt="Gainioz Reviewer" />
+                          <span class="reviewblock__quoteIcon__one"><svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.75 10.9951H18V7.99512C18 6.35449 19.3125 4.99512 21 4.99512H21.375C21.9844 4.99512 22.5 4.52637 22.5 3.87012V1.62012C22.5 1.01074 21.9844 0.495117 21.375 0.495117H21C16.8281 0.495117 13.5 3.87012 13.5 7.99512V19.2451C13.5 20.5107 14.4844 21.4951 15.75 21.4951H21.75C22.9688 21.4951 24 20.5107 24 19.2451V13.2451C24 12.0264 22.9688 10.9951 21.75 10.9951ZM8.25 10.9951H4.5V7.99512C4.5 6.35449 5.8125 4.99512 7.5 4.99512H7.875C8.48438 4.99512 9 4.52637 9 3.87012V1.62012C9 1.01074 8.48438 0.495117 7.875 0.495117H7.5C3.32812 0.495117 0 3.87012 0 7.99512V19.2451C0 20.5107 0.984375 21.4951 2.25 21.4951H8.25C9.46875 21.4951 10.5 20.5107 10.5 19.2451V13.2451C10.5 12.0264 9.46875 10.9951 8.25 10.9951Z" fill="#6b9949"/></svg></span>
+                          <h4 class="reviewblock__qotes">Flexi biogas is not just about an amazing invention that produces tons of gas but some clever uses of the gas and the bio-fertiliser which nutrifies the plants and improves gardening.</h4>
+                          <span class="reviewblock__author__name">Paula Kahumbu</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      -->
     </main>
     <!-- Main End -->
     <!-- footer -->
