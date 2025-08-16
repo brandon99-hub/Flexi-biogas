@@ -2287,6 +2287,7 @@
                 const searchTerm = this.value.trim();
                 if (searchTerm.length > 2) {
                     console.log('Searching for:', searchTerm);
+                    performSearch(searchTerm);
                 }
             });
 
@@ -2297,10 +2298,101 @@
                     const searchTerm = this.value.trim();
                     if (searchTerm) {
                         console.log('Search submitted:', searchTerm);
-                        // You can add actual search functionality here
+                        performSearch(searchTerm);
+                        closeSearch();
                     }
                 }
             });
+
+            // Search functionality
+            function performSearch(searchTerm) {
+                const searchLower = searchTerm.toLowerCase();
+                
+                // Define searchable content with their corresponding pages
+                const searchableContent = {
+                    'biogas': 'index.html',
+                    'domestic biogas': 'index.html',
+                    'large capacity': 'index.html',
+                    'flexi biogas': 'index.html',
+                    'about': 'about.html',
+                    'company': 'about.html',
+                    'team': 'about.html',
+                    'mission': 'about.html',
+                    'vision': 'about.html',
+                    'products': 'service.html',
+                    'services': 'service.html',
+                    'flexi technology': 'flexi-technology.html',
+                    'flexi systems': 'flexi-technology.html',
+                    'trex technology': 'trex-technology.html',
+                    't-rex': 'trex-technology.html',
+                    'large capacity systems': 'trex-technology.html',
+                    'biosan technology': 'biosan-technology.html',
+                    'bio-san': 'biosan-technology.html',
+                    'toilet': 'biosan-technology.html',
+                    'sanitation': 'biosan-technology.html',
+                    'bio fertiliser': 'bio-fertiliser.html',
+                    'fertilizer': 'bio-fertiliser.html',
+                    'compost': 'bio-fertiliser.html',
+                    'organic fertilizer': 'bio-fertiliser.html',
+                    'chicken brooding': 'chicken-brooding.html',
+                    'brooding': 'chicken-brooding.html',
+                    'poultry': 'chicken-brooding.html',
+                    'chicken': 'chicken-brooding.html',
+                    'copycat farming': 'copycat-farming.html',
+                    'farming': 'copycat-farming.html',
+                    'agriculture': 'copycat-farming.html',
+                    'drying fruits': 'drying-fruits.html',
+                    'fruit drying': 'drying-fruits.html',
+                    'food processing': 'drying-fruits.html',
+                    'value addition': 'value-addition.html',
+                    'processing': 'value-addition.html',
+                    'projects': 'projects.html',
+                    'installations': 'projects.html',
+                    'case studies': 'projects.html',
+                    'contact': 'contact.html',
+                    'get in touch': 'contact.html',
+                    'reach us': 'contact.html',
+                    'address': 'contact.html',
+                    'phone': 'contact.html',
+                    'email': 'contact.html',
+                    'faq': 'faq.html',
+                    'questions': 'faq.html',
+                    'help': 'faq.html',
+                    'answers': 'faq.html',
+                    'csr': 'csr.html',
+                    'corporate social responsibility': 'csr.html',
+                    'community': 'csr.html',
+                    'innovations': 'new-innovations.html',
+                    'new innovations': 'new-innovations.html',
+                    'technology': 'new-innovations.html',
+                    'events': 'events.html',
+                    'news': 'events.html',
+                    'updates': 'events.html'
+                };
+
+                // Find matching content
+                let bestMatch = null;
+                let bestMatchScore = 0;
+
+                for (const [content, page] of Object.entries(searchableContent)) {
+                    if (content.includes(searchLower)) {
+                        const score = searchLower.length / content.length;
+                        if (score > bestMatchScore) {
+                            bestMatch = page;
+                            bestMatchScore = score;
+                        }
+                    }
+                }
+
+                // If exact match found, navigate to the page
+                if (bestMatch) {
+                    console.log('Navigating to:', bestMatch);
+                    window.location.href = bestMatch;
+                } else {
+                    // If no exact match, show alert or create a search results page
+                    alert(`No results found for "${searchTerm}". Try searching for: biogas, products, about, contact, projects, or technology.`);
+                }
+            }
         } else {
             console.error('Search elements not found!');
         }

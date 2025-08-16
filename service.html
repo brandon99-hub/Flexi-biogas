@@ -20,6 +20,128 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/main.css" />
+    <style>
+      /* Inline Search Container */
+      .inline-search-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 50px;
+      }
+      
+      /* Search Icon Button */
+      .search-icon-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        border: 1px solid #f1f1f1;
+        border-radius: 50%;
+        color: #0d0d0d;
+        font-size: 18px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0px 10px 15px rgba(221, 221, 221, 0.15);
+        z-index: 10;
+        position: relative;
+      }
+      .search-icon-btn:hover {
+        color: #6b9949;
+        border-color: #6b9949;
+        transform: translateY(-2px);
+        box-shadow: 0px 15px 25px rgba(107, 153, 73, 0.25);
+      }
+      
+      /* Search Input Wrapper */
+      .search-input-wrapper {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 50px;
+        width: 0;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid #f1f1f1;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0px 10px 15px rgba(221, 221, 221, 0.15);
+      }
+      .search-input-wrapper.active {
+        width: 280px;
+        border-color: #6b9949;
+        box-shadow: 0px 15px 25px rgba(107, 153, 73, 0.25);
+      }
+      
+      /* Search Input Field */
+      .search-input {
+        flex: 1;
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 0 55px 0 20px;
+        font-size: 14px;
+        color: #333;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease 0.1s;
+      }
+      .search-input-wrapper.active .search-input {
+        opacity: 1;
+      }
+      .search-input::placeholder {
+        color: #999;
+      }
+      
+      /* Search Close Button */
+      .search-close-btn {
+        position: absolute;
+        right: 8px;
+        width: 34px;
+        height: 34px;
+        border: none;
+        background: #f8f9fa;
+        border-radius: 50%;
+        color: #666;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+      .search-input-wrapper.active .search-close-btn {
+        opacity: 1;
+        transition-delay: 0.2s;
+      }
+      .search-close-btn:hover {
+        background: #e9ecef;
+        color: #333;
+      }
+      
+      /* Header Actions */
+      .header__actions ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        .search-input-wrapper.active {
+          width: 220px;
+        }
+      }
+      @media (max-width: 576px) {
+        .search-input-wrapper.active {
+          width: 180px;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -74,7 +196,24 @@
                   <!-- Main Menu End -->
                   <!-- Header Right Buttons Search Cart -->
                   <div class="header__right">
-                    <div class="header__button">
+                  <div class="header__actions">
+                    <ul>
+                      <li>
+                        <div class="inline-search-container">
+                          <button class="search-icon-btn" id="searchToggle">
+                            <i class="fas fa-search"></i>
+                          </button>
+                          <div class="search-input-wrapper" id="searchInputWrapper">
+                            <input type="text" class="search-input" id="navSearchInput" placeholder="Search..." />
+                            <button class="search-close-btn" id="searchClose">
+                              <i class="fas fa-times"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="header__button">
                       <a class="btn btn--styleOne btn--secondary it-btn" href="contact.html">
                         <span class="btn__text">Contact Us</span>
                         <i class="fa-solid fa-tree btn__icon"></i>
@@ -836,7 +975,184 @@
     <script src="assets/nice-select/jquery.nice-select.min.js"></script>
     <script src="assets/validator.min.js"></script>
     <script src="assets/animation/wow.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/app.js"></script>    
+    <!-- Inline Search Functionality -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Search script loading...');
+        
+        const searchToggle = document.getElementById('searchToggle');
+        const searchInputWrapper = document.getElementById('searchInputWrapper');
+        const searchInput = document.getElementById('navSearchInput');
+        const searchClose = document.getElementById('searchClose');
+
+        console.log('Search elements:', {
+            searchToggle,
+            searchInputWrapper,
+            searchInput,
+            searchClose
+        });
+
+        if (searchToggle && searchInputWrapper && searchInput && searchClose) {
+            console.log('All search elements found, initializing...');
+            
+            // Open search
+            searchToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Search toggle clicked');
+                searchInputWrapper.classList.add('active');
+                setTimeout(() => {
+                    searchInput.focus();
+                }, 300);
+            });
+
+            // Close search
+            searchClose.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Search close clicked');
+                closeSearch();
+            });
+
+            // Close search on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && searchInputWrapper.classList.contains('active')) {
+                    console.log('Escape key pressed');
+                    closeSearch();
+                }
+            });
+
+            // Close search when clicking outside
+            document.addEventListener('click', function(e) {
+                if (searchInputWrapper.classList.contains('active') && 
+                    !searchToggle.contains(e.target) && 
+                    !searchInputWrapper.contains(e.target)) {
+                    console.log('Clicked outside search');
+                    closeSearch();
+                }
+            });
+
+            function closeSearch() {
+                searchInputWrapper.classList.remove('active');
+                searchInput.value = '';
+                searchInput.blur();
+            }
+
+            // Handle search input
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.trim();
+                if (searchTerm.length > 2) {
+                    console.log('Searching for:', searchTerm);
+                    performSearch(searchTerm);
+                }
+            });
+
+            // Handle enter key for search
+            searchInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const searchTerm = this.value.trim();
+                    if (searchTerm) {
+                        console.log('Search submitted:', searchTerm);
+                        performSearch(searchTerm);
+                        closeSearch();
+                    }
+                }
+            });
+
+            // Search functionality
+            function performSearch(searchTerm) {
+                const searchLower = searchTerm.toLowerCase();
+                
+                // Define searchable content with their corresponding pages
+                const searchableContent = {
+                    'biogas': 'index.html',
+                    'domestic biogas': 'index.html',
+                    'large capacity': 'index.html',
+                    'flexi biogas': 'index.html',
+                    'about': 'about.html',
+                    'company': 'about.html',
+                    'team': 'about.html',
+                    'mission': 'about.html',
+                    'vision': 'about.html',
+                    'products': 'service.html',
+                    'services': 'service.html',
+                    'flexi technology': 'flexi-technology.html',
+                    'flexi systems': 'flexi-technology.html',
+                    'trex technology': 'trex-technology.html',
+                    't-rex': 'trex-technology.html',
+                    'large capacity systems': 'trex-technology.html',
+                    'biosan technology': 'biosan-technology.html',
+                    'bio-san': 'biosan-technology.html',
+                    'toilet': 'biosan-technology.html',
+                    'sanitation': 'biosan-technology.html',
+                    'bio fertiliser': 'bio-fertiliser.html',
+                    'fertilizer': 'bio-fertiliser.html',
+                    'compost': 'bio-fertiliser.html',
+                    'organic fertilizer': 'bio-fertiliser.html',
+                    'chicken brooding': 'chicken-brooding.html',
+                    'brooding': 'chicken-brooding.html',
+                    'poultry': 'chicken-brooding.html',
+                    'chicken': 'chicken-brooding.html',
+                    'copycat farming': 'copycat-farming.html',
+                    'farming': 'copycat-farming.html',
+                    'agriculture': 'copycat-farming.html',
+                    'drying fruits': 'drying-fruits.html',
+                    'fruit drying': 'drying-fruits.html',
+                    'food processing': 'drying-fruits.html',
+                    'value addition': 'value-addition.html',
+                    'processing': 'value-addition.html',
+                    'projects': 'projects.html',
+                    'installations': 'projects.html',
+                    'case studies': 'projects.html',
+                    'contact': 'contact.html',
+                    'get in touch': 'contact.html',
+                    'reach us': 'contact.html',
+                    'address': 'contact.html',
+                    'phone': 'contact.html',
+                    'email': 'contact.html',
+                    'faq': 'faq.html',
+                    'questions': 'faq.html',
+                    'help': 'faq.html',
+                    'answers': 'faq.html',
+                    'csr': 'csr.html',
+                    'corporate social responsibility': 'csr.html',
+                    'community': 'csr.html',
+                    'innovations': 'new-innovations.html',
+                    'new innovations': 'new-innovations.html',
+                    'technology': 'new-innovations.html',
+                    'events': 'events.html',
+                    'news': 'events.html',
+                    'updates': 'events.html'
+                };
+
+                // Find matching content
+                let bestMatch = null;
+                let bestMatchScore = 0;
+
+                for (const [content, page] of Object.entries(searchableContent)) {
+                    if (content.includes(searchLower)) {
+                        const score = searchLower.length / content.length;
+                        if (score > bestMatchScore) {
+                            bestMatch = page;
+                            bestMatchScore = score;
+                        }
+                    }
+                }
+
+                // If exact match found, navigate to the page
+                if (bestMatch) {
+                    console.log('Navigating to:', bestMatch);
+                    window.location.href = bestMatch;
+                } else {
+                    // If no exact match, show alert or create a search results page
+                    alert(`No results found for "${searchTerm}". Try searching for: biogas, products, about, contact, projects, or technology.`);
+                }
+            }
+        } else {
+            console.error('Search elements not found!');
+        }
+    });
+    </script>
     <style>
       .footer__newsletter__formGroup {
         display: flex;
